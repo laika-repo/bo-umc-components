@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+.container {
+  display: flex;
+
+  border: 1px dotted red;
+}
+
+.grid-item-container {
+  flex-grow: 1;
+  border: 1px dotted green;
+}
