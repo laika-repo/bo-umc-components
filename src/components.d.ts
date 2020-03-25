@@ -24,7 +24,18 @@ export namespace Components {
     */
     'middle': string;
   }
-  interface UmcHeaderSection {}
+  interface UmcHeaderSection {
+    'logo': string;
+  }
+  interface UmcMenuToggle {
+    'title': string;
+  }
+  interface UmcTab {
+    'active': boolean;
+    'disabled': boolean;
+    'label': string;
+  }
+  interface UmcTabs {}
 }
 
 declare global {
@@ -41,9 +52,30 @@ declare global {
     prototype: HTMLUmcHeaderSectionElement;
     new (): HTMLUmcHeaderSectionElement;
   };
+
+  interface HTMLUmcMenuToggleElement extends Components.UmcMenuToggle, HTMLStencilElement {}
+  var HTMLUmcMenuToggleElement: {
+    prototype: HTMLUmcMenuToggleElement;
+    new (): HTMLUmcMenuToggleElement;
+  };
+
+  interface HTMLUmcTabElement extends Components.UmcTab, HTMLStencilElement {}
+  var HTMLUmcTabElement: {
+    prototype: HTMLUmcTabElement;
+    new (): HTMLUmcTabElement;
+  };
+
+  interface HTMLUmcTabsElement extends Components.UmcTabs, HTMLStencilElement {}
+  var HTMLUmcTabsElement: {
+    prototype: HTMLUmcTabsElement;
+    new (): HTMLUmcTabsElement;
+  };
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement;
     'umc-header-section': HTMLUmcHeaderSectionElement;
+    'umc-menu-toggle': HTMLUmcMenuToggleElement;
+    'umc-tab': HTMLUmcTabElement;
+    'umc-tabs': HTMLUmcTabsElement;
   }
 }
 
@@ -62,11 +94,25 @@ declare namespace LocalJSX {
     */
     'middle'?: string;
   }
-  interface UmcHeaderSection {}
+  interface UmcHeaderSection {
+    'logo'?: string;
+  }
+  interface UmcMenuToggle {
+    'title'?: string;
+  }
+  interface UmcTab {
+    'active'?: boolean;
+    'disabled'?: boolean;
+    'label'?: string;
+  }
+  interface UmcTabs {}
 
   interface IntrinsicElements {
     'my-component': MyComponent;
     'umc-header-section': UmcHeaderSection;
+    'umc-menu-toggle': UmcMenuToggle;
+    'umc-tab': UmcTab;
+    'umc-tabs': UmcTabs;
   }
 }
 
@@ -78,6 +124,9 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
       'umc-header-section': LocalJSX.UmcHeaderSection & JSXBase.HTMLAttributes<HTMLUmcHeaderSectionElement>;
+      'umc-menu-toggle': LocalJSX.UmcMenuToggle & JSXBase.HTMLAttributes<HTMLUmcMenuToggleElement>;
+      'umc-tab': LocalJSX.UmcTab & JSXBase.HTMLAttributes<HTMLUmcTabElement>;
+      'umc-tabs': LocalJSX.UmcTabs & JSXBase.HTMLAttributes<HTMLUmcTabsElement>;
     }
   }
 }

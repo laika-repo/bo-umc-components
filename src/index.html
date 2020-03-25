@@ -8,14 +8,30 @@
   <script type="module" src="/build/umc-research.esm.js"></script>
   <script nomodule src="/build/umc-research.js"></script>
 
+  <style>
+    umc-header-section.location-switch {
+        --background-color: #003741;
+    }
+  </style>
+
 </head>
 <body>
 
+  <umc-header-section class="location-switch">
+    <umc-tabs slot="2">
+      <umc-tab label="Healthcare"></umc-tab>
+      <umc-tab label="Health science"></umc-tab>
+      <umc-tab label="Health campus"></umc-tab>
+    </umc-tabs>
+  </umc-header-section>
+
   <umc-header-section>
-    <h1 slot="1">Boom</h1>
-    <h1 slot="2">Bam</h1>
-    <h1 slot="3">Bim</h1>
+    <umc-menu-toggle slot='1' title="Menu"></umc-menu-toggle>
+    <img slot="2" src='assets/images/logo-aumc.svg'/>
+    <umc-menu-toggle slot='3' title="Search"></umc-menu-toggle>
   </umc-header-section>
 
 </body>
 </html>
+
+	
