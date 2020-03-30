@@ -28,39 +28,3 @@
 .grid-item-container--right {
   text-align: right;
 }
-
-
-// :host {
-//   display: block;
-
-//   --default-background-color: #999;
-//   --default-text-color: black;
-//   --default-text-color-button: white;
-//   --default-background-color-button: black;
-//   --default-border-radius: 0;
-//   --default-text-decoration: none;
-  
-//   background-color: var(--background-color, var(--default-background-color));
-
-//   font-family: monospace;
-//   text-align: center;
-//   padding: 8px;
-// }
-
-// h3 {
-//   font-size: 30px;
-// }
-
-// section {
-//   margin-bottom: 10px;
-// }
-
-// a {
-//   display: inline-block;
-//   background-color: var(--background-color-button, var(--default-background-color-button));
-//   text-decoration: var(--text-decoration, var(--default-text-decoration));
-//   color: var(--text-color-button, var(--default-text-color-button));
-//   padding: 12px;
-//   border-radius: var(--border-radius, var(--default-border-radius));
-
-// }

@@ -1,0 +1,33 @@
+$page-width: 768px;
+$gutter-width: 56px;
+
+$columns: 3;
+$gutters-width-sum: $gutter-width*($columns+1);
+
+
+$column-width: ($page-width - $gutters-width-sum) / $columns;
+
+
+:host {
+  display: block;
+}
+
+.row {
+  border: 1px dotted red;
+  background: pink;
+  width: $page-width;
+}
+
+.column {
+  display: inline-block;
+  background: white;
+  box-sizing: border-box;
+  border: 1px dotted green;
+  width: $column-width;
+  height: 100px;
+  margin-right: $gutter-width;
+}
+
+.column:first-of-type {
+  margin-left: $gutter-width;
+}
