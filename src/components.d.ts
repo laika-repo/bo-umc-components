@@ -25,6 +25,7 @@ export namespace Components {
     'middle': string;
   }
   interface UmcColumn {}
+  interface UmcDevStatusbar {}
   interface UmcGridRow {}
   interface UmcGridSection {
     'cols': number;
@@ -56,6 +57,12 @@ declare global {
   var HTMLUmcColumnElement: {
     prototype: HTMLUmcColumnElement;
     new (): HTMLUmcColumnElement;
+  };
+
+  interface HTMLUmcDevStatusbarElement extends Components.UmcDevStatusbar, HTMLStencilElement {}
+  var HTMLUmcDevStatusbarElement: {
+    prototype: HTMLUmcDevStatusbarElement;
+    new (): HTMLUmcDevStatusbarElement;
   };
 
   interface HTMLUmcGridRowElement extends Components.UmcGridRow, HTMLStencilElement {}
@@ -96,6 +103,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement;
     'umc-column': HTMLUmcColumnElement;
+    'umc-dev-statusbar': HTMLUmcDevStatusbarElement;
     'umc-grid-row': HTMLUmcGridRowElement;
     'umc-grid-section': HTMLUmcGridSectionElement;
     'umc-header-section': HTMLUmcHeaderSectionElement;
@@ -121,6 +129,7 @@ declare namespace LocalJSX {
     'middle'?: string;
   }
   interface UmcColumn {}
+  interface UmcDevStatusbar {}
   interface UmcGridRow {}
   interface UmcGridSection {
     'cols'?: number;
@@ -141,6 +150,7 @@ declare namespace LocalJSX {
   interface IntrinsicElements {
     'my-component': MyComponent;
     'umc-column': UmcColumn;
+    'umc-dev-statusbar': UmcDevStatusbar;
     'umc-grid-row': UmcGridRow;
     'umc-grid-section': UmcGridSection;
     'umc-header-section': UmcHeaderSection;
@@ -158,6 +168,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
       'umc-column': LocalJSX.UmcColumn & JSXBase.HTMLAttributes<HTMLUmcColumnElement>;
+      'umc-dev-statusbar': LocalJSX.UmcDevStatusbar & JSXBase.HTMLAttributes<HTMLUmcDevStatusbarElement>;
       'umc-grid-row': LocalJSX.UmcGridRow & JSXBase.HTMLAttributes<HTMLUmcGridRowElement>;
       'umc-grid-section': LocalJSX.UmcGridSection & JSXBase.HTMLAttributes<HTMLUmcGridSectionElement>;
       'umc-header-section': LocalJSX.UmcHeaderSection & JSXBase.HTMLAttributes<HTMLUmcHeaderSectionElement>;
