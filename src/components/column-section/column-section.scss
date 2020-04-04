@@ -1,0 +1,20 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+
+  --background-color--default: $white;
+  --padding-vertical--default: 20px;
+  --padding-horizontal--default: 0px;
+  --border-color--default: transparent;
+  
+  padding: var(--padding-vertical, var(--padding-vertical--default)) var(--padding-horizontal, var(--padding-horizontal--default));
+  background-color: var(--background-color, var(--background-color--default));
+  border-bottom: 1px solid var(--border-color, var(--border-color--default));
+  
+  .column {
+    background-color: rgba(255,255,255,0.1); // DEBUG
+  }
+}
+
+
+

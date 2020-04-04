@@ -3,14 +3,66 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
-
+  <title>Amsterdam UMC</title>
+  
   <script type="module" src="/build/umc-research.esm.js"></script>
   <script nomodule src="/build/umc-research.js"></script>
 
   <style>
-    umc-header-section.location-switch {
-        --background-color: #003741;
+    @font-face {
+      font-family: 'Museo Sans Rounded';
+      src: url("assets/museosansrounded-300.woff") format("woff");
+      font-weight: 300;
+      font-style: normal;
+      font-display: fallback; 
+    }
+
+    @font-face {
+      font-family: 'Museo Sans Rounded';
+      src: url("assets/museosansrounded-500.woff") format("woff");
+      font-weight: 500;
+      font-style: normal;
+      font-display: fallback; 
+    }
+
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    umc-column-section.location-switch {
+      --text-color: #005261;
+      --border-color: #ced9e5;
+      --padding-vertical: 16px;
+    }
+
+    umc-header-section.main-navigation {
+      --padding: 24px 0;
+    }
+
+    umc-column-section.footer-links {
+      --background-color: #003741;
+      --text-color: white;
+      --text-size: 18px;
+      --padding-vertical: 106px;
+    }
+
+    umc-column-section.footer-colofon {
+      --background-color: #00778a;
+      --text-color: white;
+      --text-size: 18px;
+      --padding-vertical: 44px;
+    }
+
+    .logo {
+      width: 200px;
+      width: 260px;
+    }
+
+    .umc-column-section ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
     }
   </style>
 
@@ -18,23 +70,65 @@
 <body>
     <umc-dev-statusbar></umc-dev-statusbar>
 
-  <umc-header-section class="location-switch">
-    <umc-tabs slot="2">
-      <umc-tab label="Healthcare"></umc-tab>
-      <umc-tab label="Health science"></umc-tab>
-      <umc-tab label="Health campus"></umc-tab>
-    </umc-tabs>
-  </umc-header-section>
+  <umc-header>
+      <umc-column-section class="location-switch">
+        <umc-link-list slot='2' orientation='horizontal'>
+          <umc-link-list-item label='Healthcare'></li>
+          <umc-link-list-item active='true' label='Research'></umc-link-list-item>
+          <umc-link-list-item label='Health campus'></umc-link-list-item>
+        </umc-link-list>
+    </umc-column-section>
+  
+    <umc-header-section class="main-navigation">
+      <umc-logo slot="1" src='assets/logo-aumc.svg'></umc-logo>
+      <umc-menu-toggle slot='2' label="Search" icon='assets/icon-search.svg'></umc-menu-toggle>
+      <umc-menu-toggle slot='3' label="Menu" icon='assets/icon-hamburger.svg'></umc-menu-toggle>
+    </umc-header-section>
 
-  <umc-header-section>
-    <umc-menu-toggle slot='1' title="Menu"></umc-menu-toggle>
-    <img slot="2" src='assets/images/logo-aumc.svg'/>
-    <umc-menu-toggle slot='3' title="Search"></umc-menu-toggle>
-  </umc-header-section>
+      <umc-grid-section>
+          <span slot='1'><div>SLOT 1</div></span>
+          <span slot='2'><div>SLOT2</div></span>
+      </umc-grid-section>
+  </umc-header>
 
-  <umc-grid-section cols="12">
-  </umc-grid-section>
+  <umc-header>
+    <umc-column-section class="footer-links">
+        <umc-logo slot="1" src='logo-aumc.svg'></umc-logo>
 
+          <umc-link-list slot='2'>
+            <umc-link-list-item label='Events'></li>
+            <umc-link-list-item label='Research institutes'></umc-link-list-item>
+            <umc-link-list-item label='Departments'></umc-link-list-item>
+            <umc-link-list-item label='About'></umc-link-list-item>
+          </umc-link-list>
+      
+          <umc-link-list slot='3'>
+              <umc-link-list-item label='Events'></li>
+              <umc-link-list-item label='Research institutes'></umc-link-list-item>
+              <umc-link-list-item label='Departments'></umc-link-list-item>
+              <umc-link-list-item label='About'></umc-link-list-item>
+            </umc-link-list>
+    </umc-column-section>
+
+    <umc-column-section class="footer-colofon">
+
+          <umc-link-list slot='1' orientation='horizontal'>
+            <umc-link-list-item label='Privacy policy'></li>
+            <umc-link-list-item label='Sitemap'></umc-link-list-item>
+            <umc-link-list-item label='Accountability'></umc-link-list-item>
+            <umc-link-list-item label='Cookie settings'></umc-link-list-item>
+          </umc-link-list>
+
+          <div slot='2'></div>
+      
+          <umc-link-list slot='3' orientation='horizontal'>
+              <umc-link-list-item label='Follow us on social media'></li>
+              <umc-link-list-item label='icon' icon='assets/icon-search.svg'></umc-link-list-item>
+              <umc-link-list-item label='icon'  icon='assets/icon-search.svg'></umc-link-list-item>
+              <umc-link-list-item label='icon' icon='assets/icon-search.svg'></umc-link-list-item>
+            </umc-link-list>
+    </umc-column-section>
+  </umc-header>
 </body>
 </html>
 

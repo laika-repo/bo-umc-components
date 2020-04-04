@@ -1,11 +1,13 @@
 import { Component, Prop } from "@stencil/core";
 
 @Component({
-    tag: 'umc-tab',
+    tag: 'umc-link-list-item',
     shadow: true
 })
 
-export class tab {
+export class linkListItem {
     @Prop() label: string;
+    @Prop() href: string;
+    @Prop() icon: string;
     @Prop() active: boolean = false;
 }

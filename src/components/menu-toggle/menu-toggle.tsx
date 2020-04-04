@@ -1,16 +1,21 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, getAssetPath, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'umc-menu-toggle',
   styleUrl: 'menu-toggle.scss',
-  shadow: true
+  shadow: true,
+  assetsDirs: ['assets']
 })
 export class MenuToggle {
-  @Prop() title: string = "Required prop 'title' missing";
+  @Prop() label: string = "Required prop 'title' missing";
+  @Prop() icon: string = "icon-hamburger.svg";
 
   render() {
     return (
-    <h3>{this.title}</h3>
+      
+    <h3><span class="label">{this.label}</span>
+      <img class='icon' slot="2" src={this.icon} /> 
+    </h3>
     );
   }
 

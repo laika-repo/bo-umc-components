@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+img {
+  width: 200px;
+
+  @include wider-than('small') {
+    width: 260px;
+  }
+}

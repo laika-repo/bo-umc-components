@@ -1,9 +1,21 @@
 @font-face {
     font-family: 'Museo Sans Rounded';
-    src: local("Museo Sans 300"), 
-    url("../fonts/museo-sans-rounded-300/MuseoSansRounded-300.woff2") format("woff2"), 
-    url("../fonts/museo-sans-rounded-300/MuseoSansRounded-300.woff") format("woff");
+    src: url("assets/museosansrounded-300.woff") format("woff");
     font-weight: 300;
     font-style: normal;
     font-display: fallback; 
 }
+
+$font-sizes: (
+  'small':  375px,
+  'medium': 768px,
+  'large':  1024px,
+  'x-large':  1440px
+) !default;
+
+@function rem-calc($size) {
+    $remSize: $size / 16px;
+    @return #{$remSize}rem;
+}
+
+// 56px 48px 40px 32px 28px 24px 22px 20px 18px 16px 14px 12px

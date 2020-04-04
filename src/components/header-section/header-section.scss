@@ -1,30 +1,23 @@
 :host {
-  --default-background-color: white;
-  
   display: block;
-  background-color: var(--background-color, var(--default-background-color));
+  background-color: $white;
+
+  --border-color--default: transparent;
   
+  border-bottom: 1px solid var(--border-color, var(--border-color--default));
 }
 
 .container {
   display: flex;
+  justify-content: space-between;
 
-  border: 1px dotted $azure-blue;
+  padding: var(--padding, var(--padding--default));
 }
 
-.grid-item-container {
-  flex-grow: 1;
-}
-
-.grid-item-container--middle {
-  text-align: center;
-}
-
-.grid-item-container--left {
-  text-align: left;
+.grid-item-container:last-child {
+  @include wider-than('small') {
+    order: -1;
+  }  
 }
 
 
-.grid-item-container--right {
-  text-align: right;
-}

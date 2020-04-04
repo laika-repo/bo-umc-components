@@ -34,6 +34,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@stencil/sass": "^1.1.1"
+    "@stencil/sass": "^1.1.1",
+    "font-blast": "^0.7.0"
   }
 }

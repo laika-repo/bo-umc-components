@@ -1,8 +1,8 @@
-import { Component, h, Element, State } from '@stencil/core';
+import { Component, Host, h, Element, State } from '@stencil/core';
 
 @Component({
   tag: 'umc-tabs',
-  styleUrl: 'tabs.css',
+  styleUrl: 'tabs.scss',
   shadow: true
 })
 export class Tabs {
@@ -21,12 +21,13 @@ export class Tabs {
 
   render() {
     return (
-      <ul>
-        {this.tabs.map((tab: HTMLUmcTabElement, index: number) => {
-        return <li>{tab.label}</li>
+      <Host>
+        <ul>
+        {this.tabs.map((tab: HTMLUmcTabElement) => {
+          return <li class={tab.active ? 'active ' : ''}>{tab.label}</li>
         })}
       </ul>
+      </Host>
     );
   }
-
 }

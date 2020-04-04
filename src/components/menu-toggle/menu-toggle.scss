@@ -1,3 +1,15 @@
-:host {
-  display: block;
+h3 {
+  font-family: 'Museo Sans Rounded', sans-serif;
+  font-weight: 500;
+  font-size: rem-calc(20px);
+  color: $blue-lagoon;
+}
+
+
+.label {
+  display: none;
+
+  @include wider-than('small') {
+    display: inline;
+  }
 }

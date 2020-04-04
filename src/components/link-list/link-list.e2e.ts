@@ -1,11 +1,11 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe('amc-grid-section', () => {
+describe('umc-link-list', () => {
   it('renders', async () => {
     const page = await newE2EPage();
-    await page.setContent('<amc-grid-section></amc-grid-section>');
+    await page.setContent('<umc-link-list></umc-link-list>');
 
-    const element = await page.find('amc-grid-section');
+    const element = await page.find('umc-link-list');
     expect(element).toHaveClass('hydrated');
   });
 });

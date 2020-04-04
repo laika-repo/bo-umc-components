@@ -10,35 +10,30 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
-  }
-  interface UmcColumn {}
+  interface UmcColumnSection {}
   interface UmcDevStatusbar {}
+  interface UmcGridBlock {}
   interface UmcGridRow {}
-  interface UmcGridSection {
-    'cols': number;
+  interface UmcHeader {}
+  interface UmcHeaderSection {}
+  interface UmcLinkList {
+    'orientation': string;
   }
-  interface UmcHeaderSection {
-    'logo': string;
+  interface UmcLinkListItem {
+    'active': boolean;
+    'href': string;
+    'icon': string;
+    'label': string;
+  }
+  interface UmcLogo {
+    'src': string;
   }
   interface UmcMenuToggle {
-    'title': string;
+    'icon': string;
+    'label': string;
   }
   interface UmcTab {
     'active': boolean;
-    'disabled': boolean;
     'label': string;
   }
   interface UmcTabs {}
@@ -47,16 +42,10 @@ export namespace Components {
 declare global {
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
-  };
-
-  interface HTMLUmcColumnElement extends Components.UmcColumn, HTMLStencilElement {}
-  var HTMLUmcColumnElement: {
-    prototype: HTMLUmcColumnElement;
-    new (): HTMLUmcColumnElement;
+  interface HTMLUmcColumnSectionElement extends Components.UmcColumnSection, HTMLStencilElement {}
+  var HTMLUmcColumnSectionElement: {
+    prototype: HTMLUmcColumnSectionElement;
+    new (): HTMLUmcColumnSectionElement;
   };
 
   interface HTMLUmcDevStatusbarElement extends Components.UmcDevStatusbar, HTMLStencilElement {}
@@ -65,22 +54,46 @@ declare global {
     new (): HTMLUmcDevStatusbarElement;
   };
 
+  interface HTMLUmcGridBlockElement extends Components.UmcGridBlock, HTMLStencilElement {}
+  var HTMLUmcGridBlockElement: {
+    prototype: HTMLUmcGridBlockElement;
+    new (): HTMLUmcGridBlockElement;
+  };
+
   interface HTMLUmcGridRowElement extends Components.UmcGridRow, HTMLStencilElement {}
   var HTMLUmcGridRowElement: {
     prototype: HTMLUmcGridRowElement;
     new (): HTMLUmcGridRowElement;
   };
 
-  interface HTMLUmcGridSectionElement extends Components.UmcGridSection, HTMLStencilElement {}
-  var HTMLUmcGridSectionElement: {
-    prototype: HTMLUmcGridSectionElement;
-    new (): HTMLUmcGridSectionElement;
+  interface HTMLUmcHeaderElement extends Components.UmcHeader, HTMLStencilElement {}
+  var HTMLUmcHeaderElement: {
+    prototype: HTMLUmcHeaderElement;
+    new (): HTMLUmcHeaderElement;
   };
 
   interface HTMLUmcHeaderSectionElement extends Components.UmcHeaderSection, HTMLStencilElement {}
   var HTMLUmcHeaderSectionElement: {
     prototype: HTMLUmcHeaderSectionElement;
     new (): HTMLUmcHeaderSectionElement;
+  };
+
+  interface HTMLUmcLinkListElement extends Components.UmcLinkList, HTMLStencilElement {}
+  var HTMLUmcLinkListElement: {
+    prototype: HTMLUmcLinkListElement;
+    new (): HTMLUmcLinkListElement;
+  };
+
+  interface HTMLUmcLinkListItemElement extends Components.UmcLinkListItem, HTMLStencilElement {}
+  var HTMLUmcLinkListItemElement: {
+    prototype: HTMLUmcLinkListItemElement;
+    new (): HTMLUmcLinkListItemElement;
+  };
+
+  interface HTMLUmcLogoElement extends Components.UmcLogo, HTMLStencilElement {}
+  var HTMLUmcLogoElement: {
+    prototype: HTMLUmcLogoElement;
+    new (): HTMLUmcLogoElement;
   };
 
   interface HTMLUmcMenuToggleElement extends Components.UmcMenuToggle, HTMLStencilElement {}
@@ -101,12 +114,15 @@ declare global {
     new (): HTMLUmcTabsElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
-    'umc-column': HTMLUmcColumnElement;
+    'umc-column-section': HTMLUmcColumnSectionElement;
     'umc-dev-statusbar': HTMLUmcDevStatusbarElement;
+    'umc-grid-block': HTMLUmcGridBlockElement;
     'umc-grid-row': HTMLUmcGridRowElement;
-    'umc-grid-section': HTMLUmcGridSectionElement;
+    'umc-header': HTMLUmcHeaderElement;
     'umc-header-section': HTMLUmcHeaderSectionElement;
+    'umc-link-list': HTMLUmcLinkListElement;
+    'umc-link-list-item': HTMLUmcLinkListItemElement;
+    'umc-logo': HTMLUmcLogoElement;
     'umc-menu-toggle': HTMLUmcMenuToggleElement;
     'umc-tab': HTMLUmcTabElement;
     'umc-tabs': HTMLUmcTabsElement;
@@ -114,46 +130,44 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
-  }
-  interface UmcColumn {}
+  interface UmcColumnSection {}
   interface UmcDevStatusbar {}
+  interface UmcGridBlock {}
   interface UmcGridRow {}
-  interface UmcGridSection {
-    'cols'?: number;
+  interface UmcHeader {}
+  interface UmcHeaderSection {}
+  interface UmcLinkList {
+    'orientation'?: string;
   }
-  interface UmcHeaderSection {
-    'logo'?: string;
+  interface UmcLinkListItem {
+    'active'?: boolean;
+    'href'?: string;
+    'icon'?: string;
+    'label'?: string;
+  }
+  interface UmcLogo {
+    'src'?: string;
   }
   interface UmcMenuToggle {
-    'title'?: string;
+    'icon'?: string;
+    'label'?: string;
   }
   interface UmcTab {
     'active'?: boolean;
-    'disabled'?: boolean;
     'label'?: string;
   }
   interface UmcTabs {}
 
   interface IntrinsicElements {
-    'my-component': MyComponent;
-    'umc-column': UmcColumn;
+    'umc-column-section': UmcColumnSection;
     'umc-dev-statusbar': UmcDevStatusbar;
+    'umc-grid-block': UmcGridBlock;
     'umc-grid-row': UmcGridRow;
-    'umc-grid-section': UmcGridSection;
+    'umc-header': UmcHeader;
     'umc-header-section': UmcHeaderSection;
+    'umc-link-list': UmcLinkList;
+    'umc-link-list-item': UmcLinkListItem;
+    'umc-logo': UmcLogo;
     'umc-menu-toggle': UmcMenuToggle;
     'umc-tab': UmcTab;
     'umc-tabs': UmcTabs;
@@ -166,12 +180,15 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-      'umc-column': LocalJSX.UmcColumn & JSXBase.HTMLAttributes<HTMLUmcColumnElement>;
+      'umc-column-section': LocalJSX.UmcColumnSection & JSXBase.HTMLAttributes<HTMLUmcColumnSectionElement>;
       'umc-dev-statusbar': LocalJSX.UmcDevStatusbar & JSXBase.HTMLAttributes<HTMLUmcDevStatusbarElement>;
+      'umc-grid-block': LocalJSX.UmcGridBlock & JSXBase.HTMLAttributes<HTMLUmcGridBlockElement>;
       'umc-grid-row': LocalJSX.UmcGridRow & JSXBase.HTMLAttributes<HTMLUmcGridRowElement>;
-      'umc-grid-section': LocalJSX.UmcGridSection & JSXBase.HTMLAttributes<HTMLUmcGridSectionElement>;
+      'umc-header': LocalJSX.UmcHeader & JSXBase.HTMLAttributes<HTMLUmcHeaderElement>;
       'umc-header-section': LocalJSX.UmcHeaderSection & JSXBase.HTMLAttributes<HTMLUmcHeaderSectionElement>;
+      'umc-link-list': LocalJSX.UmcLinkList & JSXBase.HTMLAttributes<HTMLUmcLinkListElement>;
+      'umc-link-list-item': LocalJSX.UmcLinkListItem & JSXBase.HTMLAttributes<HTMLUmcLinkListItemElement>;
+      'umc-logo': LocalJSX.UmcLogo & JSXBase.HTMLAttributes<HTMLUmcLogoElement>;
       'umc-menu-toggle': LocalJSX.UmcMenuToggle & JSXBase.HTMLAttributes<HTMLUmcMenuToggleElement>;
       'umc-tab': LocalJSX.UmcTab & JSXBase.HTMLAttributes<HTMLUmcTabElement>;
       'umc-tabs': LocalJSX.UmcTabs & JSXBase.HTMLAttributes<HTMLUmcTabsElement>;
