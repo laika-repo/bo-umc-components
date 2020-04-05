@@ -10,11 +10,10 @@ export class ColumnSection {
   render() {
     return (
       <Host>
-          <div class="column"><slot name="1"/></div>
-          <div class="column"><slot name="2"/></div>
-          <div class="column"><slot name="3"/></div>
+          <slot name='1'></slot>
+          <slot name='2'></slot>
+          <slot name='3'></slot>
       </Host>
     );
   }
-
 }

@@ -33,25 +33,48 @@
     umc-column-section.location-switch {
       --text-color: #005261;
       --border-color: #ced9e5;
-      --padding-vertical: 16px;
+      --padding-vertical: 8px;
     }
 
     umc-header-section.main-navigation {
-      --padding: 24px 0;
+      --padding-vertical: 16px;
+    }
+
+    @media only screen and (min-width: 768px) {
+        umc-header-section.main-navigation {
+        --padding-horizontal: 0;
+      }
+    }
+
+    umc-sidebar.content-sidebar {
+      --padding-horizontal: 56px;
+      --padding-vertical: 56px;
+    }
+    
+    umc-sidebar.content-sidebar umc-link-list {
+      color: #00778a;
     }
 
     umc-column-section.footer-links {
       --background-color: #003741;
       --text-color: white;
-      --text-size: 18px;
-      --padding-vertical: 106px;
+      --text-size: 16px;
+      --padding-vertical: 44px;
+      --padding-horizontal: 24px;
+    }
+
+    @media only screen and (min-width: 768px) {
+      umc-column-section.footer-links {
+        --text-size: 16px;
+      }
     }
 
     umc-column-section.footer-colofon {
       --background-color: #00778a;
       --text-color: white;
-      --text-size: 18px;
+      --text-size: 14px;
       --padding-vertical: 44px;
+      --padding-horizontal: 24px;
     }
 
     .logo {
@@ -64,6 +87,12 @@
       padding: 0;
       margin: 0;
     }
+
+    @media only screen and (min-width: 768px) {
+      umc-header-section .column--right {
+        order: -1;
+      }
+    }
   </style>
 
 </head>
@@ -72,46 +101,75 @@
 
   <umc-header>
       <umc-column-section class="location-switch">
-        <umc-link-list slot='2' orientation='horizontal'>
-          <umc-link-list-item label='Healthcare'></li>
-          <umc-link-list-item active='true' label='Research'></umc-link-list-item>
-          <umc-link-list-item label='Health campus'></umc-link-list-item>
-        </umc-link-list>
+        <umc-column slot='2' alignment='center'>
+          <umc-link-list orientation='always-horizontal' slot='content'>
+            <umc-link-list-item label='Healthcare'></li>
+            <umc-link-list-item active='true' label='Research'></umc-link-list-item>
+            <umc-link-list-item label='Health campus'></umc-link-list-item>
+          </umc-link-list>
     </umc-column-section>
   
     <umc-header-section class="main-navigation">
-      <umc-logo slot="1" src='assets/logo-aumc.svg'></umc-logo>
-      <umc-menu-toggle slot='2' label="Search" icon='assets/icon-search.svg'></umc-menu-toggle>
-      <umc-menu-toggle slot='3' label="Menu" icon='assets/icon-hamburger.svg'></umc-menu-toggle>
-    </umc-header-section>
+        <umc-column slot='left'>
+          <umc-logo slot="content" src='assets/logo-aumc.svg'></umc-logo>
+        </umc-column>
 
-      <umc-grid-section>
-          <span slot='1'><div>SLOT 1</div></span>
-          <span slot='2'><div>SLOT2</div></span>
-      </umc-grid-section>
+        <umc-column slot='middle' class='column--middle'>
+            <umc-menu-toggle slot='content' label="Search" icon='assets/icon-search.svg'></umc-menu-toggle>
+        </umc-column>
+      
+        <umc-column slot='right' class='column--right'>
+            <umc-menu-toggle slot='content' label="Menu" icon='assets/icon-hamburger.svg' reverse='true'></umc-menu-toggle>
+        </umc-column>
+      
+    </umc-header-section>
+  </umc-header>
+
+  <umc-header>
+    <umc-content-section>
+      <umc-sidebar class='content-sidebar' slot='sidebar'>
+        <umc-link-list slot='content' title='Team'>
+          <umc-link-list-item label='Researcher'></umc-link-list-item>
+        </umc-link-list>
+
+        <umc-link-list slot='content' title='Projects'>
+          <umc-link-list-item label='Cancer center'></umc-link-list-item>
+          <umc-link-list-item label='Diabetes and Ramadan'></umc-link-list-item>
+        </umc-link-list>
+
+        <umc-link-list slot='content' title='Projects'>
+            <umc-link-list-item label='Diabetes and Ramadan'></umc-link-list-item>
+        </umc-link-list>
+      </umc-sidebar>
+    </umc-content-section>
   </umc-header>
 
   <umc-header>
     <umc-column-section class="footer-links">
-        <umc-logo slot="1" src='logo-aumc.svg'></umc-logo>
+        <!-- <umc-column slot='1'>
+          <umc-logo slot="content" src='assets/logo-aumc.svg'></umc-logo>
+        </umc-column> -->
+        
+        <umc-column slot='2' colspan='3'>
+            <umc-link-list slot='content'>
+                <umc-link-list-item label='Projects'></li>
+                <umc-link-list-item label='Core Facilities'></umc-link-list-item>
+                <umc-link-list-item label='Researchers'></umc-link-list-item>
+                <umc-link-list-item label='Impact'></umc-link-list-item>
+              </umc-link-list>
+        </umc-column>
 
-          <umc-link-list slot='2'>
-            <umc-link-list-item label='Events'></li>
-            <umc-link-list-item label='Research institutes'></umc-link-list-item>
-            <umc-link-list-item label='Departments'></umc-link-list-item>
-            <umc-link-list-item label='About'></umc-link-list-item>
-          </umc-link-list>
-      
-          <umc-link-list slot='3'>
-              <umc-link-list-item label='Events'></li>
-              <umc-link-list-item label='Research institutes'></umc-link-list-item>
-              <umc-link-list-item label='Departments'></umc-link-list-item>
-              <umc-link-list-item label='About'></umc-link-list-item>
-            </umc-link-list>
+        <umc-column slot='3'>
+            <umc-link-list slot='content'>
+                <umc-link-list-item label='Events'></li>
+                <umc-link-list-item label='Research institutes'></umc-link-list-item>
+                <umc-link-list-item label='Departments'></umc-link-list-item>
+                <umc-link-list-item label='About'></umc-link-list-item>
+              </umc-link-list>
+        </umc-column>
     </umc-column-section>
 
     <umc-column-section class="footer-colofon">
-
           <umc-link-list slot='1' orientation='horizontal'>
             <umc-link-list-item label='Privacy policy'></li>
             <umc-link-list-item label='Sitemap'></umc-link-list-item>
@@ -121,12 +179,12 @@
 
           <div slot='2'></div>
       
-          <umc-link-list slot='3' orientation='horizontal'>
+          <!-- <umc-link-list slot='3' orientation='horizontal'>
               <umc-link-list-item label='Follow us on social media'></li>
               <umc-link-list-item label='icon' icon='assets/icon-search.svg'></umc-link-list-item>
               <umc-link-list-item label='icon'  icon='assets/icon-search.svg'></umc-link-list-item>
               <umc-link-list-item label='icon' icon='assets/icon-search.svg'></umc-link-list-item>
-            </umc-link-list>
+            </umc-link-list> -->
     </umc-column-section>
   </umc-header>
 </body>

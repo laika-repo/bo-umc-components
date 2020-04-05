@@ -9,14 +9,17 @@ import { Component, getAssetPath, h, Prop } from '@stencil/core';
 export class MenuToggle {
   @Prop() label: string = "Required prop 'title' missing";
   @Prop() icon: string = "icon-hamburger.svg";
+  @Prop() reverse: boolean = false;
 
   render() {
     return (
       
-    <h3><span class="label">{this.label}</span>
+    <h3 class={this.reverse ? 'icon--before ' : ''}>
+      <span class="label">{this.label}</span>
       <img class='icon' slot="2" src={this.icon} /> 
     </h3>
     );
   }
 
 }
+

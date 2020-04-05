@@ -1,3 +1,23 @@
 :host {
   display: block;
+  width: 375px;
+
+  @include wider-than('small') {
+    
+  }
+    
+  @include wider-than('medium') { 
+    width: 656px;
+    
+  }
+
+  @include wider-than('large') { 
+    width: 912px;
+  }
+
+  @include wider-than('x-large') { 
+    width: 1328px;
+  }
+
+  margin: 0 auto;
 }

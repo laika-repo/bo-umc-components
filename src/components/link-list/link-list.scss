@@ -1,8 +1,20 @@
 :host {
   --text-color--default: $black;
   --text-size--default: 14px;
+  --margin-bottom--default: 24px;
+
+  margin-bottom: var(--margin-bottom, var(--margin-bottom--default));
 
   display: block;
+
+  h3 {
+    font-family: 'Museo Sans Rounded', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0;
+    line-height: rem-calc(24px);
+    color: $black;
+  }
 
   ul {
     list-style-type: none;
@@ -11,6 +23,12 @@
   }
   
   .horizontal li {
+    @include wider-than('medium') {
+      display: inline;
+    }
+  }
+
+  .always-horizontal li {
     display: inline;
   }
   
@@ -21,7 +39,7 @@
     font-weight: 300;
     font-size: var(--text-size, var(--text-size--default));
     color: var(--text-color, var(--text-color--default));
-    line-height: rem-calc(28px);
+    line-height: rem-calc(24px);
   }
 
   li.active {

@@ -5,7 +5,7 @@
 img {
   width: 200px;
 
-  @include wider-than('small') {
+  @include wider-than('medium') {
     width: 260px;
   }
 }

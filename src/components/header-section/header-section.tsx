@@ -11,13 +11,10 @@ export class HeaderSection {
   render() {
     return (
       <Host>
-        <section class="container">
-          <div class="grid-item-container grid-item-container--left"><slot name="1"/></div>
-          <div class="grid-item-container grid-item-container--middle"><slot name="2"/></div>
-          <div class="grid-item-container grid-item-container--right"><slot name="3"/></div>
-      </section>
+        <slot name="left"/>
+        <slot name="middle"/>
+        <slot name="right"/>
       </Host>
-      
     );
   }
 }

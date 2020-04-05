@@ -8,6 +8,7 @@ import { Component, Host, h, Element, State, Prop, getAssetPath } from '@stencil
 export class LinkList {
   @Element() el: HTMLElement;
   @Prop() orientation: string = 'vertical';
+  @Prop() title: string;
   
 
   @State()
@@ -24,6 +25,8 @@ export class LinkList {
   render() {
     return (
       <Host>
+        {this.title ? <h3>{this.title}</h3> : ''}
+
         <ul class={this.orientation}>
         {this.items.map((item: HTMLUmcLinkListItemElement) => {
           return <li class={item.active ? 'active ' : ''}>{item.label} <img class='icon' src={item.icon} /></li>

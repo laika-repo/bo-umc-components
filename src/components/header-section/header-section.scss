@@ -1,23 +1,12 @@
 :host {
-  display: block;
-  background-color: $white;
-
-  --border-color--default: transparent;
-  
-  border-bottom: 1px solid var(--border-color, var(--border-color--default));
-}
-
-.container {
   display: flex;
   justify-content: space-between;
 
-  padding: var(--padding, var(--padding--default));
+  background-color: $white;
+  --padding-vertical--default: 24px;
+  --padding-horizontal--default: 24px;
+  --border-color--default: transparent;
+  
+  padding: var(--padding-vertical, var(--padding-vertical--default)) var(--padding-horizontal, var(--padding-horizontal--default));
+  border-bottom: 1px solid var(--border-color, var(--border-color--default));
 }
-
-.grid-item-container:last-child {
-  @include wider-than('small') {
-    order: -1;
-  }  
-}
-
-

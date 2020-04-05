@@ -1,15 +1,35 @@
+:host {
+  display: inline-block;
+}
+
 h3 {
   font-family: 'Museo Sans Rounded', sans-serif;
   font-weight: 500;
   font-size: rem-calc(20px);
   color: $blue-lagoon;
+
+  display: flex;
+  margin: 0;
 }
 
+.icon--before {
+  flex-direction: row-reverse;
+}
 
 .label {
   display: none;
 
-  @include wider-than('small') {
+  @include wider-than('medium') {
     display: inline;
   }
+}
+
+.icon {
+  // margin-left: 8px;
+  height: 24px;
+}
+
+.icon--before .icon {
+  margin-left: 0;
+  // margin-right: 8px;
 }
