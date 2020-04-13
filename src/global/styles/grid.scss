@@ -155,6 +155,40 @@ $screens: (
   // background-color: rgba(255,255,255,0.4); // DEBUG
 }
 
+@mixin act-as-column-section {
+  :host {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    flex-direction: column;
+
+    margin: 0 24px;
+
+    width: map-deep-get($grid, "small", "content-width");
+
+    @include wider-than('small') {
+      width: 100%;
+      // max-width: map-deep-get($grid, "medium", "content-width");
+    }
+
+    @include min-screen-width('tablet-portrait') {
+      flex-direction: row;
+      margin: 0 auto;
+      width: map-deep-get($screens, 'tablet-portrait', 'content-width');
+    }
+
+    @include min-screen-width('tablet-landscape') {
+      width: map-deep-get($screens, 'tablet-landscape', 'content-width');
+    }
+
+    @include min-screen-width('desktop') {
+      width: map-deep-get($screens, 'desktop', 'content-width');
+    }
+  }
+}
+
 @mixin act-as-column {
   :host {
     box-sizing: border-box;
@@ -164,18 +198,22 @@ $screens: (
   
     @include min-screen-width('tablet-portrait') {
       width: column-width-for-min-screen('tablet-portrait', 1);
-      margin-right: map-deep-get($screens, 'tablet-portrait', 'gutter-width');
+      margin-left: map-deep-get($screens, 'tablet-portrait', 'gutter-width');
     }
   
     @include min-screen-width('tablet-landscape') {
       width: column-width-for-min-screen('tablet-landscape', 1);
-      margin-right: map-deep-get($screens, 'tablet-landscape', 'gutter-width');
+      margin-left: map-deep-get($screens, 'tablet-landscape', 'gutter-width');
     }
   
     @include min-screen-width('desktop') {
       width: column-width-for-min-screen('desktop', 1);
-      margin-right: map-deep-get($screens, 'desktop', 'gutter-width');
+      margin-left: map-deep-get($screens, 'desktop', 'gutter-width');
     }
+  }
+
+  :host(:first-child) {
+    margin-left: 0;
   }
   
   :host(.empty) {
@@ -187,49 +225,7 @@ $screens: (
   :host(.width--full) {
     width: 100%;
   }
-  
-  :host(.width--xxx-large) {
-    @include min-screen-width('desktop') {
-       width: column-width-for-min-screen('desktop', 8);
-     }
-   }
-  
-  :host(.width--xx-large) {
-   @include min-screen-width('desktop') {
-      width: column-width-for-min-screen('desktop', 7);
-    }
-  }
-  
-  :host(.width--x-large) {
-    @include min-screen-width('tablet-landscape') {
-      width: column-width-for-min-screen('tablet-landscape', 4);
-    }
-  
-    @include min-screen-width('desktop') {
-      width: column-width-for-min-screen('desktop', 6);
-    }
-  }
-  
-  :host(.width--large) {
-    @include min-screen-width('tablet-landscape') {
-      width: column-width-for-min-screen('tablet-landscape', 4);
-    }
-  
-    @include min-screen-width('desktop') {
-      width: column-width-for-min-screen('desktop', 5);
-    }
-  }
-  
-  :host(.width--medium) {
-    @include min-screen-width('tablet-landscape') {
-      width: column-width-for-min-screen('tablet-landscape', 3);
-    }
-  
-    @include min-screen-width('desktop') {
-      width: column-width-for-min-screen('desktop', 4);
-    }
-  }
-  
+
   :host(.width--small) {
     @include min-screen-width('tablet-landscape') {
       width: column-width-for-min-screen('tablet-landscape', 2);
@@ -239,39 +235,65 @@ $screens: (
       width: column-width-for-min-screen('desktop', 3);
     }
   }
+
+  :host(.width--medium) {
+    @include min-screen-width('tablet-landscape') {
+      width: column-width-for-min-screen('tablet-landscape', 3);
+    }
   
-  :host(.small) {
     @include min-screen-width('desktop') {
-      width: column-width-for-min-screen('desktop', 2);
+      width: column-width-for-min-screen('desktop', 4);
     }
   }
+
+  :host(.width--large) {
+    @include min-screen-width('tablet-landscape') {
+      width: column-width-for-min-screen('tablet-landscape', 4);
+    }
   
+    @include min-screen-width('desktop') {
+      width: column-width-for-min-screen('desktop', 5);
+    }
+  }
+
+  :host(.width--x-large) {
+    @include min-screen-width('tablet-landscape') {
+      width: column-width-for-min-screen('tablet-landscape', 4);
+    }
+  
+    @include min-screen-width('desktop') {
+      width: column-width-for-min-screen('desktop', 6);
+    }
+  }
+
+  :host(.width--xx-large) {
+    @include min-screen-width('tablet-landscape') {
+      width: column-width-for-min-screen('desktop', 5);
+    }
+
+    @include min-screen-width('desktop') {
+       width: column-width-for-min-screen('desktop', 7);
+     }
+   }
+  
+  :host(.width--xxx-large) {
+    @include min-screen-width('desktop') {
+       width: column-width-for-min-screen('desktop', 8);
+     }
+   }
+  
+
+  
+
+
   :host(.gutterless) {
     margin-right: 0;
   }
   
   
-  :host(:last-child) {
-    margin: 0;
-  }
+  
   
   :host(.align--center) {
     text-align: center;
   }
 }
-
-
-
-
-// // 1024px
-// // 912px
-// // 8
-// // 56px
-// // 56px
-
-
-// // > 1440 px
-// // 1328px
-// // 12
-// // 56px
-// // 56px

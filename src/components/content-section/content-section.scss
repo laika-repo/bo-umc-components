@@ -1,9 +1,6 @@
 :host {
-  display: flex;
-  justify-content: space-between;
-  
-
   --margin-bottom--default: 56px;
-  margin-top: 56px;
   margin-bottom: var(--margin-bottom, var(--margin-bottom--default));
 }
+
+@include act-as-column-section;

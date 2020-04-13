@@ -92,7 +92,7 @@
 
     umc-column-section.debug {
       box-sizing: border-box;
-      --background-color: pink;
+      --background-color:#fafafa;
       margin-bottom: 8px;
     }
 
@@ -156,10 +156,8 @@
         <umc-column slot='right' class='column--right gutterless'>
             <umc-menu-toggle label="Menu" icon='assets/icon-hamburger.svg' reverse='true'></umc-menu-toggle>
         </umc-column>
-      
     </umc-header-section>
   </umc-header>
-
 
   <umc-section class='colors'>
       <umc-column-section>
@@ -239,9 +237,9 @@
         </umc-column-section>
     </umc-section>
 
-  <umc-header>
+    <umc-section>
     <umc-content-section>
-      <umc-content-block slot='main'>
+      <umc-content-block slot='main' class='width--xx-large'>
         <umc-title-block title='Artificial Intelligence for the healthcare of tomorrow'></umc-title-block>
         <umc-rich-text-block>
             <p>
@@ -257,7 +255,7 @@
         </umc-rich-text-block>
       </umc-content-block>
 
-      <umc-sidebar class='content-sidebar' slot='sidebar'>
+      <umc-sidebar class='content-sidebar width--medium' slot='sidebar'>
         <umc-link-list slot='content' title='Team'>
           <umc-link-list-item label='Researcher'></umc-link-list-item>
         </umc-link-list>
@@ -272,39 +270,15 @@
         </umc-link-list>
       </umc-sidebar>
     </umc-content-section>
-  </umc-header>
-
-  <!-- <umc-section>
-      <umc-column-section class='grid-debug'>
-          <umc-column alignment='center'><b>1</b></umc-column>
-          <umc-column alignment='center'><b>2</b></umc-column>
-          <umc-column alignment='center'><b>3</b></umc-column>
-          <umc-column alignment='center'><b>4</b></umc-column>
-          <umc-column alignment='center'><b>5</b></umc-column>
-          <umc-column alignment='center'><b>6</b></umc-column>
-          <umc-column alignment='center'><b>7</b></umc-column>
-          <umc-column alignment='center'><b>8</b></umc-column>
-      </umc-column-section>
-
-      <umc-column-section class='grid-debug'>
-          <umc-column alignment='center'><b>4</b></umc-column>
-          <umc-column alignment='center'><b>5</b></umc-column>
-          <umc-column alignment='center' class='cols--3'><b>1</b></umc-column>
-          
-          <umc-column alignment='center'><b>6</b></umc-column>
-          <umc-column alignment='center'><b>7</b></umc-column>
-          <umc-column alignment='center'><b>8</b></umc-column>
-      </umc-column-section>
-  </umc-section> -->
-  
+  </umc-section>
 
   <umc-section class='footer-links'>
     <umc-column-section>
-        <umc-column class='cols-3'>
+        <umc-column class='width--medium'>
           <!-- umc-logo slot="content" src='assets/logo-aumc.svg'></umc-logo-->
         </umc-column>
 
-        <umc-column class='cols-2'>
+        <umc-column class='width--small'>
             <umc-link-list>
                 <umc-link-list-item label='Projects'></li>
                 <umc-link-list-item label='Core Facilities'></umc-link-list-item>
@@ -313,7 +287,7 @@
               </umc-link-list>
         </umc-column>
 
-        <umc-column class='cols-3'>
+        <umc-column class='width--medium'>
             <umc-link-list>
                 <umc-link-list-item label='Events'></li>
                 <umc-link-list-item label='Research institutes'></umc-link-list-item>
@@ -326,7 +300,7 @@
 
   <umc-section class='footer-colofon'>
     <umc-column-section>
-        <umc-column colspan='8'>
+        <umc-column class='width--large'>
           <umc-link-list orientation='horizontal'>
             <umc-link-list-item label='Privacy policy'></li>
             <umc-link-list-item label='Sitemap'></umc-link-list-item>

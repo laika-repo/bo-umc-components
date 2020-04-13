@@ -23,7 +23,7 @@
   }
   
   .horizontal li {
-    @include wider-than('medium') {
+    @include min-screen-width('tablet-portrait') {
       display: inline;
     }
   }

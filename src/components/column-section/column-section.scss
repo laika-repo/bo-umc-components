@@ -1,34 +1,5 @@
 :host {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
-
-  flex-direction: column;
-
-  margin: 0 24px;
-
-
-  width: map-deep-get($grid, "small", "content-width");
-
-  @include wider-than('small') {
-    width: 100%;
-    // max-width: map-deep-get($grid, "medium", "content-width");
-  }
-
-  @include min-screen-width('tablet-portrait') {
-    flex-direction: row;
-    margin: 0 auto;
-    width: map-deep-get($screens, 'tablet-portrait', 'content-width');
-  }
-
-  @include min-screen-width('tablet-landscape') {
-    width: map-deep-get($screens, 'tablet-landscape', 'content-width');
-  }
-
-  @include min-screen-width('desktop') {
-    width: map-deep-get($screens, 'desktop', 'content-width');
-  }
+  
 
   --background-color--default: $white;
   --padding-vertical--default: 20px;
@@ -40,9 +11,7 @@
   border-bottom: 1px solid var(--border-color, var(--border-color--default));
 }
 
-:host(.debug) {
-  background-color: lighten( red, 40% );
-}
+@include act-as-column-section;
 
 
 
