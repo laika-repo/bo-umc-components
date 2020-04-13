@@ -21,6 +21,7 @@ h3 {
 
   @include wider-than('medium') {
     display: inline;
+    margin: 0 8px;
   }
 }
 

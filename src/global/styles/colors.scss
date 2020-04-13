@@ -9,3 +9,54 @@ $botticelli-gray: #ced9e5;
 $black: #131516;
 $white: #fff;
 
+$colors: (
+  azure-blue: #009cb4,
+  red: #E6000F
+//   red: (
+//     base: #FF0000,
+//     light: #EEEEFF,
+//     dark: #5555FF
+//   )
+);
+
+// Color Function
+@function get-color( $color, $shade: 'base', $map : $colors ){
+    // check color exists
+    @if (map-has-key($map, $color)) {
+      $value: map-get($map, unquote($color));
+      // check if color or map
+      @if type-of($value) == color {
+        // return color
+        @return $value;
+      }
+      // check shade of color exists
+      @if (map-has-key($value, $shade)) {
+        // return shade of color
+        @return map-get($value, $shade);
+      }
+    } 
+    // else do nothing
+    @return null;
+  }
+
+
+
+// <!-- succes: #75B94E
+// error: #FF1133
+
+// azure: #009CB4
+// light-grey: CED9E5
+
+// red: #E6000F
+// honey: #F07814
+// purple: #694893
+// deep-sky-blue: #00A6E2
+// olive-green: #75B94E
+// lemon-ginger: #ADA01F
+// yellow: #F2DB45
+// jacarta: #38296D
+// lilac: #BD89B8
+// old-pink: #D47775
+// goblin: #468B54
+// link-water: #C8E2F1
+// key-lime-pie: #D3D726 -->

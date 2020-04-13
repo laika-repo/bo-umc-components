@@ -17,38 +17,39 @@ li {
   color: white;
   font-size: 10px;
   font-family: monospace;
+  margin-right: 4px;
 }
 
 .screen--small {
     background-color: green;
 
-    @include wider-than('small') {
+    @include min-screen-width('tablet-portrait') {
       background-color: red;
     }
 }
 
 .screen--medium {
-  @include wider-than('small') {
+  @include min-screen-width('tablet-portrait') {
     background-color: green;
   }
 
-  @include wider-than('medium') {
+  @include min-screen-width('tablet-landscape') {
     background-color: red;
   }
 }
 
 .screen--large {
-  @include wider-than('medium') {
+  @include min-screen-width('tablet-landscape') {
     background-color: green;
   }
 
-  @include wider-than('large') {
+  @include min-screen-width('desktop') {
     background-color: red;
   }
 }
 
 .screen--x-large {
-  @include wider-than('large') {
+  @include min-screen-width('desktop') {
     background-color: green;
   }
 }

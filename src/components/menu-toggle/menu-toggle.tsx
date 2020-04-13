@@ -1,4 +1,4 @@
-import { Component, getAssetPath, h, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'umc-menu-toggle',

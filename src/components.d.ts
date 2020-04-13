@@ -10,11 +10,15 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface UmcColorSwatch {
+    'name': string;
+  }
   interface UmcColumn {
     'alignment': string;
     'colspan': string;
   }
   interface UmcColumnSection {}
+  interface UmcContentBlock {}
   interface UmcContentSection {}
   interface UmcDevStatusbar {}
   interface UmcGridBlock {}
@@ -31,6 +35,13 @@ export namespace Components {
     'icon': string;
     'label': string;
   }
+  interface UmcList {
+    'orientation': string;
+    'title': string;
+  }
+  interface UmcListItem {
+    'label': string;
+  }
   interface UmcLogo {
     'src': string;
   }
@@ -39,16 +50,27 @@ export namespace Components {
     'label': string;
     'reverse': boolean;
   }
+  interface UmcRichTextBlock {}
+  interface UmcSection {}
   interface UmcSidebar {}
   interface UmcTab {
     'active': boolean;
     'label': string;
   }
   interface UmcTabs {}
+  interface UmcTitleBlock {
+    'title': string;
+  }
 }
 
 declare global {
 
+
+  interface HTMLUmcColorSwatchElement extends Components.UmcColorSwatch, HTMLStencilElement {}
+  var HTMLUmcColorSwatchElement: {
+    prototype: HTMLUmcColorSwatchElement;
+    new (): HTMLUmcColorSwatchElement;
+  };
 
   interface HTMLUmcColumnElement extends Components.UmcColumn, HTMLStencilElement {}
   var HTMLUmcColumnElement: {
@@ -60,6 +82,12 @@ declare global {
   var HTMLUmcColumnSectionElement: {
     prototype: HTMLUmcColumnSectionElement;
     new (): HTMLUmcColumnSectionElement;
+  };
+
+  interface HTMLUmcContentBlockElement extends Components.UmcContentBlock, HTMLStencilElement {}
+  var HTMLUmcContentBlockElement: {
+    prototype: HTMLUmcContentBlockElement;
+    new (): HTMLUmcContentBlockElement;
   };
 
   interface HTMLUmcContentSectionElement extends Components.UmcContentSection, HTMLStencilElement {}
@@ -110,6 +138,18 @@ declare global {
     new (): HTMLUmcLinkListItemElement;
   };
 
+  interface HTMLUmcListElement extends Components.UmcList, HTMLStencilElement {}
+  var HTMLUmcListElement: {
+    prototype: HTMLUmcListElement;
+    new (): HTMLUmcListElement;
+  };
+
+  interface HTMLUmcListItemElement extends Components.UmcListItem, HTMLStencilElement {}
+  var HTMLUmcListItemElement: {
+    prototype: HTMLUmcListItemElement;
+    new (): HTMLUmcListItemElement;
+  };
+
   interface HTMLUmcLogoElement extends Components.UmcLogo, HTMLStencilElement {}
   var HTMLUmcLogoElement: {
     prototype: HTMLUmcLogoElement;
@@ -120,6 +160,18 @@ declare global {
   var HTMLUmcMenuToggleElement: {
     prototype: HTMLUmcMenuToggleElement;
     new (): HTMLUmcMenuToggleElement;
+  };
+
+  interface HTMLUmcRichTextBlockElement extends Components.UmcRichTextBlock, HTMLStencilElement {}
+  var HTMLUmcRichTextBlockElement: {
+    prototype: HTMLUmcRichTextBlockElement;
+    new (): HTMLUmcRichTextBlockElement;
+  };
+
+  interface HTMLUmcSectionElement extends Components.UmcSection, HTMLStencilElement {}
+  var HTMLUmcSectionElement: {
+    prototype: HTMLUmcSectionElement;
+    new (): HTMLUmcSectionElement;
   };
 
   interface HTMLUmcSidebarElement extends Components.UmcSidebar, HTMLStencilElement {}
@@ -139,9 +191,17 @@ declare global {
     prototype: HTMLUmcTabsElement;
     new (): HTMLUmcTabsElement;
   };
+
+  interface HTMLUmcTitleBlockElement extends Components.UmcTitleBlock, HTMLStencilElement {}
+  var HTMLUmcTitleBlockElement: {
+    prototype: HTMLUmcTitleBlockElement;
+    new (): HTMLUmcTitleBlockElement;
+  };
   interface HTMLElementTagNameMap {
+    'umc-color-swatch': HTMLUmcColorSwatchElement;
     'umc-column': HTMLUmcColumnElement;
     'umc-column-section': HTMLUmcColumnSectionElement;
+    'umc-content-block': HTMLUmcContentBlockElement;
     'umc-content-section': HTMLUmcContentSectionElement;
     'umc-dev-statusbar': HTMLUmcDevStatusbarElement;
     'umc-grid-block': HTMLUmcGridBlockElement;
@@ -150,20 +210,29 @@ declare global {
     'umc-header-section': HTMLUmcHeaderSectionElement;
     'umc-link-list': HTMLUmcLinkListElement;
     'umc-link-list-item': HTMLUmcLinkListItemElement;
+    'umc-list': HTMLUmcListElement;
+    'umc-list-item': HTMLUmcListItemElement;
     'umc-logo': HTMLUmcLogoElement;
     'umc-menu-toggle': HTMLUmcMenuToggleElement;
+    'umc-rich-text-block': HTMLUmcRichTextBlockElement;
+    'umc-section': HTMLUmcSectionElement;
     'umc-sidebar': HTMLUmcSidebarElement;
     'umc-tab': HTMLUmcTabElement;
     'umc-tabs': HTMLUmcTabsElement;
+    'umc-title-block': HTMLUmcTitleBlockElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface UmcColorSwatch {
+    'name'?: string;
+  }
   interface UmcColumn {
     'alignment'?: string;
     'colspan'?: string;
   }
   interface UmcColumnSection {}
+  interface UmcContentBlock {}
   interface UmcContentSection {}
   interface UmcDevStatusbar {}
   interface UmcGridBlock {}
@@ -180,6 +249,13 @@ declare namespace LocalJSX {
     'icon'?: string;
     'label'?: string;
   }
+  interface UmcList {
+    'orientation'?: string;
+    'title'?: string;
+  }
+  interface UmcListItem {
+    'label'?: string;
+  }
   interface UmcLogo {
     'src'?: string;
   }
@@ -188,16 +264,23 @@ declare namespace LocalJSX {
     'label'?: string;
     'reverse'?: boolean;
   }
+  interface UmcRichTextBlock {}
+  interface UmcSection {}
   interface UmcSidebar {}
   interface UmcTab {
     'active'?: boolean;
     'label'?: string;
   }
   interface UmcTabs {}
+  interface UmcTitleBlock {
+    'title'?: string;
+  }
 
   interface IntrinsicElements {
+    'umc-color-swatch': UmcColorSwatch;
     'umc-column': UmcColumn;
     'umc-column-section': UmcColumnSection;
+    'umc-content-block': UmcContentBlock;
     'umc-content-section': UmcContentSection;
     'umc-dev-statusbar': UmcDevStatusbar;
     'umc-grid-block': UmcGridBlock;
@@ -206,11 +289,16 @@ declare namespace LocalJSX {
     'umc-header-section': UmcHeaderSection;
     'umc-link-list': UmcLinkList;
     'umc-link-list-item': UmcLinkListItem;
+    'umc-list': UmcList;
+    'umc-list-item': UmcListItem;
     'umc-logo': UmcLogo;
     'umc-menu-toggle': UmcMenuToggle;
+    'umc-rich-text-block': UmcRichTextBlock;
+    'umc-section': UmcSection;
     'umc-sidebar': UmcSidebar;
     'umc-tab': UmcTab;
     'umc-tabs': UmcTabs;
+    'umc-title-block': UmcTitleBlock;
   }
 }
 
@@ -220,8 +308,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'umc-color-swatch': LocalJSX.UmcColorSwatch & JSXBase.HTMLAttributes<HTMLUmcColorSwatchElement>;
       'umc-column': LocalJSX.UmcColumn & JSXBase.HTMLAttributes<HTMLUmcColumnElement>;
       'umc-column-section': LocalJSX.UmcColumnSection & JSXBase.HTMLAttributes<HTMLUmcColumnSectionElement>;
+      'umc-content-block': LocalJSX.UmcContentBlock & JSXBase.HTMLAttributes<HTMLUmcContentBlockElement>;
       'umc-content-section': LocalJSX.UmcContentSection & JSXBase.HTMLAttributes<HTMLUmcContentSectionElement>;
       'umc-dev-statusbar': LocalJSX.UmcDevStatusbar & JSXBase.HTMLAttributes<HTMLUmcDevStatusbarElement>;
       'umc-grid-block': LocalJSX.UmcGridBlock & JSXBase.HTMLAttributes<HTMLUmcGridBlockElement>;
@@ -230,11 +320,16 @@ declare module "@stencil/core" {
       'umc-header-section': LocalJSX.UmcHeaderSection & JSXBase.HTMLAttributes<HTMLUmcHeaderSectionElement>;
       'umc-link-list': LocalJSX.UmcLinkList & JSXBase.HTMLAttributes<HTMLUmcLinkListElement>;
       'umc-link-list-item': LocalJSX.UmcLinkListItem & JSXBase.HTMLAttributes<HTMLUmcLinkListItemElement>;
+      'umc-list': LocalJSX.UmcList & JSXBase.HTMLAttributes<HTMLUmcListElement>;
+      'umc-list-item': LocalJSX.UmcListItem & JSXBase.HTMLAttributes<HTMLUmcListItemElement>;
       'umc-logo': LocalJSX.UmcLogo & JSXBase.HTMLAttributes<HTMLUmcLogoElement>;
       'umc-menu-toggle': LocalJSX.UmcMenuToggle & JSXBase.HTMLAttributes<HTMLUmcMenuToggleElement>;
+      'umc-rich-text-block': LocalJSX.UmcRichTextBlock & JSXBase.HTMLAttributes<HTMLUmcRichTextBlockElement>;
+      'umc-section': LocalJSX.UmcSection & JSXBase.HTMLAttributes<HTMLUmcSectionElement>;
       'umc-sidebar': LocalJSX.UmcSidebar & JSXBase.HTMLAttributes<HTMLUmcSidebarElement>;
       'umc-tab': LocalJSX.UmcTab & JSXBase.HTMLAttributes<HTMLUmcTabElement>;
       'umc-tabs': LocalJSX.UmcTabs & JSXBase.HTMLAttributes<HTMLUmcTabsElement>;
+      'umc-title-block': LocalJSX.UmcTitleBlock & JSXBase.HTMLAttributes<HTMLUmcTitleBlockElement>;
     }
   }
 }

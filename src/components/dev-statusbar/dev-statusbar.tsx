@@ -10,12 +10,11 @@ export class DevStatusbar {
   render() {
     return (
       <ul>
-        <li class="screen--small">small screen</li>
-        <li class="screen--medium">medium screen</li>
-        <li class="screen--large">large screen</li>
-        <li class="screen--x-large">x-large screen</li>
+        <li class="screen--small">Mobile and up</li>
+        <li class="screen--medium">Tablet portrait and up</li>
+        <li class="screen--large">Tablet landscape and up</li>
+        <li class="screen--x-large">Desktop and up</li>
       </ul>
     );
   }
-
 }
