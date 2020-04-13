@@ -1,0 +1,10 @@
+:host {
+  box-sizing: border-box;
+  background: pink;
+  display: block;
+  
+  --background-color--default: $white;
+  background-color: var(--background-color, var(--background-color--default));
+  
+  width: 100%;
+}

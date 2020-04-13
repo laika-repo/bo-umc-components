@@ -1,0 +1,34 @@
+:host {
+  display:  inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+
+:host(.azure-blue) {
+  background-color: $azure-blue;
+}
+
+:host(.grenadier-orange) {
+  background-color: $grenadier-orange;
+}
+
+:host(.cypres-blue) {
+  background-color: $cypres-blue;
+}
+
+:host(.stone-blue) {
+  background-color: $stone-blue;
+}
+
+:host(.blue-lagoon) {
+  background-color: $blue-lagoon;
+}
+
+:host(.botticelli-gray) {
+  background-color: $botticelli-gray;
+}
+
+

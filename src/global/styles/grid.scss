@@ -1,0 +1,277 @@
+$grid-sizes: (
+  'small':  375px,
+  'medium': 768px,
+  'large':  1024px,
+  'xlarge':  1440px
+) !default;
+
+$grid: (
+    small:  (
+      breakpoint: 375px,
+      content-width: 327px,
+      cols: 1,
+      gutter-width: 24px,
+      col-width: 327px
+    ),
+    medium: (
+      breakpoint: 768px,
+      content-width: 656px,
+      cols: 8,
+      gutter-width: 56px,
+      col-width: 33px
+    ),
+
+    large: (
+      breakpoint: 1024px,
+      content-width: 912px,
+      cols: 8,
+      gutter-width: 56px,
+      col-width: 33px
+    ),
+
+    xlarge: (
+      breakpoint: 1440px,
+      content-width: 1328px,
+      cols: 12,
+      gutter-width: 56px,
+      col-width: 65px
+    )
+);
+
+$screens: (
+    mobile:  (
+      min-width: 375px,
+      content-width: 327px,
+      cols: 1,
+      gutter-width: 24px,
+      col-width: 327px
+    ),
+    tablet-portrait: (
+      min-width: 768px,
+      content-width: 656px,
+      cols: 8,
+      gutter-width: 56px,
+      col-width: 33px
+    ),
+
+    tablet-landscape: (
+      min-width: 1024px,
+      content-width: 912px,
+      cols: 8,
+      gutter-width: 56px,
+      col-width: 65px
+    ),
+
+    desktop: (
+      min-width: 1440px,
+      content-width: 1328px,
+      cols: 12,
+      gutter-width: 56px,
+      col-width: 59px
+    )
+);
+
+// $m-breakpoint: map-deep-get($grid, "small", "M");
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+      $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+@function column-width-for-min-screen($screen, $colspan) {
+  $cols: map-deep-get($screens, $screen, 'cols');
+  $total-width: map-deep-get($screens, $screen, 'content-width');
+
+  @if $colspan >= $cols { 
+    @return $total-width;
+  } 
+
+  $col-width: map-deep-get($screens, $screen, 'col-width');
+  $gutter-width: map-deep-get($screens, $screen, 'gutter-width');
+
+  @return  ($col-width * $colspan) + ($gutter-width * ($colspan - 1));
+}
+
+@mixin min-screen-width($screen) {
+  // If the key exists in the map
+  @if map-has-key($screens, $screen) {
+    // Prints a media query based on the value
+    @media (min-width: map-deep-get($screens, $screen, 'min-width')) {
+      @content;
+    }
+  }
+ 
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@function column-width($colspan, $gutter-width, $col-width) {
+  @return  ($col-width * $colspan) + ($gutter-width * ($colspan - 1));
+}
+
+
+@function column-width-for-breakpoint($breakpoint, $colspan) {
+  $cols: map-deep-get($grid, $breakpoint, 'cols');
+  $total-width: map-deep-get($grid, $breakpoint, 'content-width');
+
+  @if $colspan >= $cols { 
+    @return $total-width;
+  } 
+
+  $col-width: map-deep-get($grid, $breakpoint, 'col-width');
+  $gutter-width: map-deep-get($grid, $breakpoint, 'gutter-width');
+
+  @return  ($col-width * $colspan) + ($gutter-width * ($colspan - 1));
+}
+
+@function column-width($colspan, $gutter-width, $col-width) {
+  @return  ($col-width * $colspan) + ($gutter-width * ($colspan - 1));
+}
+
+@mixin act-as-column {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+
+  margin-bottom: 24px;
+
+  @include wider-than('large') {
+    min-width: column-width(1, 56px, 33px);
+    margin-bottom: 0;
+    margin-right: 56px;
+  }
+
+  @include wider-than('xlarge') {
+    min-width: column-width(1, 56px, 65px);
+    margin-bottom: 0;
+    margin-right: 56px;
+  }
+  // border: 1px dotted purple; // DEBUG
+  // background-color: rgba(255,255,255,0.4); // DEBUG
+}
+
+@mixin act-as-column {
+  :host {
+    box-sizing: border-box;
+    display: inline-block;
+  
+    width: 100%;
+  
+    @include min-screen-width('tablet-portrait') {
+      width: column-width-for-min-screen('tablet-portrait', 1);
+      margin-right: map-deep-get($screens, 'tablet-portrait', 'gutter-width');
+    }
+  
+    @include min-screen-width('tablet-landscape') {
+      width: column-width-for-min-screen('tablet-landscape', 1);
+      margin-right: map-deep-get($screens, 'tablet-landscape', 'gutter-width');
+    }
+  
+    @include min-screen-width('desktop') {
+      width: column-width-for-min-screen('desktop', 1);
+      margin-right: map-deep-get($screens, 'desktop', 'gutter-width');
+    }
+  }
+  
+  :host(.empty) {
+    @include wider-than('small') {
+      visibility: hidden;
+    }
+  }
+  
+  :host(.width--full) {
+    width: 100%;
+  }
+  
+  :host(.width--xxx-large) {
+    @include min-screen-width('desktop') {
+       width: column-width-for-min-screen('desktop', 8);
+     }
+   }
+  
+  :host(.width--xx-large) {
+   @include min-screen-width('desktop') {
+      width: column-width-for-min-screen('desktop', 7);
+    }
+  }
+  
+  :host(.width--x-large) {
+    @include min-screen-width('tablet-landscape') {
+      width: column-width-for-min-screen('tablet-landscape', 4);
+    }
+  
+    @include min-screen-width('desktop') {
+      width: column-width-for-min-screen('desktop', 6);
+    }
+  }
+  
+  :host(.width--large) {
+    @include min-screen-width('tablet-landscape') {
+      width: column-width-for-min-screen('tablet-landscape', 4);
+    }
+  
+    @include min-screen-width('desktop') {
+      width: column-width-for-min-screen('desktop', 5);
+    }
+  }
+  
+  :host(.width--medium) {
+    @include min-screen-width('tablet-landscape') {
+      width: column-width-for-min-screen('tablet-landscape', 3);
+    }
+  
+    @include min-screen-width('desktop') {
+      width: column-width-for-min-screen('desktop', 4);
+    }
+  }
+  
+  :host(.width--small) {
+    @include min-screen-width('tablet-landscape') {
+      width: column-width-for-min-screen('tablet-landscape', 2);
+    }
+  
+    @include min-screen-width('desktop') {
+      width: column-width-for-min-screen('desktop', 3);
+    }
+  }
+  
+  :host(.small) {
+    @include min-screen-width('desktop') {
+      width: column-width-for-min-screen('desktop', 2);
+    }
+  }
+  
+  :host(.gutterless) {
+    margin-right: 0;
+  }
+  
+  
+  :host(:last-child) {
+    margin: 0;
+  }
+  
+  :host(.align--center) {
+    text-align: center;
+  }
+}
+
+
+
+
+// // 1024px
+// // 912px
+// // 8
+// // 56px
+// // 56px
+
+
+// // > 1440 px
+// // 1328px
+// // 12
+// // 56px
+// // 56px

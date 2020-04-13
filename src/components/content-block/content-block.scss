@@ -1,0 +1,15 @@
+:host {
+  box-sizing: border-box;
+  font-family: 'Museo Sans Rounded', sans-serif;
+  font-weight: 300;
+    font-size: rem-calc(18px);
+    margin: 0;
+    line-height: rem-calc(28px);
+    color: $black;
+    width: column-width(5, 56px, 65px);
+
+    @include wider-than('medium') {
+      margin: 0;
+      margin-right: 56px;
+    }
+}

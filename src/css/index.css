@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Museo Sans Rounded';
+    src: url("assets/museosansrounded-300.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: fallback; 
+  }
+
+  @font-face {
+    font-family: 'Museo Sans Rounded';
+    src: url("assets/museosansrounded-500.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: fallback; 
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  umc-column-section.location-switch {
+    --text-color: #005261;
+    --border-color: #ced9e5;
+    --margin-bottom: 0;
+    --padding-vertical: 8px;
+  }
+
+  umc-header-section.main-navigation {
+    --padding-vertical: 16px;
+  }
+
+  @media only screen and (min-width: 768px) {
+      umc-header-section.main-navigation {
+      --padding-horizontal: 0;
+    }
+  }
+
+  umc-sidebar.content-sidebar {
+    --padding-horizontal: 56px;
+    --padding-vertical: 56px;
+  }
+  
+  umc-sidebar.content-sidebar umc-link-list {
+    color: #00778a;
+  }
+
+  umc-section.footer-links umc-column-section {
+    --text-color: white;
+    --text-size: 16px;
+    --padding-vertical: 44px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    umc-section.footer-links umc-column-section {
+      --text-size: 16px;
+    }
+  }
+
+  umc-section.footer-links {
+    --background-color: #003741;
+  }
+
+  umc-section.footer-colofon umc-column-section {
+    --text-color: white;
+    --text-size: 14px;
+    --padding-vertical: 44px;
+  }
+
+  umc-section.footer-colofon {
+    --background-color: #00778a;
+  }
+
+  umc-column-section.grid-debug {
+    --background-color: #c1c1c1;
+    --text-color: black;
+    --padding-vertical: 0;
+    --padding-horizontal: 0;
+  }
+
+  .logo {
+    width: 200px;
+    width: 260px;
+  }
+
+  .umc-column-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  @media only screen and (min-width: 768px) {
+    umc-header-section .column--right {
+      order: -1;
+    }
+  }
