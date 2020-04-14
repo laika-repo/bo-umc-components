@@ -23,6 +23,7 @@ export const config: Config = {
       copy: [
         { src: 'assets' }
       ],
+      minifyJs: false,
       serviceWorker: null // disable service workers
     }]
 };

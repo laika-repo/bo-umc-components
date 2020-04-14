@@ -126,7 +126,6 @@
       }
     }
   </style>
-
 </head>
 <body>
     <umc-dev-statusbar></umc-dev-statusbar>
@@ -159,16 +158,9 @@
     </umc-header-section>
   </umc-header>
 
-  <umc-section class='colors'>
-      <umc-column-section>
-        <umc-column  class='cols-4'>
-          <umc-title-block title="Colors"></umc-title-block>
-        </umc-content-block>
-        </umc-column>
-      </umc-column-section>
-      
+  <umc-style-section title='colors' class='colors'>
     <umc-column-section>
-        <umc-column  class='width--medium'>
+      <umc-column  class='width--small'>
         <umc-list orientation='horizontal'  title='Brand colors'>
             <umc-list-item label='azure-blue'>
               <umc-color-swatch name='azure-blue' slot='icon-before'></umc-color-swatch>
@@ -191,30 +183,23 @@
         </umc-list>
       </umc-column>
     </umc-column-section>
-  </umc-section>
+  </umc-style-section>
 
-  <umc-section class='grid'>
-      <umc-column-section>
-          <umc-column  class='cols-4'>
-            <umc-title-block title="Grid"></umc-title-block>
-          </umc-content-block>
-          </umc-column>
-        </umc-column-section>
-
-      <umc-column-section class='debug'>
-        <umc-column alignment='center' class='single'>1</umc-column>
-        <umc-column alignment='center' class='single'>1</umc-column>
-        <umc-column alignment='center' class='single'>1</umc-column>
-        <umc-column alignment='center' class='single'>1</umc-column>
-        <umc-column alignment='center' class='single'>1</umc-column>
-        <umc-column alignment='center' class='single'>1</umc-column>
-        <umc-column alignment='center' class='single'>1</umc-column>
-        <umc-column alignment='center' class='single'>1</umc-column>
-        <umc-column alignment='center' class='single'>1</umc-column>
-        <umc-column alignment='center' class='single'>1</umc-column>
-        <umc-column alignment='center' class='single'>1</umc-column>
-        <umc-column alignment='center' class='single'>1</umc-column>
-      </umc-column-section>
+  <umc-style-section title='Grid' class='grid'>
+    <umc-column-section class='debug'>
+      <umc-column alignment='center' class='single'>1</umc-column>
+      <umc-column alignment='center' class='single'>1</umc-column>
+      <umc-column alignment='center' class='single'>1</umc-column>
+      <umc-column alignment='center' class='single'>1</umc-column>
+      <umc-column alignment='center' class='single'>1</umc-column>
+      <umc-column alignment='center' class='single'>1</umc-column>
+      <umc-column alignment='center' class='single'>1</umc-column>
+      <umc-column alignment='center' class='single'>1</umc-column>
+      <umc-column alignment='center' class='single'>1</umc-column>
+      <umc-column alignment='center' class='single'>1</umc-column>
+      <umc-column alignment='center' class='single'>1</umc-column>
+      <umc-column alignment='center' class='single'>1</umc-column>
+    </umc-column-section>
 
       <umc-column-section class='debug'>
           <umc-column alignment='center' class='width--full'>full</umc-column>
@@ -235,7 +220,24 @@
           <umc-column class='width--xx-large'>width--xx-large</umc-column>
           <umc-column class='width--large'>width--large</umc-column>
         </umc-column-section>
-    </umc-section>
+    </umc-style-section>
+
+    <umc-style-section title='Sidebar' class='component'>
+        <umc-sidebar class='content-sidebar width--medium' slot='example'>
+            <umc-link-list slot='content' title='Team'>
+              <umc-link-list-item label='Researcher'></umc-link-list-item>
+            </umc-link-list>
+    
+            <umc-link-list slot='content' title='Projects'>
+              <umc-link-list-item label='Cancer center'></umc-link-list-item>
+              <umc-link-list-item label='Diabetes and Ramadan'></umc-link-list-item>
+            </umc-link-list>
+    
+            <umc-link-list slot='content' title='Projects'>
+                <umc-link-list-item label='Diabetes and Ramadan'></umc-link-list-item>
+            </umc-link-list>
+          </umc-sidebar>
+    </umc-style-section>
 
     <umc-section>
     <umc-content-section>

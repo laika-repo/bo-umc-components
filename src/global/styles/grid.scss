@@ -164,8 +164,6 @@ $screens: (
 
     flex-direction: column;
 
-    margin: 0 24px;
-
     width: map-deep-get($grid, "small", "content-width");
 
     @include wider-than('small') {
@@ -175,7 +173,6 @@ $screens: (
 
     @include min-screen-width('tablet-portrait') {
       flex-direction: row;
-      margin: 0 auto;
       width: map-deep-get($screens, 'tablet-portrait', 'content-width');
     }
 
@@ -198,22 +195,22 @@ $screens: (
   
     @include min-screen-width('tablet-portrait') {
       width: column-width-for-min-screen('tablet-portrait', 1);
-      margin-left: map-deep-get($screens, 'tablet-portrait', 'gutter-width');
+      margin-right: map-deep-get($screens, 'tablet-portrait', 'gutter-width');
     }
   
     @include min-screen-width('tablet-landscape') {
       width: column-width-for-min-screen('tablet-landscape', 1);
-      margin-left: map-deep-get($screens, 'tablet-landscape', 'gutter-width');
+      margin-right: map-deep-get($screens, 'tablet-landscape', 'gutter-width');
     }
   
     @include min-screen-width('desktop') {
       width: column-width-for-min-screen('desktop', 1);
-      margin-left: map-deep-get($screens, 'desktop', 'gutter-width');
+      margin-right: map-deep-get($screens, 'desktop', 'gutter-width');
     }
   }
 
-  :host(:first-child) {
-    margin-left: 0;
+  :host(:last-child) {
+    margin-right: 0;
   }
   
   :host(.empty) {

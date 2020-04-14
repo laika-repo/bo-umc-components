@@ -53,6 +53,9 @@ export namespace Components {
   interface UmcRichTextBlock {}
   interface UmcSection {}
   interface UmcSidebar {}
+  interface UmcStyleSection {
+    'title': string;
+  }
   interface UmcTab {
     'active': boolean;
     'label': string;
@@ -180,6 +183,12 @@ declare global {
     new (): HTMLUmcSidebarElement;
   };
 
+  interface HTMLUmcStyleSectionElement extends Components.UmcStyleSection, HTMLStencilElement {}
+  var HTMLUmcStyleSectionElement: {
+    prototype: HTMLUmcStyleSectionElement;
+    new (): HTMLUmcStyleSectionElement;
+  };
+
   interface HTMLUmcTabElement extends Components.UmcTab, HTMLStencilElement {}
   var HTMLUmcTabElement: {
     prototype: HTMLUmcTabElement;
@@ -217,6 +226,7 @@ declare global {
     'umc-rich-text-block': HTMLUmcRichTextBlockElement;
     'umc-section': HTMLUmcSectionElement;
     'umc-sidebar': HTMLUmcSidebarElement;
+    'umc-style-section': HTMLUmcStyleSectionElement;
     'umc-tab': HTMLUmcTabElement;
     'umc-tabs': HTMLUmcTabsElement;
     'umc-title-block': HTMLUmcTitleBlockElement;
@@ -267,6 +277,10 @@ declare namespace LocalJSX {
   interface UmcRichTextBlock {}
   interface UmcSection {}
   interface UmcSidebar {}
+  interface UmcStyleSection {
+    'onOnToggle'?: (event: CustomEvent<any>) => void;
+    'title'?: string;
+  }
   interface UmcTab {
     'active'?: boolean;
     'label'?: string;
@@ -296,6 +310,7 @@ declare namespace LocalJSX {
     'umc-rich-text-block': UmcRichTextBlock;
     'umc-section': UmcSection;
     'umc-sidebar': UmcSidebar;
+    'umc-style-section': UmcStyleSection;
     'umc-tab': UmcTab;
     'umc-tabs': UmcTabs;
     'umc-title-block': UmcTitleBlock;
@@ -327,6 +342,7 @@ declare module "@stencil/core" {
       'umc-rich-text-block': LocalJSX.UmcRichTextBlock & JSXBase.HTMLAttributes<HTMLUmcRichTextBlockElement>;
       'umc-section': LocalJSX.UmcSection & JSXBase.HTMLAttributes<HTMLUmcSectionElement>;
       'umc-sidebar': LocalJSX.UmcSidebar & JSXBase.HTMLAttributes<HTMLUmcSidebarElement>;
+      'umc-style-section': LocalJSX.UmcStyleSection & JSXBase.HTMLAttributes<HTMLUmcStyleSectionElement>;
       'umc-tab': LocalJSX.UmcTab & JSXBase.HTMLAttributes<HTMLUmcTabElement>;
       'umc-tabs': LocalJSX.UmcTabs & JSXBase.HTMLAttributes<HTMLUmcTabsElement>;
       'umc-title-block': LocalJSX.UmcTitleBlock & JSXBase.HTMLAttributes<HTMLUmcTitleBlockElement>;

@@ -6,10 +6,6 @@
   background-color: var(--background-color, var(--background-color--default));
   // border: 1px solid var(--border-color, var(--border-color--default));
   color: var(--text-color, var(--text-color--default));
-
-  
-color: red;
-  margin-bottom: 24px;
 }
 
 @include act-as-column;
