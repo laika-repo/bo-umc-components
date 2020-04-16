@@ -16,6 +16,7 @@ export namespace Components {
   interface UmcColumn {
     'alignment': string;
     'colspan': string;
+    'width': string;
   }
   interface UmcColumnSection {}
   interface UmcContentBlock {}
@@ -40,6 +41,7 @@ export namespace Components {
     'title': string;
   }
   interface UmcListItem {
+    'href': string;
     'label': string;
   }
   interface UmcLogo {
@@ -62,6 +64,7 @@ export namespace Components {
   }
   interface UmcTabs {}
   interface UmcTitleBlock {
+    'size': string;
     'title': string;
   }
 }
@@ -240,6 +243,7 @@ declare namespace LocalJSX {
   interface UmcColumn {
     'alignment'?: string;
     'colspan'?: string;
+    'width'?: string;
   }
   interface UmcColumnSection {}
   interface UmcContentBlock {}
@@ -264,6 +268,7 @@ declare namespace LocalJSX {
     'title'?: string;
   }
   interface UmcListItem {
+    'href'?: string;
     'label'?: string;
   }
   interface UmcLogo {
@@ -287,6 +292,7 @@ declare namespace LocalJSX {
   }
   interface UmcTabs {}
   interface UmcTitleBlock {
+    'size'?: string;
     'title'?: string;
   }
 

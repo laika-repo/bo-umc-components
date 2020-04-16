@@ -1,7 +1,8 @@
 # umc-column-section
 
 
-This is the read-me for the column section
+
+<!-- Auto Generated Below -->
 
 
 ----------------------------------------------

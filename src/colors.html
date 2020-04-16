@@ -125,13 +125,13 @@
         order: -1;
       }
     }
-
   </style>
+
 </head>
 <body>
-    <!-- <umc-dev-statusbar></umc-dev-statusbar> -->
+    <umc-dev-statusbar></umc-dev-statusbar>
 
-    <!-- <umc-section class='locations-header'>
+    <umc-section class='locations-header'>
       <umc-column-section class="location-switch">
           <umc-column alignment='center' class='width--full'>
             <umc-link-list orientation='always-horizontal'>
@@ -157,9 +157,87 @@
             <umc-menu-toggle label="Menu" icon='assets/icon-hamburger.svg' reverse='true'></umc-menu-toggle>
         </umc-column>
     </umc-header-section>
-  </umc-header> -->
+  </umc-header>
 
-    <!-- <umc-section>
+  <umc-section class='colors'>
+      <umc-column-section>
+        <umc-column  class='cols-4'>
+          <umc-title-block title="Colors"></umc-title-block>
+        </umc-content-block>
+        </umc-column>
+      </umc-column-section>
+      
+    <umc-column-section>
+        <umc-column  class='width--medium'>
+        <umc-list orientation='horizontal'  title='Brand colors'>
+            <umc-list-item label='azure-blue'>
+              <umc-color-swatch name='azure-blue' slot='icon-before'></umc-color-swatch>
+            </umc-list-item>
+            <umc-list-item label='grenadier-orange'>
+              <umc-color-swatch name='grenadier-orange' slot='icon-before'></umc-color-swatch>
+            </umc-list-item>
+            <umc-list-item label='stone-blue'>
+                <umc-color-swatch name='stone-blue' slot='icon-before'></umc-color-swatch>
+            </umc-list-item>
+            <umc-list-item label='cypres-blue'>
+                <umc-color-swatch name='cypres-blue' slot='icon-before'></umc-color-swatch>
+            </umc-list-item>
+            <umc-list-item label='blue-lagoon'>
+                <umc-color-swatch name='blue-lagoon' slot='icon-before'></umc-color-swatch>
+            </umc-list-item>
+            <umc-list-item label='botticelli-gray'>
+                <umc-color-swatch name='botticelli-gray' slot='icon-before'></umc-color-swatch>
+            </umc-list-item>
+        </umc-list>
+      </umc-column>
+    </umc-column-section>
+  </umc-section>
+
+  <umc-section class='grid'>
+      <umc-column-section>
+          <umc-column  class='cols-4'>
+            <umc-title-block title="Grid"></umc-title-block>
+          </umc-content-block>
+          </umc-column>
+        </umc-column-section>
+
+      <umc-column-section class='debug'>
+        <umc-column alignment='center' class='single'>1</umc-column>
+        <umc-column alignment='center' class='single'>1</umc-column>
+        <umc-column alignment='center' class='single'>1</umc-column>
+        <umc-column alignment='center' class='single'>1</umc-column>
+        <umc-column alignment='center' class='single'>1</umc-column>
+        <umc-column alignment='center' class='single'>1</umc-column>
+        <umc-column alignment='center' class='single'>1</umc-column>
+        <umc-column alignment='center' class='single'>1</umc-column>
+        <umc-column alignment='center' class='single'>1</umc-column>
+        <umc-column alignment='center' class='single'>1</umc-column>
+        <umc-column alignment='center' class='single'>1</umc-column>
+        <umc-column alignment='center' class='single'>1</umc-column>
+      </umc-column-section>
+
+      <umc-column-section class='debug'>
+          <umc-column alignment='center' class='width--full'>full</umc-column>
+        </umc-column-section>
+
+      <umc-column-section class='debug'>
+        <umc-column class='width--small'>width--small</umc-column>
+        <umc-column class='width--medium'>width--medium</umc-column>
+      </umc-column-section>
+
+        <umc-column-section class='debug'>
+            <umc-column class='width--x-large'>width--x-large</umc-column>
+            <umc-column class='width--small'>width--small</umc-column>
+            <umc-column class='width--small'>width--small</umc-column>
+          </umc-column-section>
+
+      <umc-column-section class='debug'>
+          <umc-column class='width--xx-large'>width--xx-large</umc-column>
+          <umc-column class='width--large'>width--large</umc-column>
+        </umc-column-section>
+    </umc-section>
+
+    <umc-section>
     <umc-content-section>
       <umc-content-block slot='main' class='width--xx-large'>
         <umc-title-block title='Artificial Intelligence for the healthcare of tomorrow'></umc-title-block>
@@ -192,101 +270,29 @@
         </umc-link-list>
       </umc-sidebar>
     </umc-content-section>
-  </umc-section> -->
-
-  <umc-section class='styleguide-section'>
-      <umc-column-section>
-          <umc-column width='xxx-large'>
-              <umc-title-block title='Footer' size='large'></umc-title-block>
-              <umc-rich-text-block>
-                  <p>
-                    Versie: 0.0.1
-                  </p>
-              </umc-rich-text-block>
-          </umc-column>
-        </umc-column-section>
-  </umc-section>
-  
-  <umc-style-section title='code'>
-    <pre>
-      &lt;umc-section class=&#39;footer-colofon&#39;&gt;
-        &lt;umc-column-section&gt;
-            &lt;umc-column  width=&#39;xx-large&#39;&gt;
-              &lt;umc-link-list orientation=&#39;horizontal&#39;&gt;
-                &lt;umc-link-list-item label=&#39;Privacy policy&#39;&gt;&lt;/umc-link-list-item&gt;
-                &lt;umc-link-list-item label=&#39;Sitemap&#39;&gt;&lt;/umc-link-list-item&gt;
-                &lt;umc-link-list-item label=&#39;Accountability&#39;&gt;&lt;/umc-link-list-item&gt;
-                &lt;umc-link-list-item label=&#39;Cookie settings&#39;&gt;&lt;/umc-link-list-item&gt;
-              &lt;/umc-link-list&gt;
-          &lt;/umc-column&gt;
-              &lt;!-- &lt;umc-link-list slot=&#39;3&#39; orientation=&#39;horizontal&#39;&gt;
-                  &lt;umc-link-list-item label=&#39;Follow us on social media&#39;&gt;&lt;/li&gt;
-                  &lt;umc-link-list-item label=&#39;icon&#39; icon=&#39;assets/icon-search.svg&#39;&gt;&lt;/umc-link-list-item&gt;
-                  &lt;umc-link-list-item label=&#39;icon&#39;  icon=&#39;assets/icon-search.svg&#39;&gt;&lt;/umc-link-list-item&gt;
-                  &lt;umc-link-list-item label=&#39;icon&#39; icon=&#39;assets/icon-search.svg&#39;&gt;&lt;/umc-link-list-item&gt;
-                &lt;/umc-link-list&gt; --&gt;
-        &lt;/umc-column-section&gt;
-      &lt;/umc-section&gt;
-    </pre>
-  </umc-style-section>
-
-  <umc-style-section title='Sub components'>
-      <umc-title-block title='List' size='regular'></umc-title-block>
-      <umc-column-section>
-          <umc-column width='small'>
-            <umc-list>
-              <umc-list-item href='#' label='Projects'></umc-list-item>
-              <umc-list-item label='Core Facilities'></umc-list-item>
-              <umc-list-item label='Researchers'></umc-list-item>
-              <umc-list-item label='Impact'></umc-list-item>
-            </umc-list>
-          </umc-column>
-          <umc-column  width='xx-large'>
-            <umc-link-list orientation='horizontal'>
-              <umc-link-list-item label='Lorem'></umc-link-list-item>
-              <umc-link-list-item label='Ipsum'></umc-link-list-item>
-              <umc-link-list-item label='Dorum'></umc-link-list-item>
-              <umc-link-list-item label='Loaradius'></umc-link-list-item>
-            </umc-link-list>
-        </umc-column>
-            <!-- <umc-link-list slot='3' orientation='horizontal'>
-                <umc-link-list-item label='Follow us on social media'></li>
-                <umc-link-list-item label='icon' icon='assets/icon-search.svg'></umc-link-list-item>
-                <umc-link-list-item label='icon'  icon='assets/icon-search.svg'></umc-link-list-item>
-                <umc-link-list-item label='icon' icon='assets/icon-search.svg'></umc-link-list-item>
-              </umc-link-list> -->
-      </umc-column-section>
-  </umc-style-section>
-
-  <umc-section>
-      <umc-column-section>
-          <umc-column width='xxx-large'>
-            <umc-title-block title='Voorbeeld'></umc-title-block>
-          </umc-column>
-    </umc-column-section>
   </umc-section>
 
   <umc-section class='footer-links'>
     <umc-column-section>
-        <umc-column width='medium'>
-          <umc-logo slot="content" src='assets/logo-aumc.svg'></umc-logo>
+        <umc-column class='width--medium'>
+          <!-- umc-logo slot="content" src='assets/logo-aumc.svg'></umc-logo-->
         </umc-column>
 
-        <umc-column width='small'>
-            <umc-list>
-                <umc-list-item href='#' label='Projects'></umc-list-item>
-                <umc-list-item label='Core Facilities'></umc-list-item>
-                <umc-list-item label='Researchers'></umc-list-item>
-                <umc-list-item label='Impact'></umc-list-item>
-              </umc-list>
+        <umc-column class='width--small'>
+            <umc-link-list>
+                <umc-link-list-item label='Projects'></li>
+                <umc-link-list-item label='Core Facilities'></umc-link-list-item>
+                <umc-link-list-item label='Researchers'></umc-link-list-item>
+                <umc-link-list-item label='Impact'></umc-link-list-item>
+              </umc-link-list>
         </umc-column>
 
-        <umc-column width='medium'>
-            <umc-list>
-                <umc-list-item label='Events'></umc-list-item>
-                <umc-list-item label='Research institutes'></umc-list-item>
-                <umc-list-item label='Departments'></umc-list-item>
-                <umc-list-item label='About'></umc-list-item>
+        <umc-column class='width--medium'>
+            <umc-link-list>
+                <umc-link-list-item label='Events'></li>
+                <umc-link-list-item label='Research institutes'></umc-link-list-item>
+                <umc-link-list-item label='Departments'></umc-link-list-item>
+                <umc-link-list-item label='About'></umc-link-list-item>
               </umc-link-list>
         </umc-column>
     </umc-column-section>
@@ -294,9 +300,9 @@
 
   <umc-section class='footer-colofon'>
     <umc-column-section>
-        <umc-column  width='xx-large'>
+        <umc-column class='width--large'>
           <umc-link-list orientation='horizontal'>
-            <umc-link-list-item label='Privacy policy'></umc-link-list-item>
+            <umc-link-list-item label='Privacy policy'></li>
             <umc-link-list-item label='Sitemap'></umc-link-list-item>
             <umc-link-list-item label='Accountability'></umc-link-list-item>
             <umc-link-list-item label='Cookie settings'></umc-link-list-item>

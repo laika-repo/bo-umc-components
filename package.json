@@ -30,6 +30,7 @@
     "@storybook/html": "^5.3.18",
     "babel-loader": "^8.1.0",
     "copy-webpack-plugin": "^5.1.1",
+    "stencil-markdown": "0.0.2-1",
     "write-file-webpack-plugin": "^4.5.1"
   },
   "license": "MIT",

@@ -6,6 +6,7 @@
   
   padding: var(--padding-vertical, var(--padding-vertical--default)) var(--padding-horizontal, var(--padding-horizontal--default));
   background-color: var(--background-color, var(--background-color--default));
+  color: red;
 }
 
 @include act-as-column;

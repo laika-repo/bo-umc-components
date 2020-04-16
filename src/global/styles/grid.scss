@@ -224,6 +224,10 @@ $screens: (
   }
 
   :host(.width--small) {
+    @include min-screen-width('tablet-portrait') {
+      width: column-width-for-min-screen('tablet-portrait', 2);
+    }
+
     @include min-screen-width('tablet-landscape') {
       width: column-width-for-min-screen('tablet-landscape', 2);
     }
@@ -234,6 +238,10 @@ $screens: (
   }
 
   :host(.width--medium) {
+    @include min-screen-width('tablet-portrait') {
+      width: column-width-for-min-screen('tablet-portrait', 3);
+    }
+
     @include min-screen-width('tablet-landscape') {
       width: column-width-for-min-screen('tablet-landscape', 3);
     }
@@ -244,6 +252,10 @@ $screens: (
   }
 
   :host(.width--large) {
+    @include min-screen-width('tablet-portrait') {
+      width: column-width-for-min-screen('tablet-portrait', 4);
+    }
+
     @include min-screen-width('tablet-landscape') {
       width: column-width-for-min-screen('tablet-landscape', 4);
     }
@@ -254,6 +266,10 @@ $screens: (
   }
 
   :host(.width--x-large) {
+    @include min-screen-width('tablet-portrait') {
+      width: column-width-for-min-screen('tablet-portrait', 4);
+    }
+
     @include min-screen-width('tablet-landscape') {
       width: column-width-for-min-screen('tablet-landscape', 4);
     }
@@ -264,6 +280,10 @@ $screens: (
   }
 
   :host(.width--xx-large) {
+    @include min-screen-width('tablet-portrait') {
+      width: column-width-for-min-screen('tablet-portrait', 5);
+    }
+
     @include min-screen-width('tablet-landscape') {
       width: column-width-for-min-screen('desktop', 5);
     }
@@ -274,6 +294,14 @@ $screens: (
    }
   
   :host(.width--xxx-large) {
+    @include min-screen-width('tablet-portrait') {
+      width: column-width-for-min-screen('tablet-portrait', 6);
+    }
+
+    @include min-screen-width('tablet-landscape') {
+      width: column-width-for-min-screen('desktop', 6);
+    }
+
     @include min-screen-width('desktop') {
        width: column-width-for-min-screen('desktop', 8);
      }

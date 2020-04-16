@@ -11,9 +11,9 @@ export class List {
 
   render() {
     return (
-      <Host>
+      <Host class={'align--' + this.orientation}>
         {this.title ? <h3>{this.title}</h3> : ''}
-        <ul class={'align--' + this.orientation}>
+        <ul>
           <slot></slot>
         </ul>
         </Host>

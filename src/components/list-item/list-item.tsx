@@ -7,12 +7,17 @@ import { Component, Host, h, Prop } from '@stencil/core';
 })
 export class ListItem {
   @Prop() label: string;
+  @Prop() href: string;
 
   render() {
     return (
         <Host>
           <slot name='icon-before'></slot>
-          {this.label}
+          {this.href
+            ? <a href={this.href}>{this.label}</a>
+            : this.label
+          }
+          
           <slot name='icon-after'></slot>
         </Host>
     );

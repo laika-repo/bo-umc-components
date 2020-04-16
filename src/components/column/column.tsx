@@ -8,10 +8,11 @@ import { Component, Host, h, Prop } from '@stencil/core';
 export class Column {
   @Prop() colspan: string = '1';
   @Prop() alignment: string = 'left';
+  @Prop() width: string = 'single';
 
   render() {
     return (
-      <Host class={'align--' + this.alignment}>
+      <Host class={'width--' + this.width + ' ' + 'align--' + this.alignment}>
         <slot></slot>
       </Host>
     );

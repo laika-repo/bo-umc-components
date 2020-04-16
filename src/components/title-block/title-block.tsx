@@ -7,10 +7,11 @@ import { Component, Host, Prop, h } from '@stencil/core';
 })
 export class TitleBlock {
   @Prop() title: string;
+  @Prop() size: string = 'regular';
 
   render() {
     return (
-    <Host>{this.title}</Host>
+    <Host class={this.size}>{this.title}</Host>
     );
   }
 
