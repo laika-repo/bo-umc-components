@@ -1,4 +1,4 @@
-:host {
+h2 {
   font-family: 'Museo Sans Rounded', sans-serif;
   font-weight: 300;
     font-size: rem-calc(48px);
@@ -6,11 +6,10 @@
     line-height: rem-calc(56px);
     color: $black;
 }
-
-:host(.large) {
+h2.large {
   font-size: rem-calc(48px);
 }
 
-:host(.regular) {
+.regular {
   font-size: rem-calc(32px);
 }
