@@ -63,6 +63,9 @@ export namespace Components {
     'label': string;
   }
   interface UmcTabs {}
+  interface UmcTag {
+    'label': string;
+  }
   interface UmcTitleBlock {
     'size': string;
     'title': string;
@@ -204,6 +207,12 @@ declare global {
     new (): HTMLUmcTabsElement;
   };
 
+  interface HTMLUmcTagElement extends Components.UmcTag, HTMLStencilElement {}
+  var HTMLUmcTagElement: {
+    prototype: HTMLUmcTagElement;
+    new (): HTMLUmcTagElement;
+  };
+
   interface HTMLUmcTitleBlockElement extends Components.UmcTitleBlock, HTMLStencilElement {}
   var HTMLUmcTitleBlockElement: {
     prototype: HTMLUmcTitleBlockElement;
@@ -232,6 +241,7 @@ declare global {
     'umc-style-section': HTMLUmcStyleSectionElement;
     'umc-tab': HTMLUmcTabElement;
     'umc-tabs': HTMLUmcTabsElement;
+    'umc-tag': HTMLUmcTagElement;
     'umc-title-block': HTMLUmcTitleBlockElement;
   }
 }
@@ -291,6 +301,9 @@ declare namespace LocalJSX {
     'label'?: string;
   }
   interface UmcTabs {}
+  interface UmcTag {
+    'label'?: string;
+  }
   interface UmcTitleBlock {
     'size'?: string;
     'title'?: string;
@@ -319,6 +332,7 @@ declare namespace LocalJSX {
     'umc-style-section': UmcStyleSection;
     'umc-tab': UmcTab;
     'umc-tabs': UmcTabs;
+    'umc-tag': UmcTag;
     'umc-title-block': UmcTitleBlock;
   }
 }
@@ -351,6 +365,7 @@ declare module "@stencil/core" {
       'umc-style-section': LocalJSX.UmcStyleSection & JSXBase.HTMLAttributes<HTMLUmcStyleSectionElement>;
       'umc-tab': LocalJSX.UmcTab & JSXBase.HTMLAttributes<HTMLUmcTabElement>;
       'umc-tabs': LocalJSX.UmcTabs & JSXBase.HTMLAttributes<HTMLUmcTabsElement>;
+      'umc-tag': LocalJSX.UmcTag & JSXBase.HTMLAttributes<HTMLUmcTagElement>;
       'umc-title-block': LocalJSX.UmcTitleBlock & JSXBase.HTMLAttributes<HTMLUmcTitleBlockElement>;
     }
   }

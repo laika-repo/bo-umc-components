@@ -1,0 +1,131 @@
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Amsterdam UMC</title> <script type="module" src="/build/umc-research.esm.js"></script> <script nomodule="" src="/build/umc-research.js"></script> <style>@font-face {
+      font-family: 'Museo Sans Rounded';
+      src: url("assets/museosansrounded-300.woff") format("woff");
+      font-weight: 300;
+      font-style: normal;
+      font-display: fallback; 
+    }
+
+    @font-face {
+      font-family: 'Museo Sans Rounded';
+      src: url("assets/museosansrounded-500.woff") format("woff");
+      font-weight: 500;
+      font-style: normal;
+      font-display: fallback; 
+    }
+
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    umc-dev-statusbar {
+      position: fixed;
+    }
+
+    umc-section.locations-header {
+      --background-color: white;
+    }
+
+    umc-column-section.location-switch {
+      --text-color: #005261;
+      --border-color: #ced9e5;
+      --margin-bottom: 0;
+      --padding-vertical: 8px;
+    }
+
+    umc-header-section.main-navigation {
+      --padding-vertical: 16px;
+    }
+
+    @media only screen and (min-width: 768px) {
+        umc-header-section.main-navigation {
+        --padding-horizontal: 0;
+      }
+    }
+
+    umc-sidebar.content-sidebar {
+      --padding-horizontal: 56px;
+      --padding-vertical: 56px;
+    }
+    
+    umc-sidebar.content-sidebar umc-link-list {
+      color: #00778a;
+    }
+
+    umc-section.footer-links umc-column-section {
+      --text-color: white;
+      --text-size: 16px;
+      --padding-vertical: 44px;
+    }
+
+    @media only screen and (min-width: 768px) {
+      umc-section.footer-links umc-column-section {
+        --text-size: 16px;
+      }
+    }
+
+    umc-section.footer-links {
+      --background-color: #003741;
+    }
+
+    umc-section.footer-colofon umc-column-section {
+      --text-color: white;
+      --text-size: 14px;
+      --padding-vertical: 44px;
+    }
+
+    umc-section.footer-colofon {
+      --background-color: #00778a;
+    }
+
+    umc-column-section.debug {
+      box-sizing: border-box;
+      --background-color:#fafafa;
+      margin-bottom: 8px;
+    }
+
+    umc-column-section.debug umc-column {
+      --background-color: #009cb4;
+      --border-color: blue;
+      --text-color: white;
+    }
+
+    umc-column-section.grid-debug {
+      --background-color: #c1c1c1;
+      --text-color: black;
+      --padding-vertical: 0;
+      --padding-horizontal: 0;
+    }
+
+    .logo {
+      width: 200px;
+      width: 260px;
+    }
+
+    .umc-column-section ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    @media only screen and (min-width: 768px) {
+      umc-header-section .column--right {
+        order: -1;
+      }
+    }</style> </head> <body> <umc-dev-statusbar></umc-dev-statusbar> <umc-section class="locations-header"> <umc-column-section class="location-switch"> <umc-column alignment="center" class="width--full"> <umc-link-list orientation="always-horizontal"> <umc-link-list-item label="Healthcare"> <umc-link-list-item active="true" label="Research"></umc-link-list-item> <umc-link-list-item label="Health campus"></umc-link-list-item> </umc-link-list-item></umc-link-list> </umc-column></umc-column-section> </umc-section> <umc-header> <umc-header-section class="main-navigation"> <umc-column slot="left" class="gutterless"> <umc-logo src="assets/logo-aumc.svg"></umc-logo> </umc-column> <umc-column slot="middle" class="column--middle gutterless"> <umc-menu-toggle label="Search" icon="assets/icon-search.svg"></umc-menu-toggle> </umc-column> <umc-column slot="right" class="column--right gutterless"> <umc-menu-toggle label="Menu" icon="assets/icon-hamburger.svg" reverse="true"></umc-menu-toggle> </umc-column> </umc-header-section> </umc-header> <umc-style-section title="colors" class="colors"> <umc-column-section> <umc-column class="width--small"> <umc-list orientation="horizontal" title="Brand colors"> <umc-list-item label="azure-blue"> <umc-color-swatch name="azure-blue" slot="icon-before"></umc-color-swatch> </umc-list-item> <umc-list-item label="grenadier-orange"> <umc-color-swatch name="grenadier-orange" slot="icon-before"></umc-color-swatch> </umc-list-item> <umc-list-item label="stone-blue"> <umc-color-swatch name="stone-blue" slot="icon-before"></umc-color-swatch> </umc-list-item> <umc-list-item label="cypres-blue"> <umc-color-swatch name="cypres-blue" slot="icon-before"></umc-color-swatch> </umc-list-item> <umc-list-item label="blue-lagoon"> <umc-color-swatch name="blue-lagoon" slot="icon-before"></umc-color-swatch> </umc-list-item> <umc-list-item label="botticelli-gray"> <umc-color-swatch name="botticelli-gray" slot="icon-before"></umc-color-swatch> </umc-list-item> </umc-list> </umc-column> </umc-column-section> </umc-style-section> <umc-style-section title="Grid" class="grid"> <umc-column-section class="debug"> <umc-column alignment="center" class="single">1</umc-column> <umc-column alignment="center" class="single">1</umc-column> <umc-column alignment="center" class="single">1</umc-column> <umc-column alignment="center" class="single">1</umc-column> <umc-column alignment="center" class="single">1</umc-column> <umc-column alignment="center" class="single">1</umc-column> <umc-column alignment="center" class="single">1</umc-column> <umc-column alignment="center" class="single">1</umc-column> <umc-column alignment="center" class="single">1</umc-column> <umc-column alignment="center" class="single">1</umc-column> <umc-column alignment="center" class="single">1</umc-column> <umc-column alignment="center" class="single">1</umc-column> </umc-column-section> <umc-column-section class="debug"> <umc-column alignment="center" class="width--full">full</umc-column> </umc-column-section> <umc-column-section class="debug"> <umc-column class="width--small">width--small</umc-column> <umc-column class="width--medium">width--medium</umc-column> </umc-column-section> <umc-column-section class="debug"> <umc-column class="width--x-large">width--x-large</umc-column> <umc-column class="width--small">width--small</umc-column> <umc-column class="width--small">width--small</umc-column> </umc-column-section> <umc-column-section class="debug"> <umc-column class="width--xx-large">width--xx-large</umc-column> <umc-column class="width--large">width--large</umc-column> </umc-column-section> </umc-style-section> <umc-section> <umc-content-section> <umc-content-block slot="main" class="width--xx-large"> <umc-title-block title="Artificial Intelligence for the healthcare of tomorrow"></umc-title-block> <umc-rich-text-block> <p> <b>The Dutch Cancer Society (KWF) has granted funding to our joint project "AI-DOC: 
+                Artificial Intelligence for better detection of cancer". </b> </p> <p> The Dutch Cancer Society (KWF) has granted funding to our joint project "AI-DOC: 
+                Artificial Intelligence for better detection of cancer". 
+                This is a joint proposal between the Primary Care departments at the Amsterdam UMC location AMC </p> </umc-rich-text-block> </umc-content-block> <umc-sidebar class="content-sidebar width--medium" slot="sidebar"> <umc-link-list slot="content" title="Team"> <umc-link-list-item label="Researcher"></umc-link-list-item> </umc-link-list> <umc-link-list slot="content" title="Projects"> <umc-link-list-item label="Cancer center"></umc-link-list-item> <umc-link-list-item label="Diabetes and Ramadan"></umc-link-list-item> </umc-link-list> <umc-link-list slot="content" title="Projects"> <umc-link-list-item label="Diabetes and Ramadan"></umc-link-list-item> </umc-link-list> </umc-sidebar> </umc-content-section> </umc-section> <umc-section class="footer-links"> <umc-column-section> <umc-column class="width--medium"> <!-- umc-logo slot="content" src='assets/logo-aumc.svg'></umc-logo--> </umc-column> <umc-column class="width--small"> <umc-link-list> <umc-link-list-item label="Projects"> <umc-link-list-item label="Core Facilities"></umc-link-list-item> <umc-link-list-item label="Researchers"></umc-link-list-item> <umc-link-list-item label="Impact"></umc-link-list-item> </umc-link-list-item></umc-link-list> </umc-column> <umc-column class="width--medium"> <umc-link-list> <umc-link-list-item label="Events"> <umc-link-list-item label="Research institutes"></umc-link-list-item> <umc-link-list-item label="Departments"></umc-link-list-item> <umc-link-list-item label="About"></umc-link-list-item> </umc-link-list-item></umc-link-list> </umc-column> </umc-column-section> </umc-section> <umc-section class="footer-colofon"> <umc-column-section> <umc-column class="width--large"> <umc-link-list orientation="horizontal"> <umc-link-list-item label="Privacy policy"> <umc-link-list-item label="Sitemap"></umc-link-list-item> <umc-link-list-item label="Accountability"></umc-link-list-item> <umc-link-list-item label="Cookie settings"></umc-link-list-item> </umc-link-list-item></umc-link-list> </umc-column> <!-- <umc-link-list slot='3' orientation='horizontal'>
+              <umc-link-list-item label='Follow us on social media'></li>
+              <umc-link-list-item label='icon' icon='assets/icon-search.svg'></umc-link-list-item>
+              <umc-link-list-item label='icon'  icon='assets/icon-search.svg'></umc-link-list-item>
+              <umc-link-list-item label='icon' icon='assets/icon-search.svg'></umc-link-list-item>
+            </umc-link-list> --> </umc-column-section> </umc-section> <script>if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  // auto-unregister service worker during dev mode
+  navigator.serviceWorker.getRegistration().then(function(registration) {
+    if (registration) {
+      registration.unregister().then(function() { location.reload(true) });
+    }
+  });
+}</script></body></html>

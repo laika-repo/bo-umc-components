@@ -1,0 +1,13 @@
+:host {
+  display: inline-block;
+
+  font-family: 'Museo Sans Rounded', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    margin: 0 4px;
+    border: 1px dotted green;
+    padding: 2px 4px;
+    border-radius: 2px;
+    background-color: lighten( green, 70%);
+    color: green;
+}
