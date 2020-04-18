@@ -28,5 +28,11 @@
   // .always-align--horizontal list-item {
   //   display: inline;
   // }
+
+  
+}
+
+:Host(.umc-list_horizontal--always) umc-list-item {
+  display: inline;
 }
 

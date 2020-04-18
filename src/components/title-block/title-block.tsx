@@ -3,7 +3,7 @@ import { Component, Host, Prop, h } from '@stencil/core';
 @Component({
   tag: 'umc-title-block',
   styleUrl: 'title-block.scss',
-  shadow: false
+  shadow: true
 })
 export class TitleBlock {
   @Prop() title: string;
@@ -11,7 +11,7 @@ export class TitleBlock {
 
   render() {
     return (
-    <h2 class={this.size}>{this.title}</h2>
+    <Host class={this.size}>{this.title}</Host>
     );
   }
 

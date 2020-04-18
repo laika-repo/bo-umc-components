@@ -1,4 +1,4 @@
-# umc-title-block
+# umc-tag
 
 
 
@@ -9,8 +9,7 @@
 
 | Property | Attribute | Description | Type     | Default     |
 | -------- | --------- | ----------- | -------- | ----------- |
-| `size`   | `size`    |             | `string` | `'regular'` |
-| `title`  | `title`   |             | `string` | `undefined` |
+| `label`  | `label`   |             | `string` | `undefined` |
 
 
 ----------------------------------------------

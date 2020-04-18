@@ -37,13 +37,9 @@ export namespace Components {
     'label': string;
   }
   interface UmcList {
-    'orientation': string;
     'title': string;
   }
-  interface UmcListItem {
-    'href': string;
-    'label': string;
-  }
+  interface UmcListItem {}
   interface UmcLogo {
     'src': string;
   }
@@ -274,13 +270,9 @@ declare namespace LocalJSX {
     'label'?: string;
   }
   interface UmcList {
-    'orientation'?: string;
     'title'?: string;
   }
-  interface UmcListItem {
-    'href'?: string;
-    'label'?: string;
-  }
+  interface UmcListItem {}
   interface UmcLogo {
     'src'?: string;
   }

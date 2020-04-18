@@ -22,6 +22,7 @@ export const config: Config = {
     },
     {
       type: 'www',
+      baseUrl: 'http://laika-repo.github.io'
       copy: [
         { src: 'assets' }
       ],
