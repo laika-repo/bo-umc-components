@@ -184,6 +184,10 @@ $screens: (
       width: map-deep-get($screens, 'desktop', 'content-width');
     }
   }
+
+  :host(.justify-columns) {
+    justify-content: space-between;
+  }
 }
 
 @mixin act-as-column {

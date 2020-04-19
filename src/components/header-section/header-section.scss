@@ -1,6 +1,5 @@
 :host {
-  display: flex;
-  justify-content: space-between;
+
 
   background-color: $white;
   --padding-vertical--default: 24px;
@@ -10,3 +9,5 @@
   padding: var(--padding-vertical, var(--padding-vertical--default)) var(--padding-horizontal, var(--padding-horizontal--default));
   border-bottom: 1px solid var(--border-color, var(--border-color--default));
 }
+
+@include act-as-column-section;

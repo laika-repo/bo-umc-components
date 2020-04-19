@@ -1,16 +1,17 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'umc-list',
-  styleUrl: 'list.scss',
-  shadow: true
+  tag: 'umc-list-header',
+  styleUrl: 'list-header.scss',
+  shadow: false
 })
-export class List {
+export class ListHeader {
+
   render() {
     return (
       <Host>
         <slot></slot>
-        </Host>
+      </Host>
     );
   }
 

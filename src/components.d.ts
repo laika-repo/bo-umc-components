@@ -36,13 +36,13 @@ export namespace Components {
     'icon': string;
     'label': string;
   }
-  interface UmcList {
-    'title': string;
-  }
+  interface UmcList {}
+  interface UmcListHeader {}
   interface UmcListItem {}
   interface UmcLogo {
     'src': string;
   }
+  interface UmcMenuSection {}
   interface UmcMenuToggle {
     'icon': string;
     'label': string;
@@ -149,6 +149,12 @@ declare global {
     new (): HTMLUmcListElement;
   };
 
+  interface HTMLUmcListHeaderElement extends Components.UmcListHeader, HTMLStencilElement {}
+  var HTMLUmcListHeaderElement: {
+    prototype: HTMLUmcListHeaderElement;
+    new (): HTMLUmcListHeaderElement;
+  };
+
   interface HTMLUmcListItemElement extends Components.UmcListItem, HTMLStencilElement {}
   var HTMLUmcListItemElement: {
     prototype: HTMLUmcListItemElement;
@@ -159,6 +165,12 @@ declare global {
   var HTMLUmcLogoElement: {
     prototype: HTMLUmcLogoElement;
     new (): HTMLUmcLogoElement;
+  };
+
+  interface HTMLUmcMenuSectionElement extends Components.UmcMenuSection, HTMLStencilElement {}
+  var HTMLUmcMenuSectionElement: {
+    prototype: HTMLUmcMenuSectionElement;
+    new (): HTMLUmcMenuSectionElement;
   };
 
   interface HTMLUmcMenuToggleElement extends Components.UmcMenuToggle, HTMLStencilElement {}
@@ -228,8 +240,10 @@ declare global {
     'umc-link-list': HTMLUmcLinkListElement;
     'umc-link-list-item': HTMLUmcLinkListItemElement;
     'umc-list': HTMLUmcListElement;
+    'umc-list-header': HTMLUmcListHeaderElement;
     'umc-list-item': HTMLUmcListItemElement;
     'umc-logo': HTMLUmcLogoElement;
+    'umc-menu-section': HTMLUmcMenuSectionElement;
     'umc-menu-toggle': HTMLUmcMenuToggleElement;
     'umc-rich-text-block': HTMLUmcRichTextBlockElement;
     'umc-section': HTMLUmcSectionElement;
@@ -269,12 +283,14 @@ declare namespace LocalJSX {
     'icon'?: string;
     'label'?: string;
   }
-  interface UmcList {
-    'title'?: string;
-  }
+  interface UmcList {}
+  interface UmcListHeader {}
   interface UmcListItem {}
   interface UmcLogo {
     'src'?: string;
+  }
+  interface UmcMenuSection {
+    'onOnToggle'?: (event: CustomEvent<any>) => void;
   }
   interface UmcMenuToggle {
     'icon'?: string;
@@ -282,7 +298,9 @@ declare namespace LocalJSX {
     'reverse'?: boolean;
   }
   interface UmcRichTextBlock {}
-  interface UmcSection {}
+  interface UmcSection {
+    'onOnToggle'?: (event: CustomEvent<any>) => void;
+  }
   interface UmcSidebar {}
   interface UmcStyleSection {
     'onOnToggle'?: (event: CustomEvent<any>) => void;
@@ -315,8 +333,10 @@ declare namespace LocalJSX {
     'umc-link-list': UmcLinkList;
     'umc-link-list-item': UmcLinkListItem;
     'umc-list': UmcList;
+    'umc-list-header': UmcListHeader;
     'umc-list-item': UmcListItem;
     'umc-logo': UmcLogo;
+    'umc-menu-section': UmcMenuSection;
     'umc-menu-toggle': UmcMenuToggle;
     'umc-rich-text-block': UmcRichTextBlock;
     'umc-section': UmcSection;
@@ -348,8 +368,10 @@ declare module "@stencil/core" {
       'umc-link-list': LocalJSX.UmcLinkList & JSXBase.HTMLAttributes<HTMLUmcLinkListElement>;
       'umc-link-list-item': LocalJSX.UmcLinkListItem & JSXBase.HTMLAttributes<HTMLUmcLinkListItemElement>;
       'umc-list': LocalJSX.UmcList & JSXBase.HTMLAttributes<HTMLUmcListElement>;
+      'umc-list-header': LocalJSX.UmcListHeader & JSXBase.HTMLAttributes<HTMLUmcListHeaderElement>;
       'umc-list-item': LocalJSX.UmcListItem & JSXBase.HTMLAttributes<HTMLUmcListItemElement>;
       'umc-logo': LocalJSX.UmcLogo & JSXBase.HTMLAttributes<HTMLUmcLogoElement>;
+      'umc-menu-section': LocalJSX.UmcMenuSection & JSXBase.HTMLAttributes<HTMLUmcMenuSectionElement>;
       'umc-menu-toggle': LocalJSX.UmcMenuToggle & JSXBase.HTMLAttributes<HTMLUmcMenuToggleElement>;
       'umc-rich-text-block': LocalJSX.UmcRichTextBlock & JSXBase.HTMLAttributes<HTMLUmcRichTextBlockElement>;
       'umc-section': LocalJSX.UmcSection & JSXBase.HTMLAttributes<HTMLUmcSectionElement>;

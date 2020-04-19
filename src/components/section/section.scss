@@ -1,12 +1,19 @@
-:host {
+umc-section {
   box-sizing: border-box;
-  background: pink;
   display: flex;
   align-items: center;
   flex-direction: column;
-  
-  --background-color--default: $white;
+  --background-color--default: white;
   background-color: var(--background-color, var(--background-color--default));
   
   width: 100%;
+}
+
+umc-section.content-section {
+  margin-top: 56px;
+}
+
+.closed umc-section {
+  display: none;
+  overflow: hidden;
 }

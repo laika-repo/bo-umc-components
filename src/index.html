@@ -45,9 +45,7 @@
       --padding-vertical: 8px;
     }
 
-    umc-header-section.main-navigation {
-      --padding-vertical: 16px;
-    }
+   
 
     @media only screen and (min-width: 768px) {
         umc-header-section.main-navigation {
@@ -95,18 +93,25 @@
       --background-color:#fafafa;
       margin-bottom: 8px;
     }
+    
+    umc-column.submenu__main {
+      font-size: 22px;
+    }
+    
+
+    umc-section.navigation-menu {
+      background-color: #009cb4;
+      /* background-attachment: fixed; */
+    }
+
+    umc-section.navigation-menu umc-column-section {
+      --text-color: white;
+    }
 
     umc-column-section.debug umc-column {
       --background-color: #009cb4;
       --border-color: blue;
       --text-color: white;
-    }
-
-    umc-column-section.grid-debug {
-      --background-color: #c1c1c1;
-      --text-color: black;
-      --padding-vertical: 0;
-      --padding-horizontal: 0;
     }
 
     .logo {
@@ -134,40 +139,54 @@
     <umc-section class='locations-header'>
       <umc-column-section class="location-switch">
           <umc-column alignment='center' class='width--full'>
-            <umc-link-list orientation='always-horizontal'>
-              <umc-link-list-item label='Healthcare'></li>
-              <umc-link-list-item active='true' label='Footer'><a href="./footer.html">Footer</a></umc-link-list-item>
-              <umc-link-list-item label='Header'></umc-link-list-item>
-              <umc-link-list-item label='Impact page'></umc-link-list-item>
-              <umc-link-list-item label='Impact page'></umc-link-list-item>
-              <umc-link-list-item label='Impact page'></umc-link-list-item>
-              <umc-link-list-item label='Impact page'></umc-link-list-item>
-            </umc-link-list>
-
             <umc-list class='umc-list_horizontal--always'>
-              <umc-list-item>Header</umc-list-item>              
-              <umc-list-item class='umc-list-item--active'><a href="./footer.html">Footer</a></umc-list-item>
+              <umc-list-item><a href="#">Healthcare</a></umc-list-item>
+              <umc-list-item><a href="#" umc-list-item--active>Research</a></umc-list-item>   
+              <umc-list-item><a href="#">Health campus</a></umc-list-item>                 
             </umc-list>
       </umc-column-section>
     </umc-section>
-      
 
-    <!-- <umc-header-section class="main-navigation">
-        <umc-column slot='left' class='gutterless'>
-          <umc-logo src='assets/logo-aumc.svg'></umc-logo>
-        </umc-column>
+    <umc-menu-section class='main-navigation umc-section--sticky'>
+      <umc-column-section slot='navigation' class='justify-columns'>
+          <umc-column width='small'>
+              <umc-menu-toggle label="Search" icon='assets/icon-search.svg'></umc-menu-toggle>
+          </umc-column>
 
-        <umc-column slot='middle' class='column--middle gutterless'>
-            <umc-menu-toggle label="Search" icon='assets/icon-search.svg'></umc-menu-toggle>
-        </umc-column>
-      
-        <umc-column slot='right' class='column--right gutterless'>
-            <umc-menu-toggle label="Menu" icon='assets/icon-hamburger.svg' reverse='true'></umc-menu-toggle>
-        </umc-column>
-    </umc-header-section>
-  </umc-header> -->
+          <umc-column width='medium'>
+              <umc-logo src='assets/logo-aumc.svg'></umc-logo>
+            </umc-column>
+  
+            <umc-column width='small'>
+                <umc-menu-toggle label="Menu" icon='assets/icon-hamburger.svg' reverse='true'></umc-menu-toggle>
+            </umc-column>
+      </umc-column-section>
 
-    <!-- <umc-section>
+      <umc-section class='navigation-menu' slot='menu'>
+          <umc-column-section>
+            <umc-column width='large'>
+                <umc-list class='font-style--big'>
+                  <umc-list-item><a href="#">Amsterdam UMC Research</a></umc-list-item>
+                  <umc-list-item><a href="#">Researchers</a></umc-list-item>
+                  <umc-list-item><a href="#">Research highlights</a></umc-list-item>
+                  <umc-list-item><a href="#">Core facilities</a></umc-list-item>
+                  <umc-list-item><a href="#">Impact</a></umc-list-item>
+                </umc-list>
+              </umc-column>
+              <umc-column width-='small'></umc-column>
+              <umc-column  width='medium'>
+                  <umc-list-header>More…</umc-list-header>
+                  <umc-list class='font-style--regular'>
+                    <umc-list-item><a href="#">Research institutes</a></umc-list-item>
+                    <umc-list-item><a href="#">Departments</a></umc-list-item>
+                    <umc-list-item><a href="#">Events</a></umc-list-item>
+                    <umc-list-item><a href="#">About</a></umc-list-item>
+                  </umc-list>
+        </umc-column-section>
+      </umc-section>
+    </umc-menu-section>
+
+   <umc-section class='content-section'>
     <umc-content-section>
       <umc-content-block slot='main' class='width--xx-large'>
         <umc-title-block title='Artificial Intelligence for the healthcare of tomorrow'></umc-title-block>
@@ -178,9 +197,9 @@
             </p>
 
             <p>
-                The Dutch Cancer Society (KWF) has granted funding to our joint project "AI-DOC: 
-                Artificial Intelligence for better detection of cancer". 
-                This is a joint proposal between the Primary Care departments at the Amsterdam UMC location AMC 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst. 
             </p>
         </umc-rich-text-block>
       </umc-content-block>
@@ -200,100 +219,29 @@
         </umc-link-list>
       </umc-sidebar>
     </umc-content-section>
-  </umc-section> -->
-
-  <umc-section class='styleguide-section'>
-      <umc-column-section>
-          <umc-column width='xxx-large'>
-              <umc-title-block title='Footer' size='large'></umc-title-block>
-              <umc-rich-text-block>
-                  <umc-tag label='version: 0.0.1'/>
-              </umc-rich-text-block>
-          </umc-column>
-        </umc-column-section>
-  </umc-section>
-  
-  <umc-style-section title='code'>
-    <pre>
-      &lt;umc-section class=&#39;footer-colofon&#39;&gt;
-        &lt;umc-column-section&gt;
-            &lt;umc-column  width=&#39;xx-large&#39;&gt;
-              &lt;umc-link-list orientation=&#39;horizontal&#39;&gt;
-                &lt;umc-link-list-item label=&#39;Privacy policy&#39;&gt;&lt;/umc-link-list-item&gt;
-                &lt;umc-link-list-item label=&#39;Sitemap&#39;&gt;&lt;/umc-link-list-item&gt;
-                &lt;umc-link-list-item label=&#39;Accountability&#39;&gt;&lt;/umc-link-list-item&gt;
-                &lt;umc-link-list-item label=&#39;Cookie settings&#39;&gt;&lt;/umc-link-list-item&gt;
-              &lt;/umc-link-list&gt;
-          &lt;/umc-column&gt;
-              &lt;!-- &lt;umc-link-list slot=&#39;3&#39; orientation=&#39;horizontal&#39;&gt;
-                  &lt;umc-link-list-item label=&#39;Follow us on social media&#39;&gt;&lt;/li&gt;
-                  &lt;umc-link-list-item label=&#39;icon&#39; icon=&#39;assets/icon-search.svg&#39;&gt;&lt;/umc-link-list-item&gt;
-                  &lt;umc-link-list-item label=&#39;icon&#39;  icon=&#39;assets/icon-search.svg&#39;&gt;&lt;/umc-link-list-item&gt;
-                  &lt;umc-link-list-item label=&#39;icon&#39; icon=&#39;assets/icon-search.svg&#39;&gt;&lt;/umc-link-list-item&gt;
-                &lt;/umc-link-list&gt; --&gt;
-        &lt;/umc-column-section&gt;
-      &lt;/umc-section&gt;
-    </pre>
-  </umc-style-section>
-
-  <umc-style-section title='Sub components'>
-      <umc-title-block title='List' size='regular'></umc-title-block>
-      <umc-column-section>
-          <umc-column width='small'>
-            <umc-list>
-              <umc-list-item href='#' label='Projects'></umc-list-item>
-              <umc-list-item label='Core Facilities'></umc-list-item>
-              <umc-list-item label='Researchers'></umc-list-item>
-              <umc-list-item label='Impact'></umc-list-item>
-            </umc-list>
-          </umc-column>
-          <umc-column  width='xx-large'>
-            <umc-link-list orientation='horizontal'>
-              <umc-link-list-item label='Lorem'></umc-link-list-item>
-              <umc-link-list-item label='Ipsum'></umc-link-list-item>
-              <umc-link-list-item label='Dorum'></umc-link-list-item>
-              <umc-link-list-item label='Loaradius'></umc-link-list-item>
-            </umc-link-list>
-        </umc-column>
-            <!-- <umc-link-list slot='3' orientation='horizontal'>
-                <umc-link-list-item label='Follow us on social media'></li>
-                <umc-link-list-item label='icon' icon='assets/icon-search.svg'></umc-link-list-item>
-                <umc-link-list-item label='icon'  icon='assets/icon-search.svg'></umc-link-list-item>
-                <umc-link-list-item label='icon' icon='assets/icon-search.svg'></umc-link-list-item>
-              </umc-link-list> -->
-      </umc-column-section>
-  </umc-style-section>
-
-  <umc-section>
-      <umc-column-section>
-          <umc-column width='xxx-large'>
-            <umc-title-block title='Voorbeeld'></umc-title-block>
-            <umc-tag label='in development'/>
-          </umc-column>
-    </umc-column-section>
   </umc-section>
 
   <umc-section class='footer-links'>
     <umc-column-section>
         <umc-column width='medium'>
-          <umc-logo slot="content" src='assets/logo-aumc.svg'></umc-logo>
+          <umc-logo src='assets/logo-aumc--diap.svg'></umc-logo>
         </umc-column>
 
         <umc-column width='small'>
             <umc-list>
-                <umc-list-item href='#' label='Projects'></umc-list-item>
-                <umc-list-item label='Core Facilities'></umc-list-item>
-                <umc-list-item label='Researchers'></umc-list-item>
-                <umc-list-item label='Impact'></umc-list-item>
+                <umc-list-item><a href="#">Projects</a></umc-list-item>
+                <umc-list-item><a href="#">Core Facilities</a></umc-list-item>
+                <umc-list-item><a href="#">Researchers</a></umc-list-item>
+                <umc-list-item><a href="#">Impact</a></umc-list-item>
               </umc-list>
         </umc-column>
 
         <umc-column width='medium'>
             <umc-list>
-                <umc-list-item label='Events'></umc-list-item>
-                <umc-list-item label='Research institutes'></umc-list-item>
-                <umc-list-item label='Departments'></umc-list-item>
-                <umc-list-item label='About'></umc-list-item>
+                <umc-list-item><a href="#">Events</a></umc-list-item>
+                <umc-list-item><a href="#">Research institutes</a></umc-list-item>
+                <umc-list-item><a href="#">Departments</a></umc-list-item>
+                <umc-list-item><a href="#">About</a></umc-list-item>
               </umc-link-list>
         </umc-column>
     </umc-column-section>

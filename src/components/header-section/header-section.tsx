@@ -11,9 +11,9 @@ export class HeaderSection {
   render() {
     return (
       <Host>
-        <slot name="left"/>
-        <slot name="middle"/>
-        <slot name="right"/>
+        <slot name="left"></slot>
+        <slot name="middle"></slot>
+        <slot name="right"></slot>
       </Host>
     );
   }

@@ -1,12 +1,12 @@
 import { Component, State, EventEmitter, Event, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'umc-section',
-  styleUrl: 'section.scss',
+  tag: 'umc-menu-section',
+  styleUrl: 'menu-section.scss',
   shadow: false
 })
-export class Section {
-  @State() toggle: boolean = false;
+export class MenuSection {
+  @State() toggle: boolean = true;
   @Event() onToggle: EventEmitter;
 
   toggleComponent() {
@@ -17,7 +17,9 @@ export class Section {
   render() {
     return (
       <Host class={this.toggle ? 'open' : 'closed'}>
-        <slot></slot>
+        <slot name='navigation'></slot>
+        {/* <slot name='navigation' onClick={() => this.toggleComponent()}></slot> */}
+        <slot name='menu'></slot>
       </Host>
     );
   }

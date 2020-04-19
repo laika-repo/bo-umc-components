@@ -22,6 +22,25 @@ umc-list-item {
   display: inline;
 }
 
+// Todo: abstract away to share style
+  .font-style--big umc-list-item {
+    font-size: rem-calc(22px);
+    line-height: rem-calc(56px);
+    font-weight: 500;
+    border-bottom: 1px solid #00778a;
+
+    &:last-child {
+      border-bottom-width: 0;
+    }
+  }
+
+  .font-style--regular umc-list-item {
+    font-size: rem-calc(18px);
+    line-height: rem-calc(40px);
+  }
+
+
+
 
 
 
