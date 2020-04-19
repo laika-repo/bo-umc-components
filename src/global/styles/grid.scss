@@ -311,18 +311,19 @@ $screens: (
      }
    }
   
-
-  
-
-
   :host(.gutterless) {
     margin-right: 0;
   }
   
-  
-  
-  
   :host(.align--center) {
     text-align: center;
+  }
+
+  :host(.vertical-align--middle) {
+    
+  }
+
+  :host(.align--right) {
+    text-align: right;
   }
 }
