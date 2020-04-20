@@ -4,13 +4,11 @@ umc-column {
   --text-color--default: $black;
   --font-size--default: $black;
 
-  color: red;
-
   background-color: var(--background-color, var(--background-color--default));
   // border: 1px solid var(--border-color, var(--border-color--default));
   color: var(--text-color, var(--text-color--default));
 
-  border: 1px dotted rgba(0, 0, 0, 0.3);
+  // border: 1px dotted rgba(0, 0, 0, 0.3);
 
   @include act-as-column--unscoped;
 }

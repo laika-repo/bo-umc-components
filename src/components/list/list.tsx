@@ -10,7 +10,7 @@ export class List {
     return (
       <Host>
         <slot></slot>
-        </Host>
+      </Host>
     );
   }
 

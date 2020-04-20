@@ -171,6 +171,8 @@ $screens: (
   display: flex;
   flex-direction: column;
 
+  border: 1px dotted rgba(0, 0, 0, 0.3);
+
   width: 100%;
 
   @include min-screen-width('tablet-portrait') {

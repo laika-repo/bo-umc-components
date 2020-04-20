@@ -19,4 +19,9 @@ umc-menu-section.umc-section--sticky {
   top: 0;
 }
 
+umc-menu-section umc-section.closed {
+  display: none;
+  overflow: hidden;
+}
+
 
