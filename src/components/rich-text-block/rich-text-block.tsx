@@ -10,7 +10,7 @@ export class RichTextBlock {
   render() {
     return (
       <Host>
-        <slot>hello?</slot>
+        <slot></slot>
       </Host>
     );
   }
