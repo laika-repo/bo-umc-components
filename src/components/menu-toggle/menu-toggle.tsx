@@ -3,7 +3,7 @@ import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'umc-menu-toggle',
   styleUrl: 'menu-toggle.scss',
-  shadow: true,
+  shadow: false,
   assetsDirs: ['assets']
 })
 export class MenuToggle {

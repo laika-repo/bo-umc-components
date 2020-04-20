@@ -26,6 +26,7 @@ export namespace Components {
   interface UmcGridRow {}
   interface UmcHeader {}
   interface UmcHeaderSection {}
+  interface UmcIcon {}
   interface UmcLinkList {
     'orientation': string;
     'title': string;
@@ -129,6 +130,12 @@ declare global {
   var HTMLUmcHeaderSectionElement: {
     prototype: HTMLUmcHeaderSectionElement;
     new (): HTMLUmcHeaderSectionElement;
+  };
+
+  interface HTMLUmcIconElement extends Components.UmcIcon, HTMLStencilElement {}
+  var HTMLUmcIconElement: {
+    prototype: HTMLUmcIconElement;
+    new (): HTMLUmcIconElement;
   };
 
   interface HTMLUmcLinkListElement extends Components.UmcLinkList, HTMLStencilElement {}
@@ -237,6 +244,7 @@ declare global {
     'umc-grid-row': HTMLUmcGridRowElement;
     'umc-header': HTMLUmcHeaderElement;
     'umc-header-section': HTMLUmcHeaderSectionElement;
+    'umc-icon': HTMLUmcIconElement;
     'umc-link-list': HTMLUmcLinkListElement;
     'umc-link-list-item': HTMLUmcLinkListItemElement;
     'umc-list': HTMLUmcListElement;
@@ -273,6 +281,7 @@ declare namespace LocalJSX {
   interface UmcGridRow {}
   interface UmcHeader {}
   interface UmcHeaderSection {}
+  interface UmcIcon {}
   interface UmcLinkList {
     'orientation'?: string;
     'title'?: string;
@@ -330,6 +339,7 @@ declare namespace LocalJSX {
     'umc-grid-row': UmcGridRow;
     'umc-header': UmcHeader;
     'umc-header-section': UmcHeaderSection;
+    'umc-icon': UmcIcon;
     'umc-link-list': UmcLinkList;
     'umc-link-list-item': UmcLinkListItem;
     'umc-list': UmcList;
@@ -365,6 +375,7 @@ declare module "@stencil/core" {
       'umc-grid-row': LocalJSX.UmcGridRow & JSXBase.HTMLAttributes<HTMLUmcGridRowElement>;
       'umc-header': LocalJSX.UmcHeader & JSXBase.HTMLAttributes<HTMLUmcHeaderElement>;
       'umc-header-section': LocalJSX.UmcHeaderSection & JSXBase.HTMLAttributes<HTMLUmcHeaderSectionElement>;
+      'umc-icon': LocalJSX.UmcIcon & JSXBase.HTMLAttributes<HTMLUmcIconElement>;
       'umc-link-list': LocalJSX.UmcLinkList & JSXBase.HTMLAttributes<HTMLUmcLinkListElement>;
       'umc-link-list-item': LocalJSX.UmcLinkListItem & JSXBase.HTMLAttributes<HTMLUmcLinkListItemElement>;
       'umc-list': LocalJSX.UmcList & JSXBase.HTMLAttributes<HTMLUmcListElement>;

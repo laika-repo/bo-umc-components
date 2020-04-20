@@ -18,8 +18,17 @@ umc-list-item {
   }
 }
 
+.umc-list_horizontal umc-list-item, 
 .umc-list_horizontal--always umc-list-item {
-  display: inline;
+  @include min-screen-width('tablet-portrait') {
+    display: inline;
+    margin-right: 24px;
+  }
+}
+
+.umc-list_horizontal umc-list-item:last-child, 
+.umc-list_horizontal--always umc-list-item:last-child {
+  margin-right: 0;
 }
 
 // Todo: abstract away to share style

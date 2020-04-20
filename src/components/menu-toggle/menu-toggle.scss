@@ -1,36 +1,36 @@
-:host {
-  display: inline-block;
-}
+umc-menu-toggle {
+  display: inline;
 
-h3 {
-  font-family: 'Museo Sans Rounded', sans-serif;
-  font-weight: 500;
-  font-size: rem-calc(20px);
-  color: $blue-lagoon;
-
-  display: flex;
-  margin: 0;
-}
-
-.icon--before {
-  flex-direction: row-reverse;
-}
-
-.label {
-  display: none;
-
-  @include wider-than('medium') {
-    display: inline;
-    margin: 0 8px;
+  h3 {
+    font-family: 'Museo Sans Rounded', sans-serif;
+    font-weight: 500;
+    font-size: rem-calc(20px);
+    color: $blue-lagoon;
+  
+    display: inline-flex;
+    margin: 0;
   }
+  
+  .icon--before {
+    flex-direction: row-reverse;
+  }
+  
+  .label {
+    display: none;
+  
+    @include wider-than('medium') {
+      display: inline;
+      margin: 0 8px;
+    }
+  }
+  
+  .icon {
+    height: 24px;
+  }
+  
+  .icon--before .icon {
+    margin-left: 0;
+  }
+  
 }
 
-.icon {
-  // margin-left: 8px;
-  height: 24px;
-}
-
-.icon--before .icon {
-  margin-left: 0;
-  // margin-right: 8px;
-}
