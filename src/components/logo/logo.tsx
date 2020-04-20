@@ -3,7 +3,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
 @Component({
   tag: 'umc-logo',
   styleUrl: 'logo.scss',
-  shadow: true
+  shadow: false
 })
 export class Logo {
   @Prop() src = "logo-aumc.svg";

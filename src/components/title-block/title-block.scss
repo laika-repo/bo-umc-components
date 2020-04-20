@@ -1,4 +1,4 @@
-:Host {
+umc-title-block {
   font-family: 'Museo Sans Rounded', sans-serif;
   font-weight: 300;
     font-size: rem-calc(48px);
@@ -6,10 +6,10 @@
     line-height: rem-calc(56px);
     color: $black;
 }
-:Host(.large) {
+umc-title-block.large {
   font-size: rem-calc(48px);
 }
 
-:Host(.regular) {
+umc-title-block.regular {
   font-size: rem-calc(32px);
 }

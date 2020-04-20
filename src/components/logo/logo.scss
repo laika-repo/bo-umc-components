@@ -1,11 +1,12 @@
-:host {
+umc-logo {
   display: block;
-}
 
-img {
-  width: 200px;
-
-  @include wider-than('medium') {
-    width: 260px;
+  img {
+    width: 200px;
+  
+    @include wider-than('medium') {
+      width: 260px;
+    }
   }
 }
+
