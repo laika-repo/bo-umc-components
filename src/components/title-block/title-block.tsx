@@ -1,4 +1,4 @@
-import { Component, Host, Prop, h } from '@stencil/core';
+import { Component, Host, h } from '@stencil/core';
 
 @Component({
   tag: 'umc-title-block',
@@ -6,12 +6,11 @@ import { Component, Host, Prop, h } from '@stencil/core';
   shadow: false
 })
 export class TitleBlock {
-  @Prop() title: string;
-  @Prop() size: string = 'regular';
-
   render() {
     return (
-    <Host class={this.size}>{this.title}</Host>
+    <Host>
+        <slot></slot>
+      </Host>
     );
   }
 

@@ -10,6 +10,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface UmcCodeExample {}
   interface UmcColorSwatch {
     'name': string;
   }
@@ -63,14 +64,17 @@ export namespace Components {
   interface UmcTag {
     'label': string;
   }
-  interface UmcTitleBlock {
-    'size': string;
-    'title': string;
-  }
+  interface UmcTitleBlock {}
 }
 
 declare global {
 
+
+  interface HTMLUmcCodeExampleElement extends Components.UmcCodeExample, HTMLStencilElement {}
+  var HTMLUmcCodeExampleElement: {
+    prototype: HTMLUmcCodeExampleElement;
+    new (): HTMLUmcCodeExampleElement;
+  };
 
   interface HTMLUmcColorSwatchElement extends Components.UmcColorSwatch, HTMLStencilElement {}
   var HTMLUmcColorSwatchElement: {
@@ -234,6 +238,7 @@ declare global {
     new (): HTMLUmcTitleBlockElement;
   };
   interface HTMLElementTagNameMap {
+    'umc-code-example': HTMLUmcCodeExampleElement;
     'umc-color-swatch': HTMLUmcColorSwatchElement;
     'umc-column': HTMLUmcColumnElement;
     'umc-column-section': HTMLUmcColumnSectionElement;
@@ -265,6 +270,7 @@ declare global {
 }
 
 declare namespace LocalJSX {
+  interface UmcCodeExample {}
   interface UmcColorSwatch {
     'name'?: string;
   }
@@ -323,12 +329,10 @@ declare namespace LocalJSX {
   interface UmcTag {
     'label'?: string;
   }
-  interface UmcTitleBlock {
-    'size'?: string;
-    'title'?: string;
-  }
+  interface UmcTitleBlock {}
 
   interface IntrinsicElements {
+    'umc-code-example': UmcCodeExample;
     'umc-color-swatch': UmcColorSwatch;
     'umc-column': UmcColumn;
     'umc-column-section': UmcColumnSection;
@@ -365,6 +369,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'umc-code-example': LocalJSX.UmcCodeExample & JSXBase.HTMLAttributes<HTMLUmcCodeExampleElement>;
       'umc-color-swatch': LocalJSX.UmcColorSwatch & JSXBase.HTMLAttributes<HTMLUmcColorSwatchElement>;
       'umc-column': LocalJSX.UmcColumn & JSXBase.HTMLAttributes<HTMLUmcColumnElement>;
       'umc-column-section': LocalJSX.UmcColumnSection & JSXBase.HTMLAttributes<HTMLUmcColumnSectionElement>;

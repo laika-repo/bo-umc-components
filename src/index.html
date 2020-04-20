@@ -134,13 +134,25 @@
   </style>
 </head>
 <body>
-    <!-- <umc-dev-statusbar></umc-dev-statusbar> -->
+  <umc-section>
+    <umc-column-section>
+      <umc-column class='width--full'>
+        <umc-list-header>organisms</umc-list-header>
+        <umc-list>
+          <umc-list-item><a href="#footer">Footer</a></umc-list-item>                 
+        </umc-list>
+      </umc-column>
 
-  <umc-section class='locations-header'>
-    <umc-column-section class="location-switch justify-columns">
-        <umc-column class='direction--horizontal align--center width--full'>
-          <umc-list class='umc-list_horizontal--always'>
-            <umc-list-item><a href="./footer.html">Footer</a></umc-list-item>
+      <umc-column class='width--small'>
+        <umc-list-header>Molecules</umc-list-header>
+        <umc-list>
+          <umc-list-item><a href="#lists">Lijsten</a></umc-list-item>               
+        </umc-list>
+      </umc-column>
+      <umc-column class='width--small'>
+          <umc-list-header>Atoms</umc-list-header>
+          <umc-list>
+            <umc-list-item><a href="#lists">Lijsten</a></umc-list-item>
             <umc-list-item><a href="#" umc-list-item--active>Research</a></umc-list-item>   
             <umc-list-item><a href="#">Health campus</a></umc-list-item>                 
           </umc-list>
@@ -148,90 +160,62 @@
     </umc-column-section>
   </umc-section>
 
-    <umc-menu-section class='main-navigation umc-section--sticky'>
-      <umc-column-section slot='navigation' class='justify-columns'>
-        <umc-column class='width--small align--left direction--horizontal vertical-align--middle'>
-            <umc-menu-toggle label="Menu" reverse='true' icon='assets/icon-hamburger.svg'></umc-menu-toggle>
-        </umc-column>
-
-        <umc-column class='width--medium align--center vertical-align--middle'>
-          <umc-logo src='assets/logo-aumc.svg'></umc-logo>
-        </umc-column>
-
-        <umc-column class='width--small align--right direction--horizontal vertical-align--middle'>
-            <umc-menu-toggle label="Search" icon='assets/icon-search.svg'></umc-menu-toggle>
-        </umc-column>
-      </umc-column-section>
-
-      <umc-section class='navigation-menu' slot='menu'>
-          <umc-column-section>
-            <umc-column class='width--large'>
-              <umc-list class='font-style--big'>
-                <umc-list-item><a href="#">Amsterdam UMC Research</a></umc-list-item>
-                <umc-list-item><a href="#">Researchers</a></umc-list-item>
-                <umc-list-item><a href="#">Research highlights</a></umc-list-item>
-                <umc-list-item><a href="#">Core facilities</a></umc-list-item>
-                <umc-list-item><a href="#">Impact</a></umc-list-item>
-              </umc-list>
-            </umc-column>
-            <umc-column class='width--small'></umc-column>
-            <umc-column class='width--medium'>
-              <umc-list-header>More…</umc-list-header>
-              <umc-list class='font-style--regular'>
-                <umc-list-item><a href="#">Research institutes</a></umc-list-item>
-                <umc-list-item><a href="#">Departments</a></umc-list-item>
-                <umc-list-item><a href="#">Events</a></umc-list-item>
-                <umc-list-item><a href="#">About</a></umc-list-item>
-              </umc-list>
-            </umc-column>
-        </umc-column-section>
-      </umc-section>
-    </umc-menu-section>
-
-   <umc-section class='content-section'>
-    <umc-content-section>
-      <umc-content-block class='width--xx-large'>
-        <umc-title-block>Artificial Intelligence for the healthcare of tomorrow</umc-title-block>
+  <umc-section>
+   <umc-content-section>
+      <umc-content-block class='width--full'>
+        <umc-title-block class='regular'>Lijsten</umc-title-block>
         <umc-rich-text-block>
-          <p>
-            <b>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </b>
-          </p>
-
-          <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, 
-            nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. 
-            Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. 
-            Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. 
-            Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque. 
-            Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat. 
-            Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat. Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi. 
-            Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci. In hac habitasse platea dictumst. 
-            </p>
+          <p>Allerlei soorten lijstjes, voor gebruik in navigatie elementen zoals de header, footer en sidebars.</p>
         </umc-rich-text-block>
-      </umc-content-block>
-
-      <umc-sidebar class='content-sidebar width--medium'>
-          <umc-list-header>Team</umc-list-header>
-          <umc-list>
-            <umc-list-item><a href="#">Researcher</a></umc-list-item>
-          </umc-list>
-  
-          <umc-list-header>Projects</umc-list-header>
-          <umc-list>
-            <umc-list-item><a href="#">Cancer center</a></umc-list-item>
-            <umc-list-item><a href="#">Diabetes and Ramadan</a></umc-list-item>
-          </umc-list>
-        </umc-sidebar>
     </umc-content-section>
   </umc-section>
 
-  <umc-section class='footer-links'>
+  
+
+  <umc-section class='content-section'>
+      <umc-content-section>
+        <umc-content-block class='width--full'>
+          <umc-title-block class='regular'><a name='lists'>HTML code</a></umc-title-block>
+          <umc-code-example>
+  &lt;umc-list-header&gt;Lorem ipsum&lt;/umc-list-header&gt;
+    &lt;umc-list&gt;
+    &lt;umc-list-item&gt;&lt;a href=&quot;#&quot;&gt;Dolores loremis&lt;/a&gt;&lt;/umc-list-item&gt;
+      &lt;umc-list-item&gt;&lt;a href=&quot;#&quot;&gt;Lortem ipsum&lt;/a&gt;&lt;/umc-list-item&gt;
+    &lt;/umc-list&gt;
+          </umc-code-example>
+      </umc-content-block>
+    </umc-content-section>
+  </umc-section>
+
+  <umc-section class='content-section'>
+    <umc-column-section>
+        <umc-column class='width--full'>
+          <umc-list-header>Lorem</umc-list-header>
+            <umc-list class='umc-list_horizontal'>
+              <umc-list-item><a href="#lists">sollicitudin mauris</a></umc-list-item>
+              <umc-list-item><a href="#" umc-list-item--active>ligula eu tempor</a></umc-list-item>   
+              <umc-list-item><a href="#">Curabitur augue lorem</a></umc-list-item>                   
+          </umc-list>
+        </umc-column>
+  
+        <umc-column class='width--small'>
+          <umc-list-header>Molecules</umc-list-header>
+          <umc-list>
+            <umc-list-item><a href="#lists">Lijsten</a></umc-list-item>               
+          </umc-list>
+        </umc-column>
+        <umc-column class='width--small'>
+            <umc-list-header>Lorem</umc-list-header>
+            <umc-list>
+              <umc-list-item><a href="#lists">sollicitudin mauris</a></umc-list-item>
+              <umc-list-item><a href="#" umc-list-item--active>ligula eu tempor</a></umc-list-item>   
+              <umc-list-item><a href="#">Curabitur augue lorem</a></umc-list-item>                 
+            </umc-list>
+          </umc-column>
+      </umc-column-section>
+  </umc-section>
+
+  <!-- <umc-section class='footer-links'>
     <umc-column-section>
       <umc-column width='medium'>
         <umc-logo src='assets/logo-aumc--diap.svg'></umc-logo>
@@ -309,7 +293,7 @@
         </umc-list>
       </umc-column>
     </umc-column-section>
-  </umc-section>
+  </umc-section> -->
 </body>
 </html>
 
