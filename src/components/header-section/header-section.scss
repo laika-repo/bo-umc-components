@@ -1,6 +1,4 @@
-:host {
-
-
+umc-header-section {
   background-color: $white;
   --padding-vertical--default: 24px;
   --padding-horizontal--default: 24px;
@@ -8,6 +6,7 @@
   
   padding: var(--padding-vertical, var(--padding-vertical--default)) var(--padding-horizontal, var(--padding-horizontal--default));
   border-bottom: 1px solid var(--border-color, var(--border-color--default));
+
+  @include act-as-column-section--unscoped;
 }
 
-@include act-as-column-section;

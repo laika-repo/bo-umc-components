@@ -3,7 +3,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
 @Component({
   tag: 'umc-column',
   styleUrl: 'column.scss',
-  shadow: true
+  shadow: false
 })
 export class Column {
   @Prop() colspan: string = '1';

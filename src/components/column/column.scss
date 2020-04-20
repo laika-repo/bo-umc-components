@@ -1,16 +1,18 @@
-:host {
+umc-column {
   --background-color--default: $white;
   --border-color--default: $white;
   --text-color--default: $black;
   --font-size--default: $black;
 
-  color: green;
+  color: red;
 
   background-color: var(--background-color, var(--background-color--default));
   // border: 1px solid var(--border-color, var(--border-color--default));
   color: var(--text-color, var(--text-color--default));
 
   border: 1px dotted rgba(0, 0, 0, 0.3);
+
+  @include act-as-column--unscoped;
 }
 
-@include act-as-column;
+

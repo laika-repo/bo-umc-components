@@ -3,7 +3,7 @@ import { Component, Host, h } from '@stencil/core';
 @Component({
   tag: 'umc-column-section',
   styleUrl: 'column-section.scss',
-  shadow: true
+  shadow: false
 })
 export class ColumnSection {
 

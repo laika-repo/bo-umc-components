@@ -1,10 +1,6 @@
-:host {
+umc-content-section {
   --margin-bottom--default: 56px;
   --margin-bottom--default: 56px;
-  // --overflow--default: hidden;
-  // --height--default: auto;
-  // height: var(--height, var(--height--default));
-  // overflow: var(--overflow, var(--overflow--default));
-}
 
-@include act-as-column-section;
+  @include act-as-column-section--unscoped;
+}

@@ -3,7 +3,7 @@ import { Component, Host, h } from '@stencil/core';
 @Component({
   tag: 'umc-content-section',
   styleUrl: 'content-section.scss',
-  shadow: true
+  shadow: false
 })
 export class ContentSection {
 

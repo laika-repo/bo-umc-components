@@ -80,19 +80,6 @@ $screens: (
   @return $map;
 }
 
-@function column-width-for-min-screen($screen, $colspan) {
-  $cols: map-deep-get($screens, $screen, 'cols');
-  $total-width: map-deep-get($screens, $screen, 'content-width');
-
-  @if $colspan >= $cols { 
-    @return $total-width;
-  } 
-
-  $col-width: map-deep-get($screens, $screen, 'col-width');
-  $gutter-width: map-deep-get($screens, $screen, 'gutter-width');
-
-  @return  ($col-width * $colspan) + ($gutter-width * ($colspan - 1));
-}
 
 @mixin min-screen-width($screen) {
   // If the key exists in the map
@@ -110,10 +97,23 @@ $screens: (
   }
 }
 
-@function column-width($colspan, $gutter-width, $col-width) {
+@function column-width-for-min-screen($screen, $colspan) {
+  $cols: map-deep-get($screens, $screen, 'cols');
+  $total-width: map-deep-get($screens, $screen, 'content-width');
+
+  @if $colspan >= $cols { 
+    @return $total-width;
+  } 
+
+  $col-width: map-deep-get($screens, $screen, 'col-width');
+  $gutter-width: map-deep-get($screens, $screen, 'gutter-width');
+
   @return  ($col-width * $colspan) + ($gutter-width * ($colspan - 1));
 }
 
+@function column-width($colspan, $gutter-width, $col-width) {
+  @return  ($col-width * $colspan) + ($gutter-width * ($colspan - 1));
+}
 
 @function column-width-for-breakpoint($breakpoint, $colspan) {
   $cols: map-deep-get($grid, $breakpoint, 'cols');
@@ -133,8 +133,7 @@ $screens: (
   @return  ($col-width * $colspan) + ($gutter-width * ($colspan - 1));
 }
 
-@mixin act-as-column-section {
-  :host {
+@mixin act-as-column-section--unscoped {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -145,72 +144,69 @@ $screens: (
     width: map-deep-get($grid, "small", "content-width");
 
     @include wider-than('small') {
-      width: 100%;
-      // max-width: map-deep-get($grid, "medium", "content-width");
+        width: 100%;
+        // max-width: map-deep-get($grid, "medium", "content-width");
     }
 
     @include min-screen-width('tablet-portrait') {
-      flex-direction: row;
-      width: map-deep-get($screens, 'tablet-portrait', 'content-width');
+        flex-direction: row;
+        width: map-deep-get($screens, 'tablet-portrait', 'content-width');
     }
 
     @include min-screen-width('tablet-landscape') {
-      width: map-deep-get($screens, 'tablet-landscape', 'content-width');
+        width: map-deep-get($screens, 'tablet-landscape', 'content-width');
     }
 
     @include min-screen-width('desktop') {
-      width: map-deep-get($screens, 'desktop', 'content-width');
+        width: map-deep-get($screens, 'desktop', 'content-width');
     }
-  }
 
-  :host(.justify-columns) {
-    justify-content: space-between;
-  }
+    &.justify-columns {
+        justify-content: space-between;
+    }
 }
 
-@mixin act-as-column {
-  :host {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-  
-    width: 100%;
-  
-    @include min-screen-width('tablet-portrait') {
-      width: column-width-for-min-screen('tablet-portrait', 1);
-      margin-right: map-deep-get($screens, 'tablet-portrait', 'gutter-width');
-    }
-  
-    @include min-screen-width('tablet-landscape') {
-      width: column-width-for-min-screen('tablet-landscape', 1);
-      margin-right: map-deep-get($screens, 'tablet-landscape', 'gutter-width');
-    }
-  
-    @include min-screen-width('desktop') {
-      width: column-width-for-min-screen('desktop', 1);
-      margin-right: map-deep-get($screens, 'desktop', 'gutter-width');
-    }
+@mixin act-as-column--unscoped {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  @include min-screen-width('tablet-portrait') {
+    width: column-width-for-min-screen('tablet-portrait', 1);
+    margin-right: map-deep-get($screens, 'tablet-portrait', 'gutter-width');
   }
 
-  :host(.direction--horizontal) {
+  @include min-screen-width('tablet-landscape') {
+    width: column-width-for-min-screen('tablet-landscape', 1);
+    margin-right: map-deep-get($screens, 'tablet-landscape', 'gutter-width');
+  }
+
+  @include min-screen-width('desktop') {
+    width: column-width-for-min-screen('desktop', 1);
+    margin-right: map-deep-get($screens, 'desktop', 'gutter-width');
+  }
+
+  &.direction--horizontal {
     flex-direction: row;
   }
 
-  :host(:last-child) {
+  &:last-child {
     margin-right: 0;
   }
   
-  :host(.empty) {
+  &.empty {
     @include wider-than('small') {
       visibility: hidden;
     }
   }
   
-  :host(.width--full) {
+  &.width--full {
     width: 100%;
   }
 
-  :host(.width--small) {
+  &.width--small {
     @include min-screen-width('tablet-portrait') {
       width: column-width-for-min-screen('tablet-portrait', 2);
     }
@@ -224,7 +220,7 @@ $screens: (
     }
   }
 
-  :host(.width--medium) {
+  &.width--medium {
     @include min-screen-width('tablet-portrait') {
       width: column-width-for-min-screen('tablet-portrait', 3);
     }
@@ -238,7 +234,7 @@ $screens: (
     }
   }
 
-  :host(.width--large) {
+  &.width--large {
     @include min-screen-width('tablet-portrait') {
       width: column-width-for-min-screen('tablet-portrait', 4);
     }
@@ -252,7 +248,7 @@ $screens: (
     }
   }
 
-  :host(.width--x-large) {
+  &.width--x-large {
     @include min-screen-width('tablet-portrait') {
       width: column-width-for-min-screen('tablet-portrait', 4);
     }
@@ -266,7 +262,7 @@ $screens: (
     }
   }
 
-  :host(.width--xx-large) {
+  &.width--xx-large {
     @include min-screen-width('tablet-portrait') {
       width: column-width-for-min-screen('tablet-portrait', 5);
     }
@@ -280,7 +276,7 @@ $screens: (
      }
    }
   
-  :host(.width--xxx-large) {
+  &.width--xxx-large {
     @include min-screen-width('tablet-portrait') {
       width: column-width-for-min-screen('tablet-portrait', 6);
     }
@@ -294,19 +290,15 @@ $screens: (
      }
    }
   
-  :host(.gutterless) {
+  &.gutterless {
     margin-right: 0;
   }
   
-  :host(.align--center) {
+  &.align--center {
     justify-content: center;
   }
 
-  // :host(.vertical-align--middle) {
-    
-  // }
-
-  :host(.align--right) {
+  &.align--right {
     justify-content: flex-end;
   }
 }
