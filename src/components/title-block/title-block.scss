@@ -1,6 +1,6 @@
 umc-title-block {
   font-family: 'Museo Sans Rounded', sans-serif;
-  font-weight: 300;
+  font-weight: 500;
     font-size: rem-calc(48px);
     margin: 0;
     line-height: rem-calc(56px);
@@ -8,8 +8,15 @@ umc-title-block {
 }
 umc-title-block.large {
   font-size: rem-calc(48px);
+  line-height: rem-calc(56px);
 }
 
 umc-title-block.regular {
   font-size: rem-calc(32px);
+  line-height: rem-calc(32px);
+}
+
+umc-title-block.small {
+  font-size: rem-calc(24px);
+  line-height: rem-calc(24px);
 }

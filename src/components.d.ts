@@ -23,6 +23,7 @@ export namespace Components {
   interface UmcContentBlock {}
   interface UmcContentSection {}
   interface UmcDevStatusbar {}
+  interface UmcDivider {}
   interface UmcGridBlock {}
   interface UmcGridRow {}
   interface UmcHeader {}
@@ -41,6 +42,7 @@ export namespace Components {
   interface UmcList {}
   interface UmcListHeader {}
   interface UmcListItem {}
+  interface UmcListItemHeader {}
   interface UmcLogo {
     'src': string;
   }
@@ -112,6 +114,12 @@ declare global {
     new (): HTMLUmcDevStatusbarElement;
   };
 
+  interface HTMLUmcDividerElement extends Components.UmcDivider, HTMLStencilElement {}
+  var HTMLUmcDividerElement: {
+    prototype: HTMLUmcDividerElement;
+    new (): HTMLUmcDividerElement;
+  };
+
   interface HTMLUmcGridBlockElement extends Components.UmcGridBlock, HTMLStencilElement {}
   var HTMLUmcGridBlockElement: {
     prototype: HTMLUmcGridBlockElement;
@@ -170,6 +178,12 @@ declare global {
   var HTMLUmcListItemElement: {
     prototype: HTMLUmcListItemElement;
     new (): HTMLUmcListItemElement;
+  };
+
+  interface HTMLUmcListItemHeaderElement extends Components.UmcListItemHeader, HTMLStencilElement {}
+  var HTMLUmcListItemHeaderElement: {
+    prototype: HTMLUmcListItemHeaderElement;
+    new (): HTMLUmcListItemHeaderElement;
   };
 
   interface HTMLUmcLogoElement extends Components.UmcLogo, HTMLStencilElement {}
@@ -245,6 +259,7 @@ declare global {
     'umc-content-block': HTMLUmcContentBlockElement;
     'umc-content-section': HTMLUmcContentSectionElement;
     'umc-dev-statusbar': HTMLUmcDevStatusbarElement;
+    'umc-divider': HTMLUmcDividerElement;
     'umc-grid-block': HTMLUmcGridBlockElement;
     'umc-grid-row': HTMLUmcGridRowElement;
     'umc-header': HTMLUmcHeaderElement;
@@ -255,6 +270,7 @@ declare global {
     'umc-list': HTMLUmcListElement;
     'umc-list-header': HTMLUmcListHeaderElement;
     'umc-list-item': HTMLUmcListItemElement;
+    'umc-list-item-header': HTMLUmcListItemHeaderElement;
     'umc-logo': HTMLUmcLogoElement;
     'umc-menu-section': HTMLUmcMenuSectionElement;
     'umc-menu-toggle': HTMLUmcMenuToggleElement;
@@ -283,6 +299,7 @@ declare namespace LocalJSX {
   interface UmcContentBlock {}
   interface UmcContentSection {}
   interface UmcDevStatusbar {}
+  interface UmcDivider {}
   interface UmcGridBlock {}
   interface UmcGridRow {}
   interface UmcHeader {}
@@ -301,6 +318,7 @@ declare namespace LocalJSX {
   interface UmcList {}
   interface UmcListHeader {}
   interface UmcListItem {}
+  interface UmcListItemHeader {}
   interface UmcLogo {
     'src'?: string;
   }
@@ -339,6 +357,7 @@ declare namespace LocalJSX {
     'umc-content-block': UmcContentBlock;
     'umc-content-section': UmcContentSection;
     'umc-dev-statusbar': UmcDevStatusbar;
+    'umc-divider': UmcDivider;
     'umc-grid-block': UmcGridBlock;
     'umc-grid-row': UmcGridRow;
     'umc-header': UmcHeader;
@@ -349,6 +368,7 @@ declare namespace LocalJSX {
     'umc-list': UmcList;
     'umc-list-header': UmcListHeader;
     'umc-list-item': UmcListItem;
+    'umc-list-item-header': UmcListItemHeader;
     'umc-logo': UmcLogo;
     'umc-menu-section': UmcMenuSection;
     'umc-menu-toggle': UmcMenuToggle;
@@ -376,6 +396,7 @@ declare module "@stencil/core" {
       'umc-content-block': LocalJSX.UmcContentBlock & JSXBase.HTMLAttributes<HTMLUmcContentBlockElement>;
       'umc-content-section': LocalJSX.UmcContentSection & JSXBase.HTMLAttributes<HTMLUmcContentSectionElement>;
       'umc-dev-statusbar': LocalJSX.UmcDevStatusbar & JSXBase.HTMLAttributes<HTMLUmcDevStatusbarElement>;
+      'umc-divider': LocalJSX.UmcDivider & JSXBase.HTMLAttributes<HTMLUmcDividerElement>;
       'umc-grid-block': LocalJSX.UmcGridBlock & JSXBase.HTMLAttributes<HTMLUmcGridBlockElement>;
       'umc-grid-row': LocalJSX.UmcGridRow & JSXBase.HTMLAttributes<HTMLUmcGridRowElement>;
       'umc-header': LocalJSX.UmcHeader & JSXBase.HTMLAttributes<HTMLUmcHeaderElement>;
@@ -386,6 +407,7 @@ declare module "@stencil/core" {
       'umc-list': LocalJSX.UmcList & JSXBase.HTMLAttributes<HTMLUmcListElement>;
       'umc-list-header': LocalJSX.UmcListHeader & JSXBase.HTMLAttributes<HTMLUmcListHeaderElement>;
       'umc-list-item': LocalJSX.UmcListItem & JSXBase.HTMLAttributes<HTMLUmcListItemElement>;
+      'umc-list-item-header': LocalJSX.UmcListItemHeader & JSXBase.HTMLAttributes<HTMLUmcListItemHeaderElement>;
       'umc-logo': LocalJSX.UmcLogo & JSXBase.HTMLAttributes<HTMLUmcLogoElement>;
       'umc-menu-section': LocalJSX.UmcMenuSection & JSXBase.HTMLAttributes<HTMLUmcMenuSectionElement>;
       'umc-menu-toggle': LocalJSX.UmcMenuToggle & JSXBase.HTMLAttributes<HTMLUmcMenuToggleElement>;
