@@ -165,23 +165,24 @@
       <umc-section class='navigation-menu' slot='menu'>
           <umc-column-section>
             <umc-column width='large'>
-                <umc-list class='font-style--big'>
-                  <umc-list-item><a href="#">Amsterdam UMC Research</a></umc-list-item>
-                  <umc-list-item><a href="#">Researchers</a></umc-list-item>
-                  <umc-list-item><a href="#">Research highlights</a></umc-list-item>
-                  <umc-list-item><a href="#">Core facilities</a></umc-list-item>
-                  <umc-list-item><a href="#">Impact</a></umc-list-item>
-                </umc-list>
-              </umc-column>
-              <umc-column width-='small'></umc-column>
-              <umc-column  width='medium'>
-                  <umc-list-header>More…</umc-list-header>
-                  <umc-list class='font-style--regular'>
-                    <umc-list-item><a href="#">Research institutes</a></umc-list-item>
-                    <umc-list-item><a href="#">Departments</a></umc-list-item>
-                    <umc-list-item><a href="#">Events</a></umc-list-item>
-                    <umc-list-item><a href="#">About</a></umc-list-item>
-                  </umc-list>
+              <umc-list class='font-style--big'>
+                <umc-list-item><a href="#">Amsterdam UMC Research</a></umc-list-item>
+                <umc-list-item><a href="#">Researchers</a></umc-list-item>
+                <umc-list-item><a href="#">Research highlights</a></umc-list-item>
+                <umc-list-item><a href="#">Core facilities</a></umc-list-item>
+                <umc-list-item><a href="#">Impact</a></umc-list-item>
+              </umc-list>
+            </umc-column>
+            <umc-column width-='small'></umc-column>
+            <umc-column  width='medium'>
+              <umc-list-header>More…</umc-list-header>
+              <umc-list class='font-style--regular'>
+                <umc-list-item><a href="#">Research institutes</a></umc-list-item>
+                <umc-list-item><a href="#">Departments</a></umc-list-item>
+                <umc-list-item><a href="#">Events</a></umc-list-item>
+                <umc-list-item><a href="#">About</a></umc-list-item>
+              </umc-list>
+            </umc-column>
         </umc-column-section>
       </umc-section>
     </umc-menu-section>
@@ -205,6 +206,7 @@ Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, tur
       </umc-content-block>
 
       <umc-sidebar class='content-sidebar width--medium' slot='sidebar'>
+        <!-- TODO: Deprecated, should use regular list component-->
         <umc-link-list slot='content' title='Team'>
           <umc-link-list-item label='Researcher'></umc-link-list-item>
         </umc-link-list>
@@ -217,56 +219,57 @@ Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, tur
         <umc-link-list slot='content' title='Projects'>
             <umc-link-list-item label='Diabetes and Ramadan'></umc-link-list-item>
         </umc-link-list>
+        <!-- // TODO: Deprecated, should use regular list component-->
       </umc-sidebar>
     </umc-content-section>
   </umc-section>
 
   <umc-section class='footer-links'>
     <umc-column-section>
-        <umc-column width='medium'>
-          <umc-logo src='assets/logo-aumc--diap.svg'></umc-logo>
-        </umc-column>
+      <umc-column width='medium'>
+        <umc-logo src='assets/logo-aumc--diap.svg'></umc-logo>
+      </umc-column>
 
-        <umc-column width='small'>
-            <umc-list>
-                <umc-list-item><a href="#">Projects</a></umc-list-item>
-                <umc-list-item><a href="#">Core Facilities</a></umc-list-item>
-                <umc-list-item><a href="#">Researchers</a></umc-list-item>
-                <umc-list-item><a href="#">Impact</a></umc-list-item>
-              </umc-list>
-        </umc-column>
+      <umc-column width='small'>
+        <umc-list>
+          <umc-list-item><a href="#">Projects</a></umc-list-item>
+          <umc-list-item><a href="#">Core Facilities</a></umc-list-item>
+          <umc-list-item><a href="#">Researchers</a></umc-list-item>
+          <umc-list-item><a href="#">Impact</a></umc-list-item>
+        </umc-list>
+      </umc-column>
 
-        <umc-column width='medium'>
-            <umc-list>
-                <umc-list-item><a href="#">Events</a></umc-list-item>
-                <umc-list-item><a href="#">Research institutes</a></umc-list-item>
-                <umc-list-item><a href="#">Departments</a></umc-list-item>
-                <umc-list-item><a href="#">About</a></umc-list-item>
-            </umc-list>
-        </umc-column>
+      <umc-column width='medium'>
+        <umc-list>
+            <umc-list-item><a href="#">Events</a></umc-list-item>
+            <umc-list-item><a href="#">Research institutes</a></umc-list-item>
+            <umc-list-item><a href="#">Departments</a></umc-list-item>
+            <umc-list-item><a href="#">About</a></umc-list-item>
+        </umc-list>
+      </umc-column>
     </umc-column-section>
   </umc-section>
 
   <umc-section class='footer-colofon'>
     <umc-column-section>
-        <umc-column  width='xx-large'>
-            <umc-list class='umc-list_horizontal--always'>
-              <umc-list-item><a href="#">Privacy policy</a></umc-list-item>
-              <umc-list-item><a href="#">Sitemap</a></umc-list-item>
-              <umc-list-item><a href="#">Accountability</a></umc-list-item>
-              <umc-list-item><a href="#">Cookie settings</a></umc-list-item>
-            </umc-list>
-      </umc-column>
+      <umc-column  width='xx-large'>
+        <umc-list class='umc-list_horizontal--always'>
+          <umc-list-item><a href="#">Privacy policy</a></umc-list-item>
+          <umc-list-item><a href="#">Sitemap</a></umc-list-item>
+          <umc-list-item><a href="#">Accountability</a></umc-list-item>
+          <umc-list-item><a href="#">Cookie settings</a></umc-list-item>
+        </umc-list>
+    </umc-column>
 
       <umc-column  width='medium' class='direction--horizontal align--right'>
         <umc-list class='umc-list_horizontal--always'>
           <umc-list-item>
             <a href="#">
-                <umc-icon class='diapositive'>
-                    <svg xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18 0v18h-4.959v-7.39h2.654l.398-2.88H13.04V5.892c0-.834.249-1.402 1.528-1.402H16.2V1.912a23.243 23.243 0 00-2.378-.113c-2.351 0-3.962 1.342-3.962 3.807V7.73H7.2v2.88h2.66V18H0V0h18z"/>
-                    </svg>
-                </umc-icon>
+              <umc-icon class='diapositive'>
+                <svg xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 0v18h-4.959v-7.39h2.654l.398-2.88H13.04V5.892c0-.834.249-1.402 1.528-1.402H16.2V1.912a23.243 23.243 0 00-2.378-.113c-2.351 0-3.962 1.342-3.962 3.807V7.73H7.2v2.88h2.66V18H0V0h18z"/>
+                </svg>
+              </umc-icon>
             </a>
           </umc-list-item>
           <umc-list-item>
@@ -280,20 +283,20 @@ Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, tur
           </umc-list-item>
           <umc-list-item>
             <a href="#">
-                <umc-icon class='diapositive'>
-                    <svg xmlns="http://www.w3.org/2000/svg">
-                      <path d="M19.748 3.986c.008.173.014.347.014.522C19.762 9.845 15.222 16 6.919 16c-2.55 0-4.921-.668-6.919-1.814.353.037.712.056 1.077.056 2.114 0 4.06-.645 5.606-1.73-1.976-.031-3.643-1.199-4.218-2.803a5.073 5.073 0 002.04-.07C2.439 9.267.885 7.634.885 5.678v-.052a4.9 4.9 0 002.044.506C1.717 5.408.919 4.17.919 2.77A3.7 3.7 0 011.533.74c2.226 2.443 5.552 4.052 9.303 4.22a3.646 3.646 0 01-.117-.92c0-2.231 2.021-4.04 4.513-4.04 1.3 0 2.472.491 3.294 1.276a9.699 9.699 0 002.867-.98c-.337.943-1.053 1.734-1.984 2.235A9.9 9.9 0 0022 1.895a8.718 8.718 0 01-2.252 2.09"/>
-                    </svg>
-                </umc-icon>
+              <umc-icon class='diapositive'>
+                <svg xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19.748 3.986c.008.173.014.347.014.522C19.762 9.845 15.222 16 6.919 16c-2.55 0-4.921-.668-6.919-1.814.353.037.712.056 1.077.056 2.114 0 4.06-.645 5.606-1.73-1.976-.031-3.643-1.199-4.218-2.803a5.073 5.073 0 002.04-.07C2.439 9.267.885 7.634.885 5.678v-.052a4.9 4.9 0 002.044.506C1.717 5.408.919 4.17.919 2.77A3.7 3.7 0 011.533.74c2.226 2.443 5.552 4.052 9.303 4.22a3.646 3.646 0 01-.117-.92c0-2.231 2.021-4.04 4.513-4.04 1.3 0 2.472.491 3.294 1.276a9.699 9.699 0 002.867-.98c-.337.943-1.053 1.734-1.984 2.235A9.9 9.9 0 0022 1.895a8.718 8.718 0 01-2.252 2.09"/>
+                </svg>
+              </umc-icon>
             </a>
           </umc-list-item>
           <umc-list-item>
             <a href="#">
-                <umc-icon class='diapositive'>
-                    <svg xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 0a5 5 0 00-5 5v8a5 5 0 005 5h8a5 5 0 005-5V5a5 5 0 00-5-5H5zm10 2a1 1 0 110 2 1 1 0 010-2zM9 4a5 5 0 11-.001 10.001A5 5 0 019 4zm0 2a3 3 0 100 6 3 3 0 000-6z" />
-                    </svg>
-                </umc-icon>
+              <umc-icon class='diapositive'>
+                <svg xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 0a5 5 0 00-5 5v8a5 5 0 005 5h8a5 5 0 005-5V5a5 5 0 00-5-5H5zm10 2a1 1 0 110 2 1 1 0 010-2zM9 4a5 5 0 11-.001 10.001A5 5 0 019 4zm0 2a3 3 0 100 6 3 3 0 000-6z" />
+                </svg>
+              </umc-icon>
             </a>
           </umc-list-item>
         </umc-list>

@@ -3,7 +3,7 @@ import { Component, Host, h } from '@stencil/core';
 @Component({
   tag: 'umc-list',
   styleUrl: 'list.scss',
-  shadow: true
+  shadow: false
 })
 export class List {
   render() {
