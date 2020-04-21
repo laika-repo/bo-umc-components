@@ -7,6 +7,11 @@ umc-section {
   background-color: var(--background-color, var(--background-color--default));
   
   width: 100%;
+  padding: 0 33px;
+
+  @include min-screen-width('tablet-landscape') {
+    padding: 0;
+  }
 }
 
 umc-section.content-section {
