@@ -1,0 +1,27 @@
+umc-divider {
+  display: block;
+  border-top: 1px dotted #999;
+  height: 1px;
+  margin: 24px auto;
+
+  &.invisible {
+    border: 0;
+  }
+
+  @include wider-than('small') {
+    width: 100%;
+    // max-width: map-deep-get($grid, "medium", "content-width");
+  }
+
+  @include min-screen-width('tablet-portrait') {
+      width: map-deep-get($screens, 'tablet-portrait', 'content-width');
+  }
+
+  @include min-screen-width('tablet-landscape') {
+      width: map-deep-get($screens, 'tablet-landscape', 'content-width');
+  }
+
+  @include min-screen-width('desktop') {
+      width: map-deep-get($screens, 'desktop', 'content-width');
+  }
+}

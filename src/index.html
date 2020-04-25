@@ -155,9 +155,10 @@
       <umc-column class='width--medium'>
           <umc-list-header>Algemeen</umc-list-header>
           <umc-list class='umc-list_horizontal'>
-            <umc-list-item><a href="#">Kleuren</a></umc-list-item>
+            <umc-list-item><a href="#colors">Kleuren</a></umc-list-item>
             <umc-list-item><a href="#" umc-list-item--active>Typografie</a></umc-list-item>   
-            <umc-list-item><a href="#">Grid</a></umc-list-item>                 
+            <umc-list-item><a href="#">Grid</a></umc-list-item>
+            <umc-list-item><a href="#">Assets</a></umc-list-item>                 
           </umc-list>
         </umc-column>
     </umc-column-section>
@@ -166,12 +167,42 @@
   <umc-divider class='invisible'></umc-divider>
 
   <umc-section>
+      <umc-content-section>
+         <umc-content-block class='width--full'>
+           <umc-title-block class='regular'><a name='colors'>Kleuren</a></umc-title-block>
+         </umc-content-block>
+       </umc-content-section>
+     </umc-section>
+
+     <umc-section>
+        <umc-column-section>
+          <umc-column class='width--small'>
+            <umc-list-header>Branding</umc-list-header>
+            <umc-list>
+              <umc-list-item><umc-color-swatch name='black'></umc-color-swatch>Black</a></umc-list-item>     
+              <umc-list-item><umc-color-swatch name='botticelli-gray'></umc-color-swatch>Botticelli gray</a></umc-list-item>  
+              <umc-list-item><umc-color-swatch name='cypres-blue'></umc-color-swatch>Cypres blue</a></umc-list-item>          
+              <umc-list-item><umc-color-swatch name='grenadier-orange'></umc-color-swatch>Grenadier orange</a></umc-list-item> 
+              <umc-list-item><umc-color-swatch name='azure-blue'></umc-color-swatch>Azure blue</a></umc-list-item>
+            </umc-list>
+          </umc-column>
+        </umc-column-section>
+    </umc-section>
+   
+     <umc-divider></umc-divider>
+
+  <umc-section>
    <umc-content-section>
       <umc-content-block class='width--full'>
-        <umc-title-block class='large'><a name='lists'>Lijsten</a></umc-title-block>
+        <umc-title-block class='large'>
+          <a name='lists'>Lijsten</a>
+          <umc-tag label='versie 0.0.1' class='type--notice'></umc-tag>
+          <umc-tag label='In development' class='type--carefull'></umc-tag>
+        </umc-title-block>
         <umc-rich-text-block>
           <p>Allerlei soorten lijstjes, voor gebruik in navigatie elementen zoals de header, footer en sidebars.</p>
         </umc-rich-text-block>
+      </umc-content-block>
     </umc-content-section>
   </umc-section>
 
@@ -180,18 +211,33 @@
   <umc-section>
       <umc-content-section>
         <umc-content-block class='width--full'>
-          <umc-title-block class='small'>HTML code</umc-title-block>
-          <umc-code-example>
-  
+          <umc-title-block class='small'>
+            HTML code
+          </umc-title-block>
+      </umc-content-block>
+    </umc-content-section>
+  </umc-section>
+
+<umc-section>
+  <umc-column-section>
+    <umc-column width='full'>
+      <umc-list class='umc-list_horizontal'>
+        <umc-list-item><umc-tag label='Version 0.0.1' class='type--notice'></umc-list-item>
+        <umc-list-item><umc-tag label='Stable' class='type--carefull'></umc-list-item>
+      </umc-list>
+    </umc-column>
+    <umc-column width='full'>
+      <umc-code-example>
 &lt;umc-list&gt;
   &lt;umc-list-header&gt;Lorem ipsum&lt;/umc-list-header&gt;
   &lt;umc-list-item&gt;&lt;a href=&quot;#&quot;&gt;Dolores loremis&lt;/a&gt;&lt;/umc-list-item&gt;
   &lt;umc-list-item&gt;Lortem ipsum&lt;/umc-list-item&gt;
 &lt;/umc-list&gt;
-          </umc-code-example>
-      </umc-content-block>
-    </umc-content-section>
-  </umc-section>
+      </umc-code-example>
+    </umc-column>
+  </umc-column-section>
+</umc-section>
+
 
   <umc-section>
     <umc-column-section>
@@ -276,7 +322,10 @@
     <umc-section>
      <umc-content-section>
         <umc-content-block class='width--full'>
-          <umc-title-block class='large'><a name='footer'>Footer</a></umc-title-block>
+          <umc-title-block class='large'>
+            <a name='footer'>Footer</a>
+            <umc-tag label='In development' class='type--carefull'></umc-tag>
+          </umc-title-block>
           <umc-rich-text-block>
             <p>Footer komt terug op elke pagina.</p>
           </umc-rich-text-block>

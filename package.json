@@ -35,6 +35,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@stencil/router": "^1.0.1",
     "@stencil/sass": "^1.1.1",
     "font-blast": "^0.7.0"
   }

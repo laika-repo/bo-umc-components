@@ -1,13 +1,35 @@
 :host {
-  display: inline-block;
+  display: inline;
 
   font-family: 'Museo Sans Rounded', sans-serif;
     font-weight: 300;
     font-size: 14px;
     margin: 0 4px;
-    border: 1px dotted green;
+    border: 1px dotted gray;
     padding: 2px 4px;
     border-radius: 2px;
-    background-color: lighten( green, 70%);
-    color: green;
+}
+
+:host(.type--success) {
+  background-color: lighten( green, 70%);
+  color: green;
+  border-color: green;
+}
+
+:host(.type--warning) {
+  background-color: lighten( red, 45%);
+  color: red;
+  border-color: red;
+}
+
+:host(.type--notice) {
+  background-color: lighten( blue, 45%);
+  color: blue;
+  border-color: blue;
+}
+
+:host(.type--carefull) {
+  background-color: lighten( orange, 45%);
+  color: orange;
+  border-color: orange;
 }
