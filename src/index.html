@@ -34,19 +34,6 @@
       position: fixed;
     }
 
-    umc-section.locations-header {
-      --background-color: white;
-    }
-
-    umc-column-section.location-switch {
-      --text-color: #005261;
-      --border-color: #ced9e5;
-      --margin-bottom: 0;
-      --padding-vertical: 8px;
-    }
-
-   
-
     @media only screen and (min-width: 768px) {
         umc-header-section.main-navigation {
         --padding-horizontal: 0;
@@ -98,18 +85,8 @@
       font-size: 22px;
     }
     
-
-    umc-section.navigation-menu {
-      background-color: #009cb4;
-      /* background-attachment: fixed; */
-    }
-
     umc-section.navigation-menu umc-column-section {
       --text-color: white;
-    }
-
-    umc-section umc-content-header {
-      background-color: #f0f5f5;
     }
 
     umc-section umc-hero-image {
@@ -138,20 +115,19 @@
         order: -1;
       }
     }
-
   </style>
 </head>
 <body>
-    <umc-section class='locations-header'>
-        <umc-column-section class="location-switch justify-columns">
+    <umc-section-container class='locations-header'>
+        <umc-column-section class="umc-location-switch">
             <umc-column class='direction--horizontal align--center width--full'>
-              <umc-list class='umc-list_horizontal--always'>
+              <umc-list class='umc-navigation-list'>
                 <umc-list-item><a href="#">Healthcare</a></umc-list-item>
                 <umc-list-item><a href="#" umc-list-item--active>Research</a></umc-list-item>   
                 <umc-list-item><a href="#">Health campus</a></umc-list-item>                 
               </umc-list>
         </umc-column-section>
-      </umc-section>
+      </umc-section-container>
   
       <umc-menu-section class='main-navigation umc-section--sticky'>
         <umc-column-section slot='navigation' class='justify-columns'>
@@ -171,7 +147,7 @@
         <umc-section class='navigation-menu' slot='menu'>
             <umc-column-section>
               <umc-column width='large'>
-                  <umc-list class='font-style--big'>
+                  <umc-list class='umc-navigation-list--large'>
                     <umc-list-item><a href="#">Amsterdam UMC Research</a></umc-list-item>
                     <umc-list-item><a href="#">Researchers</a></umc-list-item>
                     <umc-list-item><a href="#">Research highlights</a></umc-list-item>
@@ -181,8 +157,8 @@
                 </umc-column>
                 <umc-column width-='small'></umc-column>
                 <umc-column  width='medium'>
-                    <umc-list-header>More…</umc-list-header>
-                    <umc-list class='font-style--regular'>
+                    <umc-list class='umc-navigation-list--medium'>
+                      <umc-list-header>More…</umc-list-header>
                       <umc-list-item><a href="#">Research institutes</a></umc-list-item>
                       <umc-list-item><a href="#">Departments</a></umc-list-item>
                       <umc-list-item><a href="#">Events</a></umc-list-item>
@@ -192,7 +168,7 @@
         </umc-section>
       </umc-menu-section>
 
-      <umc-section class='content-header'>
+      <umc-section-container class='content-header'>
         <umc-content-header>
           <umc-breadcrumbs>
             <umc-list class='umc-list_horizontal--always'>
@@ -208,7 +184,7 @@
         <umc-hero-section>
           <umc-hero-image class='width--xx-large'><img src='assets/placeholder-kids.png'></umc-hero-image>
         </umc-hero-section>
-      </umc-section>
+      </umc-section-container>
   
      <umc-section class='content-section'>
       <umc-content-section>

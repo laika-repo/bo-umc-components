@@ -11,6 +11,13 @@ umc-column-section {
   @include act-as-column-section--unscoped;
 }
 
+umc-column-section.umc-location-switch {
+  --text-color: #005261;
+  --border-color: #ced9e5;
+  --margin-bottom: 0;
+  --padding-vertical: 8px;
+  justify-content: space-between;
+}
 
 
 

@@ -6,7 +6,7 @@ import { Component, State, EventEmitter, Event, Host, h } from '@stencil/core';
   shadow: false
 })
 export class Section {
-  @State() toggle: boolean = false;
+  @State() toggle: boolean = true;
   @Event() onToggle: EventEmitter;
 
   toggleComponent() {

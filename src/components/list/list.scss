@@ -1,16 +1,69 @@
 umc-list {
   --text-color--default: $black;
-  --text-size--default: 14px;
+  --header-color--default: $black;
+  --text-size--default: 30px;
+  --header-size--default: 20px;
   --margin-bottom--default: 0;
+  
+  margin: 0;
   margin-bottom: var(--margin-bottom, var(--margin-bottom--default));
 
-  h3 {
-    font-family: 'Museo Sans Rounded', sans-serif;
+  font-family: 'Museo Sans Rounded', sans-serif;
+  font-weight: 300;
+  font-size: rem-calc(var(--text-size, var(--text-size--default)));
+  color: var(--text-color, var(--text-color--default));
+  line-height: rem-calc(24px);
+
+  umc-list-header {
     font-weight: 500;
-    font-size: 18px;
-    margin: 0;
-    line-height: rem-calc(24px);
-    color: $black;
+    font-size: rem-calc(22px);
+  }
+
+  umc-list-item {
+    a {
+      color: var(--text-color, var(--text-color--default));
+      text-decoration: none;
+    }
+  
+    a:hover {
+      text-decoration: underline;
+    }
   }
 }
 
+%horizontal {
+  umc-list-item {
+    @include min-screen-width('tablet-portrait') {
+      display: inline;
+      margin-right: 24px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+/* Variations */
+umc-list.umc-navigation-list {
+  @extend %horizontal;
+}
+
+umc-list.umc-navigation-list--large {
+  font-size: rem-calc(22px);
+  line-height: rem-calc(56px);
+  font-weight: 500;
+
+  umc-list-item {
+    border-bottom: 1px solid #00778a;
+
+    &:last-child {
+      border-bottom-width: 0;
+    }
+  }
+}
+
+umc-list.umc-navigation-list--medium {
+  font-size: rem-calc(18px);
+  line-height: rem-calc(40px);
+}

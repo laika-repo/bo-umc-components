@@ -58,6 +58,7 @@ export namespace Components {
   }
   interface UmcRichTextBlock {}
   interface UmcSection {}
+  interface UmcSectionContainer {}
   interface UmcSidebar {}
   interface UmcStyleSection {
     'title': string;
@@ -70,6 +71,7 @@ export namespace Components {
   interface UmcTag {
     'label': string;
   }
+  interface UmcTheme {}
   interface UmcTitleBlock {}
 }
 
@@ -244,6 +246,12 @@ declare global {
     new (): HTMLUmcSectionElement;
   };
 
+  interface HTMLUmcSectionContainerElement extends Components.UmcSectionContainer, HTMLStencilElement {}
+  var HTMLUmcSectionContainerElement: {
+    prototype: HTMLUmcSectionContainerElement;
+    new (): HTMLUmcSectionContainerElement;
+  };
+
   interface HTMLUmcSidebarElement extends Components.UmcSidebar, HTMLStencilElement {}
   var HTMLUmcSidebarElement: {
     prototype: HTMLUmcSidebarElement;
@@ -272,6 +280,12 @@ declare global {
   var HTMLUmcTagElement: {
     prototype: HTMLUmcTagElement;
     new (): HTMLUmcTagElement;
+  };
+
+  interface HTMLUmcThemeElement extends Components.UmcTheme, HTMLStencilElement {}
+  var HTMLUmcThemeElement: {
+    prototype: HTMLUmcThemeElement;
+    new (): HTMLUmcThemeElement;
   };
 
   interface HTMLUmcTitleBlockElement extends Components.UmcTitleBlock, HTMLStencilElement {}
@@ -308,11 +322,13 @@ declare global {
     'umc-menu-toggle': HTMLUmcMenuToggleElement;
     'umc-rich-text-block': HTMLUmcRichTextBlockElement;
     'umc-section': HTMLUmcSectionElement;
+    'umc-section-container': HTMLUmcSectionContainerElement;
     'umc-sidebar': HTMLUmcSidebarElement;
     'umc-style-section': HTMLUmcStyleSectionElement;
     'umc-tab': HTMLUmcTabElement;
     'umc-tabs': HTMLUmcTabsElement;
     'umc-tag': HTMLUmcTagElement;
+    'umc-theme': HTMLUmcThemeElement;
     'umc-title-block': HTMLUmcTitleBlockElement;
   }
 }
@@ -370,6 +386,7 @@ declare namespace LocalJSX {
   interface UmcSection {
     'onOnToggle'?: (event: CustomEvent<any>) => void;
   }
+  interface UmcSectionContainer {}
   interface UmcSidebar {}
   interface UmcStyleSection {
     'onOnToggle'?: (event: CustomEvent<any>) => void;
@@ -383,6 +400,7 @@ declare namespace LocalJSX {
   interface UmcTag {
     'label'?: string;
   }
+  interface UmcTheme {}
   interface UmcTitleBlock {}
 
   interface IntrinsicElements {
@@ -414,11 +432,13 @@ declare namespace LocalJSX {
     'umc-menu-toggle': UmcMenuToggle;
     'umc-rich-text-block': UmcRichTextBlock;
     'umc-section': UmcSection;
+    'umc-section-container': UmcSectionContainer;
     'umc-sidebar': UmcSidebar;
     'umc-style-section': UmcStyleSection;
     'umc-tab': UmcTab;
     'umc-tabs': UmcTabs;
     'umc-tag': UmcTag;
+    'umc-theme': UmcTheme;
     'umc-title-block': UmcTitleBlock;
   }
 }
@@ -457,11 +477,13 @@ declare module "@stencil/core" {
       'umc-menu-toggle': LocalJSX.UmcMenuToggle & JSXBase.HTMLAttributes<HTMLUmcMenuToggleElement>;
       'umc-rich-text-block': LocalJSX.UmcRichTextBlock & JSXBase.HTMLAttributes<HTMLUmcRichTextBlockElement>;
       'umc-section': LocalJSX.UmcSection & JSXBase.HTMLAttributes<HTMLUmcSectionElement>;
+      'umc-section-container': LocalJSX.UmcSectionContainer & JSXBase.HTMLAttributes<HTMLUmcSectionContainerElement>;
       'umc-sidebar': LocalJSX.UmcSidebar & JSXBase.HTMLAttributes<HTMLUmcSidebarElement>;
       'umc-style-section': LocalJSX.UmcStyleSection & JSXBase.HTMLAttributes<HTMLUmcStyleSectionElement>;
       'umc-tab': LocalJSX.UmcTab & JSXBase.HTMLAttributes<HTMLUmcTabElement>;
       'umc-tabs': LocalJSX.UmcTabs & JSXBase.HTMLAttributes<HTMLUmcTabsElement>;
       'umc-tag': LocalJSX.UmcTag & JSXBase.HTMLAttributes<HTMLUmcTagElement>;
+      'umc-theme': LocalJSX.UmcTheme & JSXBase.HTMLAttributes<HTMLUmcThemeElement>;
       'umc-title-block': LocalJSX.UmcTitleBlock & JSXBase.HTMLAttributes<HTMLUmcTitleBlockElement>;
     }
   }

@@ -1,0 +1,9 @@
+umc-hero-image {
+  @include act-as-column--unscoped;
+
+  margin-top: -24px;
+
+  img {
+    width: 100%;
+  }
+}
