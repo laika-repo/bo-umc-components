@@ -11,6 +11,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface UmcBreadcrumbs {}
+  interface UmcButton {}
   interface UmcCodeExample {}
   interface UmcColorSwatch {
     'name': string;
@@ -57,6 +58,7 @@ export namespace Components {
     'reverse': boolean;
   }
   interface UmcRichTextBlock {}
+  interface UmcSearchInput {}
   interface UmcSection {}
   interface UmcSectionContainer {}
   interface UmcSidebar {}
@@ -82,6 +84,12 @@ declare global {
   var HTMLUmcBreadcrumbsElement: {
     prototype: HTMLUmcBreadcrumbsElement;
     new (): HTMLUmcBreadcrumbsElement;
+  };
+
+  interface HTMLUmcButtonElement extends Components.UmcButton, HTMLStencilElement {}
+  var HTMLUmcButtonElement: {
+    prototype: HTMLUmcButtonElement;
+    new (): HTMLUmcButtonElement;
   };
 
   interface HTMLUmcCodeExampleElement extends Components.UmcCodeExample, HTMLStencilElement {}
@@ -240,6 +248,12 @@ declare global {
     new (): HTMLUmcRichTextBlockElement;
   };
 
+  interface HTMLUmcSearchInputElement extends Components.UmcSearchInput, HTMLStencilElement {}
+  var HTMLUmcSearchInputElement: {
+    prototype: HTMLUmcSearchInputElement;
+    new (): HTMLUmcSearchInputElement;
+  };
+
   interface HTMLUmcSectionElement extends Components.UmcSection, HTMLStencilElement {}
   var HTMLUmcSectionElement: {
     prototype: HTMLUmcSectionElement;
@@ -295,6 +309,7 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'umc-breadcrumbs': HTMLUmcBreadcrumbsElement;
+    'umc-button': HTMLUmcButtonElement;
     'umc-code-example': HTMLUmcCodeExampleElement;
     'umc-color-swatch': HTMLUmcColorSwatchElement;
     'umc-column': HTMLUmcColumnElement;
@@ -321,6 +336,7 @@ declare global {
     'umc-menu-section': HTMLUmcMenuSectionElement;
     'umc-menu-toggle': HTMLUmcMenuToggleElement;
     'umc-rich-text-block': HTMLUmcRichTextBlockElement;
+    'umc-search-input': HTMLUmcSearchInputElement;
     'umc-section': HTMLUmcSectionElement;
     'umc-section-container': HTMLUmcSectionContainerElement;
     'umc-sidebar': HTMLUmcSidebarElement;
@@ -335,6 +351,7 @@ declare global {
 
 declare namespace LocalJSX {
   interface UmcBreadcrumbs {}
+  interface UmcButton {}
   interface UmcCodeExample {}
   interface UmcColorSwatch {
     'name'?: string;
@@ -383,6 +400,7 @@ declare namespace LocalJSX {
     'reverse'?: boolean;
   }
   interface UmcRichTextBlock {}
+  interface UmcSearchInput {}
   interface UmcSection {
     'onOnToggle'?: (event: CustomEvent<any>) => void;
   }
@@ -405,6 +423,7 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'umc-breadcrumbs': UmcBreadcrumbs;
+    'umc-button': UmcButton;
     'umc-code-example': UmcCodeExample;
     'umc-color-swatch': UmcColorSwatch;
     'umc-column': UmcColumn;
@@ -431,6 +450,7 @@ declare namespace LocalJSX {
     'umc-menu-section': UmcMenuSection;
     'umc-menu-toggle': UmcMenuToggle;
     'umc-rich-text-block': UmcRichTextBlock;
+    'umc-search-input': UmcSearchInput;
     'umc-section': UmcSection;
     'umc-section-container': UmcSectionContainer;
     'umc-sidebar': UmcSidebar;
@@ -450,6 +470,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'umc-breadcrumbs': LocalJSX.UmcBreadcrumbs & JSXBase.HTMLAttributes<HTMLUmcBreadcrumbsElement>;
+      'umc-button': LocalJSX.UmcButton & JSXBase.HTMLAttributes<HTMLUmcButtonElement>;
       'umc-code-example': LocalJSX.UmcCodeExample & JSXBase.HTMLAttributes<HTMLUmcCodeExampleElement>;
       'umc-color-swatch': LocalJSX.UmcColorSwatch & JSXBase.HTMLAttributes<HTMLUmcColorSwatchElement>;
       'umc-column': LocalJSX.UmcColumn & JSXBase.HTMLAttributes<HTMLUmcColumnElement>;
@@ -476,6 +497,7 @@ declare module "@stencil/core" {
       'umc-menu-section': LocalJSX.UmcMenuSection & JSXBase.HTMLAttributes<HTMLUmcMenuSectionElement>;
       'umc-menu-toggle': LocalJSX.UmcMenuToggle & JSXBase.HTMLAttributes<HTMLUmcMenuToggleElement>;
       'umc-rich-text-block': LocalJSX.UmcRichTextBlock & JSXBase.HTMLAttributes<HTMLUmcRichTextBlockElement>;
+      'umc-search-input': LocalJSX.UmcSearchInput & JSXBase.HTMLAttributes<HTMLUmcSearchInputElement>;
       'umc-section': LocalJSX.UmcSection & JSXBase.HTMLAttributes<HTMLUmcSectionElement>;
       'umc-section-container': LocalJSX.UmcSectionContainer & JSXBase.HTMLAttributes<HTMLUmcSectionContainerElement>;
       'umc-sidebar': LocalJSX.UmcSidebar & JSXBase.HTMLAttributes<HTMLUmcSidebarElement>;

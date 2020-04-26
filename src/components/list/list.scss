@@ -28,6 +28,8 @@ umc-list {
     a:hover {
       text-decoration: underline;
     }
+
+    
   }
 }
 
@@ -61,9 +63,31 @@ umc-list.umc-navigation-list--large {
       border-bottom-width: 0;
     }
   }
+
+  a::before {
+    display: inline-block;
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-image: url(./assets/arrow-right-white.svg);
+    background-repeat: no-repeat;
+    margin-right: 16px;
+  }
 }
 
 umc-list.umc-navigation-list--medium {
   font-size: rem-calc(18px);
   line-height: rem-calc(40px);
+
+  umc-list-item {
+    a::before {
+      display: inline-block;
+      content: "";
+      width: 16px;
+      height: 16px;
+      background-image: url(./assets/arrow-right-white.svg);
+      background-repeat: no-repeat;
+      margin-right: 16px;
+    }
+  }
 }
