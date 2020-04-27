@@ -1,11 +1,11 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'umc-sidebar',
-  styleUrl: 'sidebar.scss',
-  shadow: false
+  tag: 'umc-teaser-image',
+  styleUrl: 'teaser-image.css',
+  shadow: true
 })
-export class Sidebar {
+export class TeaserImage {
 
   render() {
     return (

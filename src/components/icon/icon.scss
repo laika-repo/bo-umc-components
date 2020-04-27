@@ -1,5 +1,5 @@
 umc-icon {
-  display: inline;
+  display: inline-block;
 
   svg {
     width: 18px;
@@ -10,3 +10,37 @@ umc-icon {
 umc-icon.diapositive svg {
   fill: white;
 }
+
+@mixin svg-icon($svg, $width: 22px, $height: 16px) {
+  width: $width;
+  height: $height;
+  background-repeat: no-repeat;
+  background-image: url('./assets/icon-' + $svg + '-white.svg');
+}
+
+umc-icon.facebook-white {
+  @include svg-icon('facebook');
+}
+
+umc-icon.twitter-white {
+  @include svg-icon('twitter');
+}
+
+umc-icon.linkedin-white {
+  @include svg-icon('linkedin');
+}
+
+
+umc-icon.linkedin-white {
+  @include svg-icon('instagram');
+}
+
+umc-teaser-link umc-icon {
+  background-color: #00778a;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center; 
+
+  @include svg-icon('linkedin', 57px, 57px);
+}
+

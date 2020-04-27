@@ -1,0 +1,6 @@
+umc-teaser-link {
+  $half-gutter: map-deep-get($screens, 'desktop', 'gutter-width') / 2;
+  margin-left: $half-gutter * 3;
+  margin-top: -1 * $half-gutter;
+  
+}

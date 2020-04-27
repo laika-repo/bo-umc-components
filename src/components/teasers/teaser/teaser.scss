@@ -1,0 +1,27 @@
+umc-teaser {
+  --background-color--default: $white;
+  --border-color--default: $white;
+  --text-color--default: $black;
+  --font-size--default: $black;
+
+  @include act-as-column--unscoped;
+
+  background-color: var(--background-color, var(--background-color--default));
+
+  margin-bottom: 12px;
+  
+
+  font-family: 'Museo Sans Rounded', sans-serif;
+  font-weight: 300;
+  font-size: rem-calc(var(--text-size, var(--text-size--default)));
+  color: var(--text-color, var(--text-color--default));
+  line-height: rem-calc(24px);
+
+  img {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+
+
