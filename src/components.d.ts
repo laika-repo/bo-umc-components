@@ -10,7 +10,6 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface UmcBreadcrumbs {}
   interface UmcCodeExample {}
   interface UmcColorSwatch {
     'name': string;
@@ -22,7 +21,6 @@ export namespace Components {
   }
   interface UmcColumnSection {}
   interface UmcContentBlock {}
-  interface UmcContentHeader {}
   interface UmcContentSection {}
   interface UmcDevStatusbar {}
   interface UmcDivider {}
@@ -30,8 +28,6 @@ export namespace Components {
   interface UmcGridRow {}
   interface UmcHeader {}
   interface UmcHeaderSection {}
-  interface UmcHeroImage {}
-  interface UmcHeroSection {}
   interface UmcIcon {}
   interface UmcLinkList {
     'orientation': string;
@@ -76,12 +72,6 @@ export namespace Components {
 declare global {
 
 
-  interface HTMLUmcBreadcrumbsElement extends Components.UmcBreadcrumbs, HTMLStencilElement {}
-  var HTMLUmcBreadcrumbsElement: {
-    prototype: HTMLUmcBreadcrumbsElement;
-    new (): HTMLUmcBreadcrumbsElement;
-  };
-
   interface HTMLUmcCodeExampleElement extends Components.UmcCodeExample, HTMLStencilElement {}
   var HTMLUmcCodeExampleElement: {
     prototype: HTMLUmcCodeExampleElement;
@@ -110,12 +100,6 @@ declare global {
   var HTMLUmcContentBlockElement: {
     prototype: HTMLUmcContentBlockElement;
     new (): HTMLUmcContentBlockElement;
-  };
-
-  interface HTMLUmcContentHeaderElement extends Components.UmcContentHeader, HTMLStencilElement {}
-  var HTMLUmcContentHeaderElement: {
-    prototype: HTMLUmcContentHeaderElement;
-    new (): HTMLUmcContentHeaderElement;
   };
 
   interface HTMLUmcContentSectionElement extends Components.UmcContentSection, HTMLStencilElement {}
@@ -158,18 +142,6 @@ declare global {
   var HTMLUmcHeaderSectionElement: {
     prototype: HTMLUmcHeaderSectionElement;
     new (): HTMLUmcHeaderSectionElement;
-  };
-
-  interface HTMLUmcHeroImageElement extends Components.UmcHeroImage, HTMLStencilElement {}
-  var HTMLUmcHeroImageElement: {
-    prototype: HTMLUmcHeroImageElement;
-    new (): HTMLUmcHeroImageElement;
-  };
-
-  interface HTMLUmcHeroSectionElement extends Components.UmcHeroSection, HTMLStencilElement {}
-  var HTMLUmcHeroSectionElement: {
-    prototype: HTMLUmcHeroSectionElement;
-    new (): HTMLUmcHeroSectionElement;
   };
 
   interface HTMLUmcIconElement extends Components.UmcIcon, HTMLStencilElement {}
@@ -280,13 +252,11 @@ declare global {
     new (): HTMLUmcTitleBlockElement;
   };
   interface HTMLElementTagNameMap {
-    'umc-breadcrumbs': HTMLUmcBreadcrumbsElement;
     'umc-code-example': HTMLUmcCodeExampleElement;
     'umc-color-swatch': HTMLUmcColorSwatchElement;
     'umc-column': HTMLUmcColumnElement;
     'umc-column-section': HTMLUmcColumnSectionElement;
     'umc-content-block': HTMLUmcContentBlockElement;
-    'umc-content-header': HTMLUmcContentHeaderElement;
     'umc-content-section': HTMLUmcContentSectionElement;
     'umc-dev-statusbar': HTMLUmcDevStatusbarElement;
     'umc-divider': HTMLUmcDividerElement;
@@ -294,8 +264,6 @@ declare global {
     'umc-grid-row': HTMLUmcGridRowElement;
     'umc-header': HTMLUmcHeaderElement;
     'umc-header-section': HTMLUmcHeaderSectionElement;
-    'umc-hero-image': HTMLUmcHeroImageElement;
-    'umc-hero-section': HTMLUmcHeroSectionElement;
     'umc-icon': HTMLUmcIconElement;
     'umc-link-list': HTMLUmcLinkListElement;
     'umc-link-list-item': HTMLUmcLinkListItemElement;
@@ -318,7 +286,6 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface UmcBreadcrumbs {}
   interface UmcCodeExample {}
   interface UmcColorSwatch {
     'name'?: string;
@@ -330,7 +297,6 @@ declare namespace LocalJSX {
   }
   interface UmcColumnSection {}
   interface UmcContentBlock {}
-  interface UmcContentHeader {}
   interface UmcContentSection {}
   interface UmcDevStatusbar {}
   interface UmcDivider {}
@@ -338,8 +304,6 @@ declare namespace LocalJSX {
   interface UmcGridRow {}
   interface UmcHeader {}
   interface UmcHeaderSection {}
-  interface UmcHeroImage {}
-  interface UmcHeroSection {}
   interface UmcIcon {}
   interface UmcLinkList {
     'orientation'?: string;
@@ -386,13 +350,11 @@ declare namespace LocalJSX {
   interface UmcTitleBlock {}
 
   interface IntrinsicElements {
-    'umc-breadcrumbs': UmcBreadcrumbs;
     'umc-code-example': UmcCodeExample;
     'umc-color-swatch': UmcColorSwatch;
     'umc-column': UmcColumn;
     'umc-column-section': UmcColumnSection;
     'umc-content-block': UmcContentBlock;
-    'umc-content-header': UmcContentHeader;
     'umc-content-section': UmcContentSection;
     'umc-dev-statusbar': UmcDevStatusbar;
     'umc-divider': UmcDivider;
@@ -400,8 +362,6 @@ declare namespace LocalJSX {
     'umc-grid-row': UmcGridRow;
     'umc-header': UmcHeader;
     'umc-header-section': UmcHeaderSection;
-    'umc-hero-image': UmcHeroImage;
-    'umc-hero-section': UmcHeroSection;
     'umc-icon': UmcIcon;
     'umc-link-list': UmcLinkList;
     'umc-link-list-item': UmcLinkListItem;
@@ -429,13 +389,11 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'umc-breadcrumbs': LocalJSX.UmcBreadcrumbs & JSXBase.HTMLAttributes<HTMLUmcBreadcrumbsElement>;
       'umc-code-example': LocalJSX.UmcCodeExample & JSXBase.HTMLAttributes<HTMLUmcCodeExampleElement>;
       'umc-color-swatch': LocalJSX.UmcColorSwatch & JSXBase.HTMLAttributes<HTMLUmcColorSwatchElement>;
       'umc-column': LocalJSX.UmcColumn & JSXBase.HTMLAttributes<HTMLUmcColumnElement>;
       'umc-column-section': LocalJSX.UmcColumnSection & JSXBase.HTMLAttributes<HTMLUmcColumnSectionElement>;
       'umc-content-block': LocalJSX.UmcContentBlock & JSXBase.HTMLAttributes<HTMLUmcContentBlockElement>;
-      'umc-content-header': LocalJSX.UmcContentHeader & JSXBase.HTMLAttributes<HTMLUmcContentHeaderElement>;
       'umc-content-section': LocalJSX.UmcContentSection & JSXBase.HTMLAttributes<HTMLUmcContentSectionElement>;
       'umc-dev-statusbar': LocalJSX.UmcDevStatusbar & JSXBase.HTMLAttributes<HTMLUmcDevStatusbarElement>;
       'umc-divider': LocalJSX.UmcDivider & JSXBase.HTMLAttributes<HTMLUmcDividerElement>;
@@ -443,8 +401,6 @@ declare module "@stencil/core" {
       'umc-grid-row': LocalJSX.UmcGridRow & JSXBase.HTMLAttributes<HTMLUmcGridRowElement>;
       'umc-header': LocalJSX.UmcHeader & JSXBase.HTMLAttributes<HTMLUmcHeaderElement>;
       'umc-header-section': LocalJSX.UmcHeaderSection & JSXBase.HTMLAttributes<HTMLUmcHeaderSectionElement>;
-      'umc-hero-image': LocalJSX.UmcHeroImage & JSXBase.HTMLAttributes<HTMLUmcHeroImageElement>;
-      'umc-hero-section': LocalJSX.UmcHeroSection & JSXBase.HTMLAttributes<HTMLUmcHeroSectionElement>;
       'umc-icon': LocalJSX.UmcIcon & JSXBase.HTMLAttributes<HTMLUmcIconElement>;
       'umc-link-list': LocalJSX.UmcLinkList & JSXBase.HTMLAttributes<HTMLUmcLinkListElement>;
       'umc-link-list-item': LocalJSX.UmcLinkListItem & JSXBase.HTMLAttributes<HTMLUmcLinkListItemElement>;
