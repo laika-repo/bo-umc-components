@@ -73,6 +73,13 @@ export namespace Components {
   interface UmcTag {
     'label': string;
   }
+  interface UmcTeaser {}
+  interface UmcTeaserBody {}
+  interface UmcTeaserHeader {}
+  interface UmcTeaserImage {}
+  interface UmcTeaserLink {}
+  interface UmcTeaserSection {}
+  interface UmcTeaserText {}
   interface UmcTheme {}
   interface UmcTitleBlock {}
 }
@@ -296,6 +303,48 @@ declare global {
     new (): HTMLUmcTagElement;
   };
 
+  interface HTMLUmcTeaserElement extends Components.UmcTeaser, HTMLStencilElement {}
+  var HTMLUmcTeaserElement: {
+    prototype: HTMLUmcTeaserElement;
+    new (): HTMLUmcTeaserElement;
+  };
+
+  interface HTMLUmcTeaserBodyElement extends Components.UmcTeaserBody, HTMLStencilElement {}
+  var HTMLUmcTeaserBodyElement: {
+    prototype: HTMLUmcTeaserBodyElement;
+    new (): HTMLUmcTeaserBodyElement;
+  };
+
+  interface HTMLUmcTeaserHeaderElement extends Components.UmcTeaserHeader, HTMLStencilElement {}
+  var HTMLUmcTeaserHeaderElement: {
+    prototype: HTMLUmcTeaserHeaderElement;
+    new (): HTMLUmcTeaserHeaderElement;
+  };
+
+  interface HTMLUmcTeaserImageElement extends Components.UmcTeaserImage, HTMLStencilElement {}
+  var HTMLUmcTeaserImageElement: {
+    prototype: HTMLUmcTeaserImageElement;
+    new (): HTMLUmcTeaserImageElement;
+  };
+
+  interface HTMLUmcTeaserLinkElement extends Components.UmcTeaserLink, HTMLStencilElement {}
+  var HTMLUmcTeaserLinkElement: {
+    prototype: HTMLUmcTeaserLinkElement;
+    new (): HTMLUmcTeaserLinkElement;
+  };
+
+  interface HTMLUmcTeaserSectionElement extends Components.UmcTeaserSection, HTMLStencilElement {}
+  var HTMLUmcTeaserSectionElement: {
+    prototype: HTMLUmcTeaserSectionElement;
+    new (): HTMLUmcTeaserSectionElement;
+  };
+
+  interface HTMLUmcTeaserTextElement extends Components.UmcTeaserText, HTMLStencilElement {}
+  var HTMLUmcTeaserTextElement: {
+    prototype: HTMLUmcTeaserTextElement;
+    new (): HTMLUmcTeaserTextElement;
+  };
+
   interface HTMLUmcThemeElement extends Components.UmcTheme, HTMLStencilElement {}
   var HTMLUmcThemeElement: {
     prototype: HTMLUmcThemeElement;
@@ -344,6 +393,13 @@ declare global {
     'umc-tab': HTMLUmcTabElement;
     'umc-tabs': HTMLUmcTabsElement;
     'umc-tag': HTMLUmcTagElement;
+    'umc-teaser': HTMLUmcTeaserElement;
+    'umc-teaser-body': HTMLUmcTeaserBodyElement;
+    'umc-teaser-header': HTMLUmcTeaserHeaderElement;
+    'umc-teaser-image': HTMLUmcTeaserImageElement;
+    'umc-teaser-link': HTMLUmcTeaserLinkElement;
+    'umc-teaser-section': HTMLUmcTeaserSectionElement;
+    'umc-teaser-text': HTMLUmcTeaserTextElement;
     'umc-theme': HTMLUmcThemeElement;
     'umc-title-block': HTMLUmcTitleBlockElement;
   }
@@ -418,6 +474,13 @@ declare namespace LocalJSX {
   interface UmcTag {
     'label'?: string;
   }
+  interface UmcTeaser {}
+  interface UmcTeaserBody {}
+  interface UmcTeaserHeader {}
+  interface UmcTeaserImage {}
+  interface UmcTeaserLink {}
+  interface UmcTeaserSection {}
+  interface UmcTeaserText {}
   interface UmcTheme {}
   interface UmcTitleBlock {}
 
@@ -458,6 +521,13 @@ declare namespace LocalJSX {
     'umc-tab': UmcTab;
     'umc-tabs': UmcTabs;
     'umc-tag': UmcTag;
+    'umc-teaser': UmcTeaser;
+    'umc-teaser-body': UmcTeaserBody;
+    'umc-teaser-header': UmcTeaserHeader;
+    'umc-teaser-image': UmcTeaserImage;
+    'umc-teaser-link': UmcTeaserLink;
+    'umc-teaser-section': UmcTeaserSection;
+    'umc-teaser-text': UmcTeaserText;
     'umc-theme': UmcTheme;
     'umc-title-block': UmcTitleBlock;
   }
@@ -505,6 +575,13 @@ declare module "@stencil/core" {
       'umc-tab': LocalJSX.UmcTab & JSXBase.HTMLAttributes<HTMLUmcTabElement>;
       'umc-tabs': LocalJSX.UmcTabs & JSXBase.HTMLAttributes<HTMLUmcTabsElement>;
       'umc-tag': LocalJSX.UmcTag & JSXBase.HTMLAttributes<HTMLUmcTagElement>;
+      'umc-teaser': LocalJSX.UmcTeaser & JSXBase.HTMLAttributes<HTMLUmcTeaserElement>;
+      'umc-teaser-body': LocalJSX.UmcTeaserBody & JSXBase.HTMLAttributes<HTMLUmcTeaserBodyElement>;
+      'umc-teaser-header': LocalJSX.UmcTeaserHeader & JSXBase.HTMLAttributes<HTMLUmcTeaserHeaderElement>;
+      'umc-teaser-image': LocalJSX.UmcTeaserImage & JSXBase.HTMLAttributes<HTMLUmcTeaserImageElement>;
+      'umc-teaser-link': LocalJSX.UmcTeaserLink & JSXBase.HTMLAttributes<HTMLUmcTeaserLinkElement>;
+      'umc-teaser-section': LocalJSX.UmcTeaserSection & JSXBase.HTMLAttributes<HTMLUmcTeaserSectionElement>;
+      'umc-teaser-text': LocalJSX.UmcTeaserText & JSXBase.HTMLAttributes<HTMLUmcTeaserTextElement>;
       'umc-theme': LocalJSX.UmcTheme & JSXBase.HTMLAttributes<HTMLUmcThemeElement>;
       'umc-title-block': LocalJSX.UmcTitleBlock & JSXBase.HTMLAttributes<HTMLUmcTitleBlockElement>;
     }

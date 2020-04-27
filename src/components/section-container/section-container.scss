@@ -17,6 +17,10 @@ umc-section-container {
   background-color: var(--background-color, var(--background-color--default));
 }
 
+umc-section-container.content-footer {
+  --background-color: #f0f5f5;
+}
+
 
 // umc-section {
 //   box-sizing: border-box;

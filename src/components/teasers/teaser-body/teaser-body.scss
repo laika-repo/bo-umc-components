@@ -1,0 +1,9 @@
+umc-teaser-body {
+  display: block;
+  margin-left: map-deep-get($screens, 'desktop', 'gutter-width');
+  margin-top: -1 * map-deep-get($screens, 'desktop', 'gutter-width');
+    box-sizing: border-box;
+    border-radius: 16px 0 0;
+    background: #fff;
+    padding: 32px map-deep-get($screens, 'desktop', 'gutter-width') map-deep-get($screens, 'desktop', 'gutter-width') 32px;
+}
