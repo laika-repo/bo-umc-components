@@ -5,5 +5,8 @@ umc-content-header {
 
   @include act-as-column-section--unscoped;
 
+  box-sizing: border-box;
+  justify-content: center;
+
   background-color: var(--background-color, var(--background-color--default));
 }

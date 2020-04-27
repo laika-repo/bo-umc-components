@@ -19,8 +19,12 @@ umc-column-section.umc-location-switch {
   justify-content: space-between;
 }
 
-
-
+umc-column-section.umc-navigation-menu,
+umc-column-section.umc-breadcrumbs {
+  @include min-screen-width('desktop') {
+    width: map-deep-get($screens, 'desktop', 'content-width') - ( map-deep-get($screens, 'desktop', 'gutter-width') * 2 );
+  }
+}
 
 
 

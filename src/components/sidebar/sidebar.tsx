@@ -10,7 +10,7 @@ export class Sidebar {
   render() {
     return (
       <Host>
-        <slot name='content'></slot>
+        <slot></slot>
       </Host>
     );
   }

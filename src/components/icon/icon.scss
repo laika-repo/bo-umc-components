@@ -11,13 +11,27 @@ umc-icon.diapositive svg {
   fill: white;
 }
 
-umc-icon.arrow-right--before {
-  width: 16px;
+@mixin svg-icon($svg) {
+  width: 22px;
   height: 16px;
-  background-image: url(./assets/arrow-right-white.svg);
   background-repeat: no-repeat;
+  background-image: url('./assets/icon-' + $svg + '-white.svg');
 
-  margin-right: 16px;
-  
+}
 
+umc-icon.facebook-white {
+  @include svg-icon('facebook');
+}
+
+umc-icon.twitter-white {
+  @include svg-icon('twitter');
+}
+
+umc-icon.linkedin-white {
+  @include svg-icon('linkedin');
+}
+
+
+umc-icon.linkedin-white {
+  @include svg-icon('instagram');
 }
