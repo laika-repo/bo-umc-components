@@ -21,6 +21,38 @@ umc-teaser {
     width: 400px;
     height: 300px;
   }
+
+  &:last-child {
+    display: none;
+
+    @include min-screen-width('desktop') {
+      display: flex;
+    }
+  }
+
+  &:nth-last-child(2) {
+    margin: 0;
+
+    @include min-screen-width('desktop') {
+      margin-right: map-deep-get($screens, 'desktop', 'gutter-width');
+    }
+  }
+
+  &.width--medium {
+
+
+    @include min-screen-width('tablet-portrait') {
+      width: column-width-for-min-screen('tablet-portrait', 4);
+    }
+
+    @include min-screen-width('tablet-landscape') {
+      width: column-width-for-min-screen('tablet-landscape', 4);
+    }
+  
+    @include min-screen-width('desktop') {
+      width: column-width-for-min-screen('desktop', 4);
+    }
+  }
 }
 
 

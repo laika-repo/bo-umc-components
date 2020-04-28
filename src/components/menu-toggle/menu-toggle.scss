@@ -1,36 +1,31 @@
 umc-menu-toggle {
-  display: inline;
-
-  h3 {
-    font-family: 'Museo Sans Rounded', sans-serif;
-    font-weight: 500;
-    font-size: rem-calc(20px);
-    color: $blue-lagoon;
-  
-    display: inline-flex;
-    margin: 0;
-  }
-  
-  .icon--before {
-    flex-direction: row-reverse;
-  }
-  
-  .label {
-    display: none;
-  
-    @include wider-than('medium') {
-      display: inline;
-      margin: 0 8px;
+    umc-label {
+        font-family: 'Museo Sans Rounded', sans-serif;
+        font-weight: 500;
+        font-size: rem-calc(20px);
+        color: $blue-lagoon;
+        margin: 0;
+        display: inline-flex;
+        align-items: center;
     }
-  }
-  
-  .icon {
-    height: 24px;
-  }
-  
-  .icon--before .icon {
-    margin-left: 0;
-  }
-  
 }
 
+umc-menu-toggle.umc-menu-toggle--menu umc-label::before {
+    display: inline-block;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-image: url(./assets/icon-hamburger-azure-blue.svg);
+    background-repeat: no-repeat;
+    margin-right: 8px;
+}
+
+umc-menu-toggle.umc-menu-toggle--search umc-label::after {
+    display: inline-block;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-image: url(./assets/icon-search-azure-blue.svg);
+    background-repeat: no-repeat;
+    margin-left: 8px;
+}

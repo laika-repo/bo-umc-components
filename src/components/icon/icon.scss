@@ -1,46 +1,52 @@
 umc-icon {
-  display: inline-block;
-
-  svg {
-    width: 18px;
-    height: 18px;
-  } 
+    display: inline-block;
+    svg {
+        width: 18px;
+        height: 18px;
+    }
 }
 
 umc-icon.diapositive svg {
-  fill: white;
+    fill: white;
 }
 
-@mixin svg-icon($svg, $width: 22px, $height: 16px) {
-  width: $width;
-  height: $height;
-  background-repeat: no-repeat;
-  background-image: url('./assets/icon-' + $svg + '-white.svg');
+@mixin svg-icon($svg, $width: 22px, $height: 16px, $color: white) {
+    width: $width;
+    height: $height;
+    background-repeat: no-repeat;
+    background-image: url('./assets/icon-' + $svg + '-' + $color + '.svg');
 }
 
+// umc-icon.search {
+//     @include svg-icon('search',
+//     $width: 24px, $height: 24px, $color: azure-blue);
+// }
+// umc-icon.hamburger {
+//     @include svg-icon('hamburger',
+//     $width: 24px, $height: 24px, $color: azure-blue);
+// }
 umc-icon.facebook-white {
-  @include svg-icon('facebook');
+    @include svg-icon('facebook');
 }
 
 umc-icon.twitter-white {
-  @include svg-icon('twitter');
+    @include svg-icon('twitter');
 }
 
 umc-icon.linkedin-white {
-  @include svg-icon('linkedin');
+    @include svg-icon('linkedin');
 }
 
-
-umc-icon.linkedin-white {
-  @include svg-icon('instagram');
+umc-icon.instagram-white {
+    @include svg-icon('instagram');
 }
 
 umc-teaser-link umc-icon {
-  background-color: #00778a;
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  background-position: center; 
-
-  @include svg-icon('linkedin', 57px, 57px);
+    background-color: #00778a;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include svg-icon('linkedin',
+    57px,
+    57px);
 }
-
