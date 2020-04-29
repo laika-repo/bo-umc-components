@@ -455,7 +455,9 @@ declare namespace LocalJSX {
   interface UmcMenuSection {
     'onOnToggle'?: (event: CustomEvent<any>) => void;
   }
-  interface UmcMenuToggle {}
+  interface UmcMenuToggle {
+    'onOnToggle'?: (event: CustomEvent<any>) => void;
+  }
   interface UmcRichTextBlock {}
   interface UmcSearchInput {}
   interface UmcSection {

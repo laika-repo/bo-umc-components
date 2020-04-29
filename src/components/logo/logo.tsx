@@ -11,8 +11,6 @@ export class Logo {
   render() {
     return (
       <Host>
-        <img src={this.src} />
-
       </Host>
     );
   }

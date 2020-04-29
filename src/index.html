@@ -31,10 +31,6 @@
             margin: 0;
         }
         
-        umc-dev-statusbar {
-            position: fixed;
-        }
-        
         @media only screen and (min-width: 768px) {
             umc-header-section.main-navigation {
                 --padding-horizontal: 0;
@@ -74,12 +70,6 @@
         
         umc-section.footer-colofon {
             --background-color: #00778a;
-        }
-        
-        umc-column-section.debug {
-            box-sizing: border-box;
-            --background-color: #fafafa;
-            margin-bottom: 8px;
         }
         
         umc-column.submenu__main {
@@ -122,10 +112,10 @@
 <body>
     <umc-section-container class='locations-header'>
         <umc-column-section class="umc-location-switch">
-            <umc-column class='direction--horizontal align--center width--full'>
+            <umc-column>
                 <umc-list class='umc-navigation-list'>
                     <umc-list-item><a href="#">Healthcare</a></umc-list-item>
-                    <umc-list-item><a href="#" umc-list-item--active>Research</a></umc-list-item>
+                    <umc-list-item class='umc-list-item--active'><a href="#">Research</a></umc-list-item>
                     <umc-list-item><a href="#">Health campus</a></umc-list-item>
                 </umc-list>
         </umc-column-section>
@@ -133,13 +123,13 @@
 
     <umc-menu-section class='main-navigation umc-section--sticky'>
         <umc-column-section slot='navigation' class='umc-navigation-menu justify-columns'>
-            <umc-column width='small' class='direction--horizontal vertical-align--middle'>
+            <umc-column class='width--small direction--horizontal vertical-align--middle'>
                 <umc-menu-toggle class='umc-menu-toggle--menu'>
                     <umc-label>Menu</umc-label>
                 </umc-menu-toggle>
             </umc-column>
             <umc-column class="width--medium align--center vertical-align--middle">
-                <umc-logo src="assets/logo-aumc.svg"></umc-logo>
+                <umc-logo class='umc-logo--fullcolor'></umc-logo>
             </umc-column>
             <umc-column class="width--small direction--horizontal align--right vertical-align--middle">
                 <umc-menu-toggle class='umc-menu-toggle--search'>
@@ -149,7 +139,7 @@
 
         <umc-section class='navigation-menu' slot='menu'>
             <umc-column-section>
-                <umc-column width='large'>
+                <umc-column class='width--large'>
                     <umc-list class='umc-navigation-list--primary'>
                         <umc-list-item><a href="#">Amsterdam UMC Research</a></umc-list-item>
                         <umc-list-item><a href="#">Researchers</a></umc-list-item>
@@ -158,8 +148,8 @@
                         <umc-list-item><a href="#">Impact</a></umc-list-item>
                     </umc-list>
                 </umc-column>
-                <umc-column width-='small'></umc-column>
-                <umc-column width='medium'>
+                <umc-column class='width--small'></umc-column>
+                <umc-column class='width--medium'>
                     <umc-list class='umc-navigation-list--secondary'>
                         <umc-list-header>More…</umc-list-header>
                         <umc-list-item><a href="#" class='umc-link-out'>Research institutes</a></umc-list-item>
@@ -173,7 +163,7 @@
 
         <umc-section class='search-menu' slot='menu'>
             <umc-column-section>
-                <umc-column width='full'>
+                <umc-column class='width--full'>
                     <umc-search-input>
                         <input type="text" placeholder="Keyword" />
                         <umc-button>
@@ -184,6 +174,70 @@
             </umc-column-section>
         </umc-section>
     </umc-menu-section>
+
+    <umc-section-container>
+        <umc-column-section class='umc-debug-background-grid'>
+            <umc-column class='fluid--1x'>1</umc-column>
+            <umc-column class='fluid--1x'>1</umc-column>
+            <umc-column class='fluid--1x'>1</umc-column>
+            <umc-column class='fluid--1x'>1</umc-column>
+            <umc-column class='fluid--1x'>1</umc-column>
+            <umc-column class='fluid--1x'>1</umc-column>
+            <umc-column class='fluid--1x'>1</umc-column>
+            <umc-column class='fluid--1x'>1</umc-column>
+            <umc-column class='fluid--1x'>1</umc-column>
+            <umc-column class='fluid--1x'>1</umc-column>
+            <umc-column class='fluid--1x'>1</umc-column>
+        </umc-column-section>
+
+        <umc-column-section>
+            <umc-column class='fluid--2x-nogro'>1</umc-column>
+            <umc-column class='fluid--2x-nogro'>2</umc-column>
+            <umc-column class='fluid--2x-nogro'>3</umc-column>
+            <umc-column class='fluid--2x-nogro'>4</umc-column>
+            <umc-column class='fluid--2x-nogro'>5</umc-column>
+            <umc-column class='fluid--2x-nogro'>6</umc-column>
+        </umc-column-section>
+
+        <umc-column-section>
+            <umc-column class='fluid--3x'>4x</umc-column>
+            <umc-column class='fluid--3x'>4x</umc-column>
+            <umc-column class='fluid--3x'>4x</umc-column>
+            <umc-column class='fluid--3x'>4x</umc-column>
+        </umc-column-section>
+
+        <umc-column-section>
+            <umc-column class='fluid--4x'>4x</umc-column>
+            <umc-column class='fluid--4x'>4x</umc-column>
+            <umc-column class='fluid--4x'>4x</umc-column>
+        </umc-column-section>
+
+        <umc-column-section>
+            <umc-column class='fluid--8x'>8x</umc-column>
+            <umc-column class='fluid--4x'>4x</umc-column>
+        </umc-column-section>
+
+        <umc-column-section>
+            <umc-column class='fluid--10x'>10</umc-column>
+            <umc-column class='fluid--2x'>2</umc-column>
+        </umc-column-section>
+        <umc-column-section>
+            <umc-column class='width--xx-large'>1</umc-column>
+            <umc-column class='width--large'>2</umc-column>
+        </umc-column-section>
+
+        <umc-column-section>
+            <umc-column class='width--xx-large'>1</umc-column>
+            <umc-column class='width--single'>2</umc-column>
+            <umc-column class='width--medium'>2</umc-column>
+        </umc-column-section>
+
+        <umc-column-section>
+            <umc-column class='width--xxx-large'>1</umc-column>
+            <umc-column class='width--medium'>2</umc-column>
+        </umc-column-section>
+        </umc-section>
+    </umc-section-container>
 
     <umc-section-container class='content-header'>
         <umc-content-header>
@@ -245,7 +299,7 @@
 
                     <umc-list-item>
                         <a href="#">
-                            <umc-icon class='linkedin-white'></umc-icon>
+                            <umc-icon class='share-white'></umc-icon>
                         </a>
                     </umc-list-item>
                 </umc-list>
@@ -327,11 +381,11 @@
 
     <umc-section class='footer-links'>
         <umc-column-section>
-            <umc-column width='large'>
-                <umc-logo src='assets/logo-aumc--diap.svg'></umc-logo>
+            <umc-column class='width--large'>
+                <umc-logo class='umc-logo--white'></umc-logo>
             </umc-column>
 
-            <umc-column width='small'>
+            <umc-column class='width--small'>
                 <umc-list>
                     <umc-list-item><a href="#">Projects</a></umc-list-item>
                     <umc-list-item><a href="#">Core Facilities</a></umc-list-item>
@@ -340,7 +394,7 @@
                 </umc-list>
             </umc-column>
 
-            <umc-column width='medium'>
+            <umc-column class='width--medium'>
                 <umc-list>
                     <umc-list-item><a href="#">Events</a></umc-list-item>
                     <umc-list-item><a href="#">Research institutes</a></umc-list-item>
@@ -353,7 +407,7 @@
 
     <umc-section class='footer-colofon'>
         <umc-column-section>
-            <umc-column width='xx-large'>
+            <umc-column class='width--xx-large'>
                 <umc-list class='umc-navigation-list'>
                     <umc-list-item><a href="#">Privacy policy</a></umc-list-item>
                     <umc-list-item><a href="#">Sitemap</a></umc-list-item>
@@ -362,7 +416,7 @@
                 </umc-list>
             </umc-column>
 
-            <umc-column width='medium' class='direction--horizontal align--right'>
+            <umc-column class='width--medium direction--horizontal align--right'>
                 <umc-list class='umc-navigation-list'>
                     <umc-list-item>
                         <a href="#">

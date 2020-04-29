@@ -1,12 +1,15 @@
 umc-logo {
-  display: block;
-
-  img {
-    width: 200px;
-  
-    @include wider-than('medium') {
-      width: 260px;
-    }
-  }
+    display: block;
+    width: 288px;
+    height: 52px;
 }
 
+umc-logo.umc-logo--fullcolor {
+    background-repeat: no-repeat;
+    background-image: url('./assets/logo-aumc.svg');
+}
+
+umc-logo.umc-logo--white {
+    background-repeat: no-repeat;
+    background-image: url('./assets/logo-aumc-white.svg');
+}

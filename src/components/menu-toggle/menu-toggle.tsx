@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, State, EventEmitter, Event, Host, h } from '@stencil/core';
 
 @Component({
   tag: 'umc-menu-toggle',
@@ -7,9 +7,19 @@ import { Component, h } from '@stencil/core';
   assetsDirs: ['assets']
 })
 export class MenuToggle {
+  @State() toggle: boolean = true;
+  @Event() onToggle: EventEmitter;
+
+  toggleComponent() {
+    this.toggle = !this.toggle;
+    this.onToggle.emit({ visible: this.toggle });
+  }
+
   render() {
     return (
-      <slot></slot>
+      <Host class={this.toggle ? 'open' : 'closed'}>
+        <slot></slot>
+      </Host> 
     );
   }
 

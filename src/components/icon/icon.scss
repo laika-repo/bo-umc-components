@@ -37,6 +37,10 @@ umc-icon.linkedin-white {
     @include svg-icon('linkedin');
 }
 
+umc-icon.share-white {
+    @include svg-icon('share');
+}
+
 umc-icon.instagram-white {
     @include svg-icon('instagram');
 }

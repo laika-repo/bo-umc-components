@@ -5,13 +5,11 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
+## Events
 
-| Property  | Attribute | Description | Type      | Default                           |
-| --------- | --------- | ----------- | --------- | --------------------------------- |
-| `icon`    | `icon`    |             | `string`  | `"icon-hamburger.svg"`            |
-| `label`   | `label`   |             | `string`  | `"Required prop 'title' missing"` |
-| `reverse` | `reverse` |             | `boolean` | `false`                           |
+| Event      | Description | Type               |
+| ---------- | ----------- | ------------------ |
+| `onToggle` |             | `CustomEvent<any>` |
 
 
 ----------------------------------------------

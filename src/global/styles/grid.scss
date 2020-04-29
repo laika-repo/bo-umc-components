@@ -1,136 +1,57 @@
-$grid-sizes: (
-  'small':  375px,
-  'medium': 768px,
-  'large':  1024px,
-  'xlarge':  1440px
-) !default;
-
-$grid: (
-    small:  (
-      breakpoint: 375px,
-      content-width: 327px,
-      cols: 1,
-      gutter-width: 24px,
-      col-width: 327px
-    ),
-    medium: (
-      breakpoint: 768px,
-      content-width: 656px,
-      cols: 8,
-      gutter-width: 56px,
-      col-width: 33px
-    ),
-
-    large: (
-      breakpoint: 1024px,
-      content-width: 912px,
-      cols: 8,
-      gutter-width: 56px,
-      col-width: 33px
-    ),
-
-    xlarge: (
-      breakpoint: 1440px,
-      content-width: 1328px,
-      cols: 12,
-      gutter-width: 56px,
-      col-width: 65px
-    )
-);
-
-$screens: (
-    mobile:  (
-      min-width: 375px,
-      content-width: 327px,
-      cols: 1,
-      gutter-width: 24px,
-      col-width: 327px
-    ),
-    tablet-portrait: (
-      min-width: 768px,
-      content-width: 656px,
-      cols: 8,
-      gutter-width: 56px,
-      col-width: 33px
-    ),
-
-    tablet-landscape: (
-      min-width: 1024px,
-      content-width: 912px,
-      cols: 8,
-      gutter-width: 56px,
-      col-width: 65px
-    ),
-
-    desktop: (
-      min-width: 1440px,
-      content-width: 1328px,
-      cols: 12,
-      gutter-width: 56px,
-      col-width: 59px
-    )
-);
-
+$grid-sizes: ( 'small': 375px, 'medium': 768px, 'large': 1024px, 'xlarge': 1440px) !default;
+// Legacy!
+$grid: ( small: ( breakpoint: 375px, content-width: 327px, cols: 1, gutter-width: 24px, col-width: 327px), medium: ( breakpoint: 768px, content-width: 656px, cols: 8, gutter-width: 56px, col-width: 33px), large: ( breakpoint: 1024px, content-width: 912px, cols: 8, gutter-width: 56px, col-width: 33px), xlarge: ( breakpoint: 1440px, content-width: 1328px, cols: 12, gutter-width: 56px, col-width: 65px));
+$screens: ( mobile: ( min-width: 375px, content-width: 327px, cols: 1, gutter-width: 24px, col-width: 327px), tablet-portrait: ( min-width: 768px, content-width: 656px, cols: 8, gutter-width: 56px, col-width: 3px), tablet-landscape: ( min-width: 1024px, content-width: 912px, cols: 12, gutter-width: 56px, col-width: 24px), desktop: ( min-width: 1440px, content-width: 1328px, cols: 12, gutter-width: 56px, col-width: 59px));
 // $m-breakpoint: map-deep-get($grid, "small", "M");
-
 @function map-deep-get($map, $keys...) {
-  @each $key in $keys {
-      $map: map-get($map, $key);
-  }
-  @return $map;
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
 }
 
-
 @mixin min-screen-width($screen) {
-  // If the key exists in the map
-  @if map-has-key($screens, $screen) {
-    // Prints a media query based on the value
-    @media (min-width: map-deep-get($screens, $screen, 'min-width')) {
-      @content;
+    // If the key exists in the map
+    @if map-has-key($screens, $screen) {
+        // Prints a media query based on the value
+        @media (min-width: map-deep-get($screens, $screen, 'min-width')) {
+            @content;
+        }
     }
-  }
- 
-  // If the key doesn't exist in the map
-  @else {
-    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        + "Available breakpoints are: #{map-keys($breakpoints)}.";
-  }
+    // If the key doesn't exist in the map
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "+"Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
 }
 
 @function column-width-for-min-screen($screen, $colspan) {
-  $cols: map-deep-get($screens, $screen, 'cols');
-  $total-width: map-deep-get($screens, $screen, 'content-width');
-
-  @if $colspan >= $cols { 
-    @return $total-width;
-  } 
-
-  $col-width: map-deep-get($screens, $screen, 'col-width');
-  $gutter-width: map-deep-get($screens, $screen, 'gutter-width');
-
-  @return  ($col-width * $colspan) + ($gutter-width * ($colspan - 1));
+    $cols: map-deep-get($screens, $screen, 'cols');
+    $total-width: map-deep-get($screens, $screen, 'content-width');
+    @if $colspan>=$cols {
+        @return $total-width;
+    }
+    $col-width: map-deep-get($screens, $screen, 'col-width');
+    $gutter-width: map-deep-get($screens, $screen, 'gutter-width');
+    @return ($col-width * $colspan)+($gutter-width * ($colspan - 1));
 }
 
 @function column-width($colspan, $gutter-width, $col-width) {
-  @return  ($col-width * $colspan) + ($gutter-width * ($colspan - 1));
+    @return ($col-width * $colspan)+($gutter-width * ($colspan - 1));
 }
 
 @function column-width-for-breakpoint($breakpoint, $colspan) {
-  $cols: map-deep-get($grid, $breakpoint, 'cols');
-  $total-width: map-deep-get($grid, $breakpoint, 'content-width');
-
-  @if $colspan >= $cols { 
-    @return $total-width;
-  } 
-
-  $col-width: map-deep-get($grid, $breakpoint, 'col-width');
-  $gutter-width: map-deep-get($grid, $breakpoint, 'gutter-width');
-
-  @return  ($col-width * $colspan) + ($gutter-width * ($colspan - 1));
+    $cols: map-deep-get($grid, $breakpoint, 'cols');
+    $total-width: map-deep-get($grid, $breakpoint, 'content-width');
+    @if $colspan>=$cols {
+        @return $total-width;
+    }
+    $col-width: map-deep-get($grid, $breakpoint, 'col-width');
+    $gutter-width: map-deep-get($grid, $breakpoint, 'gutter-width');
+    @return ($col-width * $colspan)+($gutter-width * ($colspan - 1));
 }
 
 @function column-width($colspan, $gutter-width, $col-width) {
-  @return  ($col-width * $colspan) + ($gutter-width * ($colspan - 1));
+    @return ($col-width * $colspan)+($gutter-width * ($colspan - 1));
 }
 
 @mixin act-as-column-section--unscoped {
@@ -138,169 +59,249 @@ $screens: (
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
-
     flex-direction: column;
-
+    // border: 1px dotted rgba(255, 0, 0, 0.3);
     width: map-deep-get($grid, "small", "content-width");
-
     @include wider-than('small') {
         width: 100%;
         // max-width: map-deep-get($grid, "medium", "content-width");
     }
-
     @include min-screen-width('tablet-portrait') {
         flex-direction: row;
         width: map-deep-get($screens, 'tablet-portrait', 'content-width');
     }
-
     @include min-screen-width('tablet-landscape') {
-        width: map-deep-get($screens, 'tablet-landscape', 'content-width');
+        width: calc(100% - (2*56px));
+        justify-content: space-between;
+        // width: map-deep-get($screens, 'tablet-landscape', 'content-width');
     }
-
     @include min-screen-width('desktop') {
         width: map-deep-get($screens, 'desktop', 'content-width');
     }
-
     &.justify-columns {
         justify-content: space-between;
     }
 }
 
 @mixin act-as-column--unscoped {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-
-  // border: 1px dotted rgba(0, 0, 0, 0.3);
-
-  width: 100%;
-
-  @include min-screen-width('tablet-portrait') {
-    width: column-width-for-min-screen('tablet-portrait', 1);
-    margin-right: map-deep-get($screens, 'tablet-portrait', 'gutter-width');
-  }
-
-  @include min-screen-width('tablet-landscape') {
-    width: column-width-for-min-screen('tablet-landscape', 1);
-    margin-right: map-deep-get($screens, 'tablet-landscape', 'gutter-width');
-  }
-
-  @include min-screen-width('desktop') {
-    width: column-width-for-min-screen('desktop', 1);
-    margin-right: map-deep-get($screens, 'desktop', 'gutter-width');
-  }
-
-  &.direction--horizontal {
-    flex-direction: row;
-  }
-
-  &:last-child {
-    margin-right: 0;
-  }
-  
-  &.empty {
-    @include wider-than('small') {
-      visibility: hidden;
-    }
-  }
-  
-  &.width--full {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border: 1px dotted rgba(0, 0, 0, 0.5);
     width: 100%;
-  }
-
-  &.width--small {
     @include min-screen-width('tablet-portrait') {
-      width: column-width-for-min-screen('tablet-portrait', 2);
+        width: column-width-for-min-screen('tablet-portrait', 1);
+        margin-right: map-deep-get($screens, 'tablet-portrait', 'gutter-width');
     }
-
     @include min-screen-width('tablet-landscape') {
-      width: column-width-for-min-screen('tablet-landscape', 2);
+        width: column-width-for-min-screen('tablet-landscape', 1);
+        margin-right: map-deep-get($screens, 'tablet-landscape', 'gutter-width');
     }
-  
     @include min-screen-width('desktop') {
-      width: column-width-for-min-screen('desktop', 3);
+        width: column-width-for-min-screen('desktop', 1);
+        margin-right: map-deep-get($screens, 'desktop', 'gutter-width');
     }
-  }
-
-  &.width--medium {
-    @include min-screen-width('tablet-portrait') {
-      width: column-width-for-min-screen('tablet-portrait', 3);
+    &.direction--horizontal {
+        flex-direction: row;
     }
-
-    @include min-screen-width('tablet-landscape') {
-      width: column-width-for-min-screen('tablet-landscape', 3);
+    &:last-child {
+        margin-right: 0;
     }
-  
-    @include min-screen-width('desktop') {
-      width: column-width-for-min-screen('desktop', 4);
+    &.empty {
+        @include wider-than('small') {
+            visibility: hidden;
+        }
     }
-  }
-
-  &.width--large {
-    @include min-screen-width('tablet-portrait') {
-      width: column-width-for-min-screen('tablet-portrait', 4);
+    &.width--full {
+        width: 100%;
     }
-
-    @include min-screen-width('tablet-landscape') {
-      width: column-width-for-min-screen('tablet-landscape', 4);
+    &.fluid--1x {
+        @include min-screen-width('tablet-portrait') {
+            background-color: rgba($color: #00ff00, $alpha: 0.3);
+            width: auto;
+            margin-right: 56px;
+            flex: 1;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+        @include min-screen-width('desktop') {
+            width: column-width-for-min-screen('desktop', 2);
+        }
     }
-  
-    @include min-screen-width('desktop') {
-      width: column-width-for-min-screen('desktop', 5);
+    &.fluid--2x {
+        @include min-screen-width('tablet-portrait') {
+            background-color: rgba($color: #00ff00, $alpha: 0.3);
+            width: auto;
+            margin-right: 56px;
+            flex: 2;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+        @include min-screen-width('desktop') {
+            width: column-width-for-min-screen('desktop', 2);
+        }
     }
-  }
-
-  &.width--x-large {
-    @include min-screen-width('tablet-portrait') {
-      width: column-width-for-min-screen('tablet-portrait', 4);
+    &.fluid--2x {
+        @include min-screen-width('tablet-portrait') {
+            background-color: rgba($color: #00ffff, $alpha: 0.3);
+            width: calc(16.6% - (56px));
+            margin-right: 56px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+        @include min-screen-width('desktop') {
+            width: column-width-for-min-screen('desktop', 2);
+        }
     }
-
-    @include min-screen-width('tablet-landscape') {
-      width: column-width-for-min-screen('tablet-landscape', 4);
+    &.fluid--3x {
+        @include min-screen-width('tablet-portrait') {
+            background-color: rgba($color: #00ff00, $alpha: 0.3);
+            width: auto;
+            margin-right: 56px;
+            flex: 3;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+        @include min-screen-width('desktop') {
+            width: column-width-for-min-screen('desktop', 3);
+        }
     }
-  
-    @include min-screen-width('desktop') {
-      width: column-width-for-min-screen('desktop', 6);
+    &.fluid--4x {
+        @include min-screen-width('tablet-portrait') {
+            background-color: rgba($color: #00ff00, $alpha: 0.3);
+            width: auto;
+            margin-right: 56px;
+            flex: 4;
+            flex-basis: 0;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+        @include min-screen-width('desktop') {
+            width: column-width-for-min-screen('desktop', 4);
+        }
     }
-  }
-
-  &.width--xx-large {
-    @include min-screen-width('tablet-portrait') {
-      width: column-width-for-min-screen('tablet-portrait', 5);
+    &.fluid--6x {
+        @include min-screen-width('tablet-portrait') {
+            background-color: rgba($color: #00ff00, $alpha: 0.3);
+            width: auto;
+            margin-right: 56px;
+            flex: 6;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+        @include min-screen-width('desktop') {
+            width: column-width-for-min-screen('desktop', 6);
+        }
     }
-
-    @include min-screen-width('tablet-landscape') {
-      width: column-width-for-min-screen('desktop', 5);
+    &.fluid--8x {
+        @include min-screen-width('tablet-portrait') {
+            background-color: rgba($color: #00ff00, $alpha: 0.3);
+            width: auto;
+            margin-right: 56px;
+            flex: 8;
+            flex-basis: 0;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+        @include min-screen-width('desktop') {
+            width: column-width-for-min-screen('desktop', 8);
+        }
     }
-
-    @include min-screen-width('desktop') {
-       width: column-width-for-min-screen('desktop', 7);
-     }
-   }
-  
-  &.width--xxx-large {
-    @include min-screen-width('tablet-portrait') {
-      width: column-width-for-min-screen('tablet-portrait', 6);
+    &.fluid--10x {
+        @include min-screen-width('tablet-portrait') {
+            background-color: rgba($color: #00ff00, $alpha: 0.3);
+            width: auto;
+            margin-right: 56px;
+            flex: 10;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+        @include min-screen-width('desktop') {
+            width: column-width-for-min-screen('desktop', 10);
+        }
     }
-
-    @include min-screen-width('tablet-landscape') {
-      width: column-width-for-min-screen('desktop', 6);
+    &.width--small {
+        @include min-screen-width('tablet-portrait') {
+            width: column-width-for-min-screen('tablet-portrait', 3);
+        }
+        @include min-screen-width('tablet-landscape') {
+            width: 0.24vw;
+            // width: column-width-for-min-screen('tablet-landscape', 3);
+        }
+        @include min-screen-width('desktop') {
+            width: column-width-for-min-screen('desktop', 3);
+        }
     }
-
-    @include min-screen-width('desktop') {
-       width: column-width-for-min-screen('desktop', 8);
-     }
-   }
-  
-  &.gutterless {
-    margin-right: 0;
-  }
-  
-  &.align--center {
-    justify-content: center;
-  }
-
-  &.align--right {
-    justify-content: flex-end;
-  }
+    &.width--medium {
+        @include min-screen-width('tablet-portrait') {
+            width: column-width-for-min-screen('tablet-portrait', 4);
+        }
+        @include min-screen-width('tablet-landscape') {
+            width: column-width-for-min-screen('tablet-landscape', 4);
+        }
+        @include min-screen-width('desktop') {
+            width: column-width-for-min-screen('desktop', 4);
+        }
+    }
+    &.width--large {
+        @include min-screen-width('tablet-portrait') {
+            width: column-width-for-min-screen('tablet-portrait', 5);
+        }
+        @include min-screen-width('tablet-landscape') {
+            width: column-width-for-min-screen('tablet-landscape', 5);
+        }
+        @include min-screen-width('desktop') {
+            width: column-width-for-min-screen('desktop', 5);
+        }
+    }
+    &.width--x-large {
+        @include min-screen-width('tablet-portrait') {
+            width: column-width-for-min-screen('tablet-portrait', 6);
+        }
+        @include min-screen-width('tablet-landscape') {
+            width: column-width-for-min-screen('tablet-landscape', 6);
+        }
+        @include min-screen-width('desktop') {
+            width: column-width-for-min-screen('desktop', 6);
+        }
+    }
+    &.width--xx-large {
+        @include min-screen-width('tablet-portrait') {
+            width: column-width-for-min-screen('tablet-portrait', 7);
+        }
+        @include min-screen-width('tablet-landscape') {
+            width: column-width-for-min-screen('tablet-landscape', 7);
+        }
+        @include min-screen-width('desktop') {
+            width: column-width-for-min-screen('desktop', 7);
+        }
+    }
+    &.width--xxx-large {
+        @include min-screen-width('tablet-portrait') {
+            width: column-width-for-min-screen('tablet-portrait', 8);
+        }
+        @include min-screen-width('tablet-landscape') {
+            width: column-width-for-min-screen('tablet-landscape', 8);
+        }
+        @include min-screen-width('desktop') {
+            width: column-width-for-min-screen('desktop', 8);
+        }
+    }
+    &.gutterless {
+        margin-right: 0;
+    }
+    &.align--center {
+        justify-content: center;
+    }
+    &.align--right {
+        justify-content: flex-end;
+    }
 }

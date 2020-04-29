@@ -1,30 +1,31 @@
 umc-column-section {
-  --background-color--default: $white;
-  --padding-vertical--default: 20px;
-  --padding-horizontal--default: 0px;
-  --border-color--default: transparent;
-  
-  padding: var(--padding-vertical, var(--padding-vertical--default)) var(--padding-horizontal, var(--padding-horizontal--default));
-  background-color: var(--background-color, var(--background-color--default));
-  border-bottom: 1px solid var(--border-color, var(--border-color--default));
-
-  @include act-as-column-section--unscoped;
+    --background-color--default: $white;
+    --padding-vertical--default: 20px;
+    --padding-horizontal--default: 0px;
+    --border-color--default: transparent;
+    padding: var(--padding-vertical, var(--padding-vertical--default)) var(--padding-horizontal, var(--padding-horizontal--default));
+    background-color: var(--background-color, var(--background-color--default));
+    border-bottom: 1px solid var(--border-color, var(--border-color--default));
+    @include act-as-column-section--unscoped;
+    color: green;
 }
 
 umc-column-section.umc-location-switch {
-  --text-color: #005261;
-  --border-color: #ced9e5;
-  --margin-bottom: 0;
-  --padding-vertical: 8px;
-  justify-content: space-between;
+    --text-color: #005261;
+    --border-color: #ced9e5;
+    --margin-bottom: 0;
+    --padding-vertical: 8px;
+    justify-content: space-between;
+    umc-column {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 umc-column-section.umc-navigation-menu,
 umc-column-section.umc-breadcrumbs {
-  @include min-screen-width('desktop') {
-    width: map-deep-get($screens, 'desktop', 'content-width') - ( map-deep-get($screens, 'desktop', 'gutter-width') * 2 );
-  }
+    @include min-screen-width('desktop') {
+        width: map-deep-get($screens, 'desktop', 'content-width') - ( map-deep-get($screens, 'desktop', 'gutter-width') * 2);
+    }
 }
-
-
-

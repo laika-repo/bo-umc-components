@@ -8,6 +8,9 @@ umc-menu-toggle {
         display: inline-flex;
         align-items: center;
     }
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 umc-menu-toggle.umc-menu-toggle--menu umc-label::before {
