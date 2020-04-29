@@ -7,5 +7,5 @@ umc-column {
     color: var(--text-color, var(--text-color--default));
     margin-bottom: 12px;
     @include act-as-column--unscoped;
-    color: chartreuse;
+    color: pink;
 }

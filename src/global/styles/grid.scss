@@ -58,7 +58,7 @@ $screens: ( mobile: ( min-width: 375px, content-width: 327px, cols: 1, gutter-wi
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
     // border: 1px dotted rgba(255, 0, 0, 0.3);
     width: map-deep-get($grid, "small", "content-width");
@@ -68,12 +68,7 @@ $screens: ( mobile: ( min-width: 375px, content-width: 327px, cols: 1, gutter-wi
     }
     @include min-screen-width('tablet-portrait') {
         flex-direction: row;
-        width: map-deep-get($screens, 'tablet-portrait', 'content-width');
-    }
-    @include min-screen-width('tablet-landscape') {
         width: calc(100% - (2*56px));
-        justify-content: space-between;
-        // width: map-deep-get($screens, 'tablet-landscape', 'content-width');
     }
     @include min-screen-width('desktop') {
         width: map-deep-get($screens, 'desktop', 'content-width');
@@ -116,39 +111,26 @@ $screens: ( mobile: ( min-width: 375px, content-width: 327px, cols: 1, gutter-wi
         width: 100%;
     }
     &.fluid--1x {
+        background-color: rgba($color: #698069, $alpha: 0.3);
         @include min-screen-width('tablet-portrait') {
-            background-color: rgba($color: #00ff00, $alpha: 0.3);
-            width: auto;
+            width: 4vw;
+            //width: calc((1vw - (13 * 56px)) / 12);
             margin-right: 56px;
-            flex: 1;
-            &:last-of-type {
+            &:last-child {
                 margin-right: 0;
             }
         }
         @include min-screen-width('desktop') {
-            width: column-width-for-min-screen('desktop', 2);
+            width: column-width-for-min-screen('desktop', 1);
         }
     }
     &.fluid--2x {
+        background-color: rgba($color: #698069, $alpha: 0.3);
         @include min-screen-width('tablet-portrait') {
-            background-color: rgba($color: #00ff00, $alpha: 0.3);
-            width: auto;
+            width: 12vw;
+            // width: calc(((100% - (5 * 56px)) / 6) + 56px);
             margin-right: 56px;
-            flex: 2;
-            &:last-of-type {
-                margin-right: 0;
-            }
-        }
-        @include min-screen-width('desktop') {
-            width: column-width-for-min-screen('desktop', 2);
-        }
-    }
-    &.fluid--2x {
-        @include min-screen-width('tablet-portrait') {
-            background-color: rgba($color: #00ffff, $alpha: 0.3);
-            width: calc(16.6% - (56px));
-            margin-right: 56px;
-            &:last-of-type {
+            &:last-child {
                 margin-right: 0;
             }
         }
@@ -158,11 +140,11 @@ $screens: ( mobile: ( min-width: 375px, content-width: 327px, cols: 1, gutter-wi
     }
     &.fluid--3x {
         @include min-screen-width('tablet-portrait') {
-            background-color: rgba($color: #00ff00, $alpha: 0.3);
-            width: auto;
+            background-color: rgba($color: #698069, $alpha: 0.3);
+            width: 20vw;
+            // width: calc(((100% - (3 * 56px)) / 4) + (2 * 56px));
             margin-right: 56px;
-            flex: 3;
-            &:last-of-type {
+            &:last-child {
                 margin-right: 0;
             }
         }
@@ -172,12 +154,11 @@ $screens: ( mobile: ( min-width: 375px, content-width: 327px, cols: 1, gutter-wi
     }
     &.fluid--4x {
         @include min-screen-width('tablet-portrait') {
-            background-color: rgba($color: #00ff00, $alpha: 0.3);
-            width: auto;
+            background-color: rgba($color: #698069, $alpha: 0.3);
+            width: 28vw;
+            // width: calc(((100% - (2 * 56px)) / 3) + (3 * 56px));
             margin-right: 56px;
-            flex: 4;
-            flex-basis: 0;
-            &:last-of-type {
+            &:last-child {
                 margin-right: 0;
             }
         }
@@ -187,11 +168,11 @@ $screens: ( mobile: ( min-width: 375px, content-width: 327px, cols: 1, gutter-wi
     }
     &.fluid--6x {
         @include min-screen-width('tablet-portrait') {
-            background-color: rgba($color: #00ff00, $alpha: 0.3);
-            width: auto;
+            background-color: rgba($color: #698069, $alpha: 0.3);
+            width: 44vw;
+            // width: calc(((100% - (56px)) / 2) + (5 * 56px));
             margin-right: 56px;
-            flex: 6;
-            &:last-of-type {
+            &:last-child {
                 margin-right: 0;
             }
         }
@@ -201,12 +182,11 @@ $screens: ( mobile: ( min-width: 375px, content-width: 327px, cols: 1, gutter-wi
     }
     &.fluid--8x {
         @include min-screen-width('tablet-portrait') {
-            background-color: rgba($color: #00ff00, $alpha: 0.3);
-            width: auto;
+            background-color: rgba($color: #698069, $alpha: 0.3);
+            width: 60vw;
+            // width: calc(((100% - (56px)) / 1.5) + (7 * 56px));
             margin-right: 56px;
-            flex: 8;
-            flex-basis: 0;
-            &:last-of-type {
+            &:last-child {
                 margin-right: 0;
             }
         }
@@ -216,11 +196,11 @@ $screens: ( mobile: ( min-width: 375px, content-width: 327px, cols: 1, gutter-wi
     }
     &.fluid--10x {
         @include min-screen-width('tablet-portrait') {
-            background-color: rgba($color: #00ff00, $alpha: 0.3);
-            width: auto;
+            background-color: rgba($color: #698069, $alpha: 0.3);
+            width: 76vw;
+            // width: calc(((100% - (56px)) / 1.2) + (9 * 56px));
             margin-right: 56px;
-            flex: 10;
-            &:last-of-type {
+            &:last-child {
                 margin-right: 0;
             }
         }
