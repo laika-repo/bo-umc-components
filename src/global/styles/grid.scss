@@ -111,7 +111,6 @@ $screens: ( mobile: ( min-width: 375px, content-width: 327px, cols: 1, gutter-wi
         width: 100%;
     }
     &.fluid--1x {
-        background-color: rgba($color: #698069, $alpha: 0.3);
         @include min-screen-width('tablet-portrait') {
             width: 4vw;
             //width: calc((1vw - (13 * 56px)) / 12);
@@ -125,7 +124,6 @@ $screens: ( mobile: ( min-width: 375px, content-width: 327px, cols: 1, gutter-wi
         }
     }
     &.fluid--2x {
-        background-color: rgba($color: #698069, $alpha: 0.3);
         @include min-screen-width('tablet-portrait') {
             width: 12vw;
             // width: calc(((100% - (5 * 56px)) / 6) + 56px);
@@ -140,7 +138,6 @@ $screens: ( mobile: ( min-width: 375px, content-width: 327px, cols: 1, gutter-wi
     }
     &.fluid--3x {
         @include min-screen-width('tablet-portrait') {
-            background-color: rgba($color: #698069, $alpha: 0.3);
             width: 20vw;
             // width: calc(((100% - (3 * 56px)) / 4) + (2 * 56px));
             margin-right: 56px;
@@ -154,7 +151,6 @@ $screens: ( mobile: ( min-width: 375px, content-width: 327px, cols: 1, gutter-wi
     }
     &.fluid--4x {
         @include min-screen-width('tablet-portrait') {
-            background-color: rgba($color: #698069, $alpha: 0.3);
             width: 28vw;
             // width: calc(((100% - (2 * 56px)) / 3) + (3 * 56px));
             margin-right: 56px;
@@ -168,7 +164,6 @@ $screens: ( mobile: ( min-width: 375px, content-width: 327px, cols: 1, gutter-wi
     }
     &.fluid--6x {
         @include min-screen-width('tablet-portrait') {
-            background-color: rgba($color: #698069, $alpha: 0.3);
             width: 44vw;
             // width: calc(((100% - (56px)) / 2) + (5 * 56px));
             margin-right: 56px;
@@ -182,7 +177,6 @@ $screens: ( mobile: ( min-width: 375px, content-width: 327px, cols: 1, gutter-wi
     }
     &.fluid--8x {
         @include min-screen-width('tablet-portrait') {
-            background-color: rgba($color: #698069, $alpha: 0.3);
             width: 60vw;
             // width: calc(((100% - (56px)) / 1.5) + (7 * 56px));
             margin-right: 56px;
@@ -196,7 +190,6 @@ $screens: ( mobile: ( min-width: 375px, content-width: 327px, cols: 1, gutter-wi
     }
     &.fluid--10x {
         @include min-screen-width('tablet-portrait') {
-            background-color: rgba($color: #698069, $alpha: 0.3);
             width: 76vw;
             // width: calc(((100% - (56px)) / 1.2) + (9 * 56px));
             margin-right: 56px;

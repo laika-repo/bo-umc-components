@@ -16,11 +16,15 @@ umc-section-container.content-footer {
     --background-color: #f0f5f5;
 }
 
-umc-section-container.umc-debug-grid-example {
+umc-section-container.umc-debug-background-grid {
+    position: fixed;
     background: rgba(0, 0, 255, 0.1);
+    umc-column-section {
+        padding: 0;
+    }
     umc-column {
         height: 64px;
-        background: rgba(255, 0, 0, 0.3);
+        background: rgba(255, 0, 0, 0.1);
     }
 }
 
