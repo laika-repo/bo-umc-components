@@ -1,158 +1,155 @@
 umc-list {
-  --text-color--default: $black;
-  --header-color--default: $black;
-  --text-size--default: 30px;
-  --header-size--default: 20px;
-  --margin-bottom--default: 0;
-  
-  margin: 0;
-  margin-bottom: var(--margin-bottom, var(--margin-bottom--default));
-
-  font-family: 'Museo Sans Rounded', sans-serif;
-  font-weight: 300;
-  font-size: rem-calc(var(--text-size, var(--text-size--default)));
-  color: var(--text-color, var(--text-color--default));
-  line-height: rem-calc(24px);
-
-  umc-list-header {
-    font-weight: 500;
-    font-size: rem-calc(22px);
-  }
-
-  umc-list-item {
-    a {
-      color: var(--text-color, var(--text-color--default));
-      text-decoration: none;
+    --text-color--default: $black;
+    --header-color--default: $black;
+    --text-size--default: 30px;
+    --header-size--default: 20px;
+    --margin-bottom--default: 0;
+    margin: 0;
+    margin-bottom: var(--margin-bottom, var(--margin-bottom--default));
+    font-family: 'Museo Sans Rounded', sans-serif;
+    font-weight: 300;
+    font-size: rem-calc(var(--text-size, var(--text-size--default)));
+    color: var(--text-color, var(--text-color--default));
+    line-height: rem-calc(24px);
+    umc-list-header {
+        font-weight: 500;
+        font-size: rem-calc(22px);
     }
-  
-    a:hover {
-      text-decoration: underline;
-    } 
-  }
+    umc-list-item {
+        a {
+            color: var(--text-color, var(--text-color--default));
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 %horizontal {
-  umc-list-item {
-    @include min-screen-width('tablet-portrait') {
-      display: inline;
-      margin-right: 24px;
+    umc-list-item {
+        @include min-screen-width('tablet-portrait') {
+            display: inline;
+            margin-right: 24px;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
     }
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
 }
 
+%always-horizontal {
+    umc-list-item {
+        display: inline;
+        margin-right: 24px;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+
 /* Variations */
+
 umc-list.umc-navigation-list {
-  @extend %horizontal;
+    @extend %horizontal;
+}
+
+umc-column.umc-footer-socials umc-list.umc-navigation-list {
+    @extend %always-horizontal;
 }
 
 umc-list.umc-share-list {
-  @extend %horizontal;
-
-  padding-bottom: 22px;
-  margin-bottom: 22px;
-  border-bottom: 1px solid #ced9e5;
-  
-  umc-list-header {
-    font-weight: 500;
-    font-size: rem-calc(18px);
-    margin-bottom: 16px;
-  }
-
-  umc-list-item {
-    margin-right: 4px;
-  }
-
-  umc-icon {
-    width: 42px;
-    height: 42px;
-    background-color: #00778a;
-    border-radius: 50%;
-    background-repeat: no-repeat;
-    background-position: center; 
-  }
+    @extend %horizontal;
+    padding-bottom: 22px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid #ced9e5;
+    umc-list-header {
+        font-weight: 500;
+        font-size: rem-calc(18px);
+        margin-bottom: 16px;
+    }
+    umc-list-item {
+        margin-right: 4px;
+    }
+    umc-icon {
+        width: 42px;
+        height: 42px;
+        background-color: #00778a;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 }
 
 umc-list.umc-navigation-list--primary {
-  font-size: rem-calc(22px);
-  line-height: rem-calc(56px);
-  font-weight: 500;
-
-  umc-list-item {
-    border-bottom: 1px solid #00778a;
-
-    &:last-child {
-      border-bottom-width: 0;
+    font-size: rem-calc(22px);
+    line-height: rem-calc(56px);
+    font-weight: 500;
+    umc-list-item {
+        border-bottom: 1px solid #00778a;
+        &:last-child {
+            border-bottom-width: 0;
+        }
     }
-  }
-
-  a.umc-link-out::before {
-    transform: scaleX(-1); // Flip the svg
-  }
-
-  a::before {
-    display: inline-block;
-    content: "";
-    width: 16px;
-    height: 16px;
-    background-image: url(./assets/arrow-right-white.svg);
-    background-repeat: no-repeat;
-    margin-right: 16px;
-  }
+    a.umc-link-out::before {
+        transform: scaleX(-1); // Flip the svg
+    }
+    a::before {
+        display: inline-block;
+        content: "";
+        width: 16px;
+        height: 16px;
+        background-image: url(./assets/arrow-right-white.svg);
+        background-repeat: no-repeat;
+        margin-right: 16px;
+    }
 }
 
 umc-list.umc-navigation-list--sidebar {
-  font-size: rem-calc(18px);
-  line-height: rem-calc(28px);
-  margin-bottom: 32px;
-
-  umc-list-item a {
-    color: $azure-blue;
-  }
+    font-size: rem-calc(18px);
+    line-height: rem-calc(28px);
+    margin-bottom: 32px;
+    umc-list-item a {
+        color: $azure-blue;
+    }
 }
 
 umc-list.umc-navigation-list--secondary {
-  font-size: rem-calc(18px);
-  line-height: rem-calc(40px);
-
-  umc-list-item {
-    a::before {
-      display: inline-block;
-      content: "";
-      width: 16px;
-      height: 16px;
-      background-image: url(./assets/arrow-right-white.svg);
-      background-repeat: no-repeat;
-      margin-right: 16px;
+    font-size: rem-calc(18px);
+    line-height: rem-calc(40px);
+    umc-list-item {
+        a::before {
+            display: inline-block;
+            content: "";
+            width: 16px;
+            height: 16px;
+            background-image: url(./assets/arrow-right-white.svg);
+            background-repeat: no-repeat;
+            margin-right: 16px;
+        }
     }
-  }
 }
 
 umc-list.umc-navigation-list--back {
-  @extend %horizontal;
-
-  font-size: rem-calc(18px);
-  font-weight: 500;
-  color: #00778a;
-
-  umc-list-item {
-    a {
-      display: inline-flex;
-      align-items: center;
-    }    
-
-    a::before {
-      display: inline-block;
-      content: "";
-      width: 16px;
-      height: 16px;
-      transform: scaleX(-1);
-      background-image: url(./assets/arrow-right-azure-blue.svg);
-      background-repeat: no-repeat;
-      margin-right: 8px;
+    @extend %horizontal;
+    font-size: rem-calc(18px);
+    font-weight: 500;
+    color: #00778a;
+    umc-list-item {
+        a {
+            display: inline-flex;
+            align-items: center;
+        }
+        a::before {
+            display: inline-block;
+            content: "";
+            width: 16px;
+            height: 16px;
+            transform: scaleX(-1);
+            background-image: url(./assets/arrow-right-azure-blue.svg);
+            background-repeat: no-repeat;
+            margin-right: 8px;
+        }
     }
-  }
 }
