@@ -1,10 +1,61 @@
 umc-content-block {
-  font-family: 'Museo Sans Rounded', sans-serif;
-  font-weight: 300;
-  font-size: rem-calc(18px);
-  line-height: rem-calc(28px);
-  
-  @include act-as-column--unscoped;
+    font-family: 'Museo Sans Rounded', sans-serif;
+    font-weight: 300;
+    font-size: rem-calc(18px);
+    line-height: rem-calc(28px);
+    @include act-as-column--unscoped;
 }
 
+%fluid {
+    margin-right: 56px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
 
+@mixin fluid--2x() {
+    width: 12vw;
+}
+
+@mixin fluid--4x() {
+    width: 28vw;
+}
+
+@mixin fluid--6x() {
+    width: 44vw;
+}
+
+@mixin fluid--7x() {
+    width: 53vw;
+}
+
+@mixin fluid--8x() {
+    width: 60vw;
+}
+
+@mixin fluid--10x() {
+    width: 76vw;
+}
+
+%direction--horizontal {
+    flex-direction: row;
+}
+
+%align--left {
+    justify-content: flex-start;
+}
+
+umc-content-block {
+    @extend %fluid;
+    margin-bottom: 56px;
+    @include min-screen-width('tablet-portrait') {
+        @include fluid--10x();
+    }
+    @include min-screen-width('tablet-landscape') {
+        @include fluid--7x();
+        margin-bottom: 0;
+    }
+    @include min-screen-width('desktop') {
+        width: column-width-for-min-screen('desktop', 7);
+    }
+}

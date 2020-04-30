@@ -9,42 +9,39 @@ umc-column {
     @include act-as-column--unscoped;
 }
 
-// Todo: move to act-as-column
-%fluid--4x {
-    @include min-screen-width('tablet-portrait') {
-        width: 28vw;
-        margin-right: 56px;
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-    @include min-screen-width('desktop') {
-        width: column-width-for-min-screen('desktop', 4);
-    }
-}
-
-%fluid--6x {
-    @include min-screen-width('tablet-portrait') {
-        width: 44vw;
-        margin-right: 56px;
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-    @include min-screen-width('desktop') {
-        width: column-width-for-min-screen('desktop', 6);
-    }
-}
-
-%fluid--8x {
-    max-width: 60vw;
-    min-width: 60vw;
-    margin-right: 56px;
-    &:last-child {
-        margin-right: 0;
-    }
-}
-
+// // Todo: move to act-as-column
+// %fluid--4x {
+//     @include min-screen-width('tablet-portrait') {
+//         width: 28vw;
+//         margin-right: 56px;
+//         &:last-child {
+//             margin-right: 0;
+//         }
+//     }
+//     @include min-screen-width('desktop') {
+//         width: column-width-for-min-screen('desktop', 4);
+//     }
+// }
+// %fluid--6x {
+//     @include min-screen-width('tablet-portrait') {
+//         width: 44vw;
+//         margin-right: 56px;
+//         &:last-child {
+//             margin-right: 0;
+//         }
+//     }
+//     @include min-screen-width('desktop') {
+//         width: column-width-for-min-screen('desktop', 6);
+//     }
+// }
+// %fluid--8x {
+//     max-width: 60vw;
+//     min-width: 60vw;
+//     margin-right: 56px;
+//     &:last-child {
+//         margin-right: 0;
+//     }
+// }
 %fluid {
     margin-right: 56px;
     &:last-child {

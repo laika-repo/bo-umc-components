@@ -27,7 +27,8 @@ umc-list {
 }
 
 %horizontal {
-    umc-list-item {
+    umc-list-item,
+    umc-list-header {
         @include min-screen-width('tablet-portrait') {
             display: inline;
             margin-right: 24px;
@@ -39,7 +40,8 @@ umc-list {
 }
 
 %always-horizontal {
-    umc-list-item {
+    umc-list-item,
+    umc-list-header {
         display: inline;
         margin-right: 24px;
     }
@@ -60,11 +62,20 @@ umc-column.umc-footer-socials umc-list.umc-navigation-list {
 }
 
 umc-list.umc-share-list {
-    @extend %horizontal;
+    @extend %always-horizontal;
     padding-bottom: 22px;
     margin-bottom: 22px;
     border-bottom: 1px solid #ced9e5;
+    @include min-screen-width('tablet-portrait') {
+        border-bottom-width: 0;
+        width: 50%;
+    }
+    @include min-screen-width('tablet-landscape') {
+        border-bottom: 1px solid #ced9e5;
+        width: auto;
+    }
     umc-list-header {
+        display: block;
         font-weight: 500;
         font-size: rem-calc(18px);
         margin-bottom: 16px;
@@ -79,6 +90,24 @@ umc-list.umc-share-list {
         border-radius: 50%;
         background-repeat: no-repeat;
         background-position: center;
+    }
+}
+
+umc-list.umc-navigation-list--sidebar {
+    font-size: rem-calc(18px);
+    line-height: rem-calc(28px);
+    margin-bottom: 32px;
+    umc-list-header {
+        margin-top: 16px;
+        @include min-screen-width('tablet-portrait') {
+            margin-top: 0;
+        }
+        @include min-screen-width('tablet-landscape') {
+            margin-top: 16px;
+        }
+    }
+    umc-list-item a {
+        color: $azure-blue;
     }
 }
 
@@ -103,15 +132,6 @@ umc-list.umc-navigation-list--primary {
         background-image: url(./assets/arrow-right-white.svg);
         background-repeat: no-repeat;
         margin-right: 16px;
-    }
-}
-
-umc-list.umc-navigation-list--sidebar {
-    font-size: rem-calc(18px);
-    line-height: rem-calc(28px);
-    margin-bottom: 32px;
-    umc-list-item a {
-        color: $azure-blue;
     }
 }
 

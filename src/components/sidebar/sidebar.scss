@@ -1,13 +1,61 @@
 umc-sidebar {
-  --background-color--default: #f0f5f5;
-  --padding-vertical--default: 24px;
-  --padding-horizontal--default: 24px;
-  --border-color--default: transparent;
-  
-  padding: var(--padding-vertical, var(--padding-vertical--default)) var(--padding-horizontal, var(--padding-horizontal--default));
-  background-color: var(--background-color, var(--background-color--default));
-
-  @include act-as-column--unscoped;
+    --background-color--default: #f0f5f5;
+    --padding-vertical--default: 24px;
+    --padding-horizontal--default: 24px;
+    --border-color--default: transparent;
+    padding: var(--padding-vertical, var(--padding-vertical--default)) var(--padding-horizontal, var(--padding-horizontal--default));
+    background-color: var(--background-color, var(--background-color--default));
+    @include act-as-column--unscoped;
 }
 
+%fluid {
+    margin-right: 56px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
 
+@mixin fluid--2x() {
+    width: 12vw;
+}
+
+@mixin fluid--4x() {
+    width: 28vw;
+}
+
+@mixin fluid--6x() {
+    width: 44vw;
+}
+
+@mixin fluid--8x() {
+    width: 60vw;
+}
+
+@mixin fluid--10x() {
+    width: 76vw;
+}
+
+%direction--horizontal {
+    flex-direction: row;
+}
+
+%align--left {
+    justify-content: flex-start;
+}
+
+umc-sidebar {
+    @extend %fluid;
+    margin-bottom: 56px;
+    @include min-screen-width('tablet-portrait') {
+        flex-direction: row;
+        @include fluid--10x();
+    }
+    @include min-screen-width('tablet-landscape') {
+        @include fluid--4x();
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    @include min-screen-width('desktop') {
+        width: column-width-for-min-screen('desktop', 4);
+    }
+}

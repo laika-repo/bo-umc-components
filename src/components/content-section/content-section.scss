@@ -1,18 +1,23 @@
-umc-content-section {
-  --margin-bottom--default: 56px;
-  --margin-bottom--default: 56px;
-
-  @include act-as-column-section--unscoped;
-}
-
-
-umc-content-section.umc-content {
-  @include min-screen-width('desktop') {
-    width: map-deep-get($screens, 'desktop', 'content-width') - map-deep-get($screens, 'desktop', 'gutter-width');
-    margin-left: map-deep-get($screens, 'desktop', 'gutter-width');
-    box-sizing: border-box;
-    border-radius: 16px 0 0;
-    background: #fff;
-    padding: 56px 0 0 56px;
-  }
-}
+    umc-content-section {
+        --margin-bottom--default: 56px;
+        --margin-bottom--default: 56px;
+        @include act-as-column-section--unscoped;
+    }
+    
+    umc-content-section.umc-content {
+        @include min-screen-width('tablet-portrait') {
+            width: calc(100% - (2*56px));
+            margin-left: map-deep-get($screens, 'desktop', 'gutter-width');
+            box-sizing: border-box;
+            border-radius: 16px 0 0;
+            background: #fff;
+            padding: 56px 0 0 56px;
+        }
+        @include min-screen-width('desktop') {
+            width: map-deep-get($screens, 'desktop', 'content-width') - map-deep-get($screens, 'desktop', 'gutter-width');
+        }
+        flex-wrap: wrap;
+        @include min-screen-width('tablet-landscape') {
+            flex-wrap: nowrap;
+        }
+    }
