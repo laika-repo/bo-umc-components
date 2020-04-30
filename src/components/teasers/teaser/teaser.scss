@@ -1,59 +1,89 @@
 umc-teaser {
-  --background-color--default: $white;
-  --border-color--default: $white;
-  --text-color--default: $black;
-  --font-size--default: $black;
-
-  @include act-as-column--unscoped;
-
-  background-color: var(--background-color, var(--background-color--default));
-
-  margin-bottom: 12px;
-  
-
-  font-family: 'Museo Sans Rounded', sans-serif;
-  font-weight: 300;
-  font-size: rem-calc(var(--text-size, var(--text-size--default)));
-  color: var(--text-color, var(--text-color--default));
-  line-height: rem-calc(24px);
-
-  img {
-    width: 400px;
-    height: 300px;
-  }
-
-  &:last-child {
-    display: none;
-
-    @include min-screen-width('desktop') {
-      display: flex;
+    --background-color--default: $white;
+    --border-color--default: $white;
+    --text-color--default: $black;
+    --font-size--default: $black;
+    box-sizing: border-box;
+    @include act-as-column--unscoped;
+    background-color: var(--background-color, var(--background-color--default));
+    margin-bottom: 12px;
+    font-family: 'Museo Sans Rounded', sans-serif;
+    font-weight: 300;
+    font-size: rem-calc(var(--text-size, var(--text-size--default)));
+    color: var(--text-color, var(--text-color--default));
+    line-height: rem-calc(24px);
+    img {
+        width: 100%;
     }
-  }
-
-  &:nth-last-child(2) {
-    margin: 0;
-
-    @include min-screen-width('desktop') {
-      margin-right: map-deep-get($screens, 'desktop', 'gutter-width');
-    }
-  }
-
-  &.width--medium {
-
-
-    @include min-screen-width('tablet-portrait') {
-      width: column-width-for-min-screen('tablet-portrait', 4);
-    }
-
-    @include min-screen-width('tablet-landscape') {
-      width: column-width-for-min-screen('tablet-landscape', 4);
-    }
-  
-    @include min-screen-width('desktop') {
-      width: column-width-for-min-screen('desktop', 4);
-    }
-  }
+    // &:last-child {
+    //     display: none;
+    //     @include min-screen-width('desktop') {
+    //         display: flex;
+    //     }
+    // }
+    // &:nth-last-child(2) {
+    //     margin: 0;
+    //     @include min-screen-width('desktop') {
+    //         margin-right: map-deep-get($screens, 'desktop', 'gutter-width');
+    //     }
+    // }
+    // &.width--medium {
+    //     @include min-screen-width('tablet-portrait') {
+    //         width: column-width-for-min-screen('tablet-portrait', 4);
+    //     }
+    //     @include min-screen-width('tablet-landscape') {
+    //         width: column-width-for-min-screen('tablet-landscape', 4);
+    //     }
+    //     @include min-screen-width('desktop') {
+    //         width: column-width-for-min-screen('desktop', 4);
+    //     }
+    // }
 }
 
+%fluid {
+    margin-right: 56px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
 
+@mixin fluid--2x() {
+    width: 12vw;
+}
 
+@mixin fluid--4x() {
+    width: 28vw;
+}
+
+@mixin fluid--6x() {
+    width: calc(39vw);
+}
+
+@mixin fluid--8x() {
+    width: 60vw;
+}
+
+@mixin fluid--10x() {
+    width: 76vw;
+}
+
+umc-teaser {
+    @extend %fluid;
+    &:nth-child(2) {
+        margin-right: 0;
+        @include min-screen-width('tablet-landscape') {
+            margin-right: 56px;
+        }
+    }
+    margin-bottom: 56px;
+    @include min-screen-width('tablet-portrait') {
+        @include fluid--6x();
+    }
+    @include min-screen-width('tablet-landscape') {
+        @include fluid--4x();
+        margin-bottom: 0;
+    }
+    @include min-screen-width('desktop') {
+        width: column-width-for-min-screen('desktop', 4);
+    }
+}

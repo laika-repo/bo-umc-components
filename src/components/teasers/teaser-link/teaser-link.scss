@@ -1,6 +1,9 @@
 umc-teaser-link {
-  $half-gutter: map-deep-get($screens, 'desktop', 'gutter-width') / 2;
-  margin-left: $half-gutter * 3;
-  margin-top: -1 * $half-gutter;
-  
+    $half-gutter: map-deep-get($screens, 'desktop', 'gutter-width') / 2;
+    margin-left: $half-gutter * 3;
+    margin-top: -1 * $half-gutter;
+    margin-left: 56px;
+    @include min-screen-width('tablet-landscape') {
+        margin-left: $half-gutter * 3;
+    }
 }

@@ -1,14 +1,12 @@
 umc-teaser-header {
-  --text-color--default: $black;
-  --header-color--default: $black;
-  --text-size--default: 30px;
-  --header-size--default: 20px;
-  --margin-bottom--default: 0;
-  
-  margin: 0;
-  margin-bottom: var(--margin-bottom, var(--margin-bottom--default));
-
-  font-weight: 500;
-  font-size: rem-calc(24px);
-  line-height: rem-calc(32px);
-  }
+    --text-color--default: $black;
+    --header-color--default: $black;
+    --text-size--default: 30px;
+    --header-size--default: 20px;
+    --margin-bottom--default: 0;
+    margin: 0;
+    margin-bottom: var(--margin-bottom, var(--margin-bottom--default));
+    font-weight: 500;
+    font-size: rem-calc(24px);
+    line-height: rem-calc(32px);
+}

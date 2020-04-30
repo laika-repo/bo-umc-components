@@ -1,9 +1,13 @@
 umc-teaser-body {
-  display: block;
-  margin-left: map-deep-get($screens, 'desktop', 'gutter-width');
-  margin-top: -1 * map-deep-get($screens, 'desktop', 'gutter-width');
+    display: block;
+    margin-left: 32px;
+    margin-top: -1 * 56px;
     box-sizing: border-box;
     border-radius: 16px 0 0;
     background: #fff;
-    padding: 32px map-deep-get($screens, 'desktop', 'gutter-width') map-deep-get($screens, 'desktop', 'gutter-width') 32px;
+    padding: 32px 32px 56px 32px;
+    @include min-screen-width('tablet-landscape') {
+        padding-left: 56px;
+        padding-left: 32px;
+    }
 }

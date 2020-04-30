@@ -1,22 +1,36 @@
 umc-title-block {
-  font-family: 'Museo Sans Rounded', sans-serif;
-  font-weight: 500;
-    font-size: rem-calc(48px);
+    font-family: 'Museo Sans Rounded', sans-serif;
+    font-weight: 500;
     margin: 0;
     line-height: rem-calc(56px);
     color: $black;
+    font-size: rem-calc(32px);
+    @include min-screen-width('tablet-portrait') {
+        font-size: rem-calc(48px);
+    }
 }
+
 umc-title-block.large {
-  font-size: rem-calc(48px);
-  line-height: rem-calc(56px);
+    font-size: rem-calc(48px);
+    line-height: rem-calc(56px);
 }
 
 umc-title-block.regular {
-  font-size: rem-calc(32px);
-  line-height: rem-calc(32px);
+    font-size: rem-calc(32px);
+    line-height: rem-calc(32px);
 }
 
 umc-title-block.small {
-  font-size: rem-calc(24px);
-  line-height: rem-calc(24px);
+    font-size: rem-calc(24px);
+    line-height: rem-calc(24px);
+}
+
+.content-footer umc-title-block {
+    padding-left: 32px;
+    @include min-screen-width('tablet-portrait') {
+        padding-left: 56px;
+    }
+    @include min-screen-width('tablet-portrait') {
+        padding-left: 56px;
+    }
 }
