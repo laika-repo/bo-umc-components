@@ -1,4 +1,5 @@
 umc-section-container {
+    border: 1px dotted rgba($color: #ff6600, $alpha: .5);
     --background-color--default: white;
     box-sizing: border-box;
     width: 100%;
@@ -15,8 +16,11 @@ umc-section-container {
 umc-section-container.content-footer,
 umc-section-container.teaser-overview {
     --background-color: #f0f5f5;
-    padding: 0;
-    padding-bottom: 56px;
+    padding: 56px 0 0;
+}
+
+umc-section-container.umc-main-content {
+    margin-bottom: 56px;
 }
 
 umc-section-container.teaser-overview {
@@ -25,6 +29,7 @@ umc-section-container.teaser-overview {
 
 umc-section-container.styleguide-main-navigation {
     --background-color: #009cb4;
+    margin-bottom: 112px;
 }
 
 umc-section-container.umc-debug-background-grid {

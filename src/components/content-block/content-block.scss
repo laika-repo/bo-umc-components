@@ -6,13 +6,6 @@ umc-content-block {
     @include act-as-column--unscoped;
 }
 
-%fluid {
-    margin-right: 56px;
-    &:last-child {
-        margin-right: 0;
-    }
-}
-
 @mixin fluid--2x() {
     width: 12vw;
 }
@@ -46,7 +39,6 @@ umc-content-block {
 }
 
 umc-content-block {
-    @extend %fluid;
     margin-bottom: 56px;
     @include min-screen-width('tablet-portrait') {
         @include fluid--10x();

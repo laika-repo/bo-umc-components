@@ -23,6 +23,10 @@ umc-sidebar {
     width: 28vw;
 }
 
+@mixin fluid--5x() {
+    width: 37vw;
+}
+
 @mixin fluid--6x() {
     width: 44vw;
 }

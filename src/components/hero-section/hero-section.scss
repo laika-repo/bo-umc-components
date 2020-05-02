@@ -1,15 +1,9 @@
 umc-hero-section {
-  @include act-as-column-section--unscoped;
-  box-sizing: border-box;
-
-  background-color: #009cb4;
-  --padding-vertical--default: 0;
-  --padding-horizontal--default: 0;
-  --border-color--default: transparent;
-  
-  padding: var(--padding-vertical, var(--padding-vertical--default)) var(--padding-horizontal, var(--padding-horizontal--default));
-  border-bottom: 1px solid var(--border-color, var(--border-color--default));
-
-  
+    @include act-as-column-section--unscoped;
+    background-color: #009cb4;
+    --padding-vertical--default: 0;
+    --padding-horizontal--default: 0;
+    --border-color--default: transparent;
+    padding: var(--padding-vertical, var(--padding-vertical--default)) var(--padding-horizontal, var(--padding-horizontal--default));
+    border-bottom: 1px solid var(--border-color, var(--border-color--default));
 }
-

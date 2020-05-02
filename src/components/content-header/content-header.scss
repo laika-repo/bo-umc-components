@@ -1,12 +1,6 @@
 umc-content-header {
-  --margin-bottom--default: 56px;
-  --margin-bottom--default: 56px;
-  --background-color--default: #f0f5f5;
-
-  @include act-as-column-section--unscoped;
-
-  box-sizing: border-box;
-  justify-content: center;
-
-  background-color: var(--background-color, var(--background-color--default));
+    @include act-as-column-section--unscoped;
+    justify-content: center;
+    background-color: #f0f5f5;
+    padding: 56px 0 32px;
 }

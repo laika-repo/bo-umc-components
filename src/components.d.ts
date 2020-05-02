@@ -25,6 +25,7 @@ export namespace Components {
   interface UmcContentBlock {}
   interface UmcContentHeader {}
   interface UmcContentSection {}
+  interface UmcContentSectionWrapper {}
   interface UmcDevStatusbar {}
   interface UmcDivider {}
   interface UmcGridBlock {}
@@ -136,6 +137,12 @@ declare global {
   var HTMLUmcContentSectionElement: {
     prototype: HTMLUmcContentSectionElement;
     new (): HTMLUmcContentSectionElement;
+  };
+
+  interface HTMLUmcContentSectionWrapperElement extends Components.UmcContentSectionWrapper, HTMLStencilElement {}
+  var HTMLUmcContentSectionWrapperElement: {
+    prototype: HTMLUmcContentSectionWrapperElement;
+    new (): HTMLUmcContentSectionWrapperElement;
   };
 
   interface HTMLUmcDevStatusbarElement extends Components.UmcDevStatusbar, HTMLStencilElement {}
@@ -369,6 +376,7 @@ declare global {
     'umc-content-block': HTMLUmcContentBlockElement;
     'umc-content-header': HTMLUmcContentHeaderElement;
     'umc-content-section': HTMLUmcContentSectionElement;
+    'umc-content-section-wrapper': HTMLUmcContentSectionWrapperElement;
     'umc-dev-statusbar': HTMLUmcDevStatusbarElement;
     'umc-divider': HTMLUmcDividerElement;
     'umc-grid-block': HTMLUmcGridBlockElement;
@@ -425,6 +433,7 @@ declare namespace LocalJSX {
   interface UmcContentBlock {}
   interface UmcContentHeader {}
   interface UmcContentSection {}
+  interface UmcContentSectionWrapper {}
   interface UmcDevStatusbar {}
   interface UmcDivider {}
   interface UmcGridBlock {}
@@ -497,6 +506,7 @@ declare namespace LocalJSX {
     'umc-content-block': UmcContentBlock;
     'umc-content-header': UmcContentHeader;
     'umc-content-section': UmcContentSection;
+    'umc-content-section-wrapper': UmcContentSectionWrapper;
     'umc-dev-statusbar': UmcDevStatusbar;
     'umc-divider': UmcDivider;
     'umc-grid-block': UmcGridBlock;
@@ -552,6 +562,7 @@ declare module "@stencil/core" {
       'umc-content-block': LocalJSX.UmcContentBlock & JSXBase.HTMLAttributes<HTMLUmcContentBlockElement>;
       'umc-content-header': LocalJSX.UmcContentHeader & JSXBase.HTMLAttributes<HTMLUmcContentHeaderElement>;
       'umc-content-section': LocalJSX.UmcContentSection & JSXBase.HTMLAttributes<HTMLUmcContentSectionElement>;
+      'umc-content-section-wrapper': LocalJSX.UmcContentSectionWrapper & JSXBase.HTMLAttributes<HTMLUmcContentSectionWrapperElement>;
       'umc-dev-statusbar': LocalJSX.UmcDevStatusbar & JSXBase.HTMLAttributes<HTMLUmcDevStatusbarElement>;
       'umc-divider': LocalJSX.UmcDivider & JSXBase.HTMLAttributes<HTMLUmcDividerElement>;
       'umc-grid-block': LocalJSX.UmcGridBlock & JSXBase.HTMLAttributes<HTMLUmcGridBlockElement>;

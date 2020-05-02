@@ -1,9 +1,41 @@
 umc-hero-image {
-  @include act-as-column--unscoped;
+    @include act-as-column--unscoped;
+    margin-top: -24px;
+    img {
+        width: 100%;
+    }
+}
 
-  margin-top: -24px;
+@mixin fluid--2x() {
+    width: 12vw;
+}
 
-  img {
-    width: 100%;
-  }
+@mixin fluid--4x() {
+    width: 28vw;
+}
+
+@mixin fluid--6x {
+    width: 44vw;
+}
+
+@mixin fluid--7x() {
+    width: 53vw;
+}
+
+@mixin fluid--8x() {
+    width: 60vw;
+}
+
+@mixin fluid--10x() {
+    width: 76vw;
+}
+
+umc-hero-image {
+    border: 1px dotted rgba($color: #ff6600, $alpha: .5);
+    @include min-screen-width('tablet-portrait') {
+        @include fluid--8x();
+    }
+    @include min-screen-width('desktop') {
+        width: column-width-for-min-screen('desktop', 8);
+    }
 }

@@ -1,16 +1,16 @@
+    $gutter: map-deep-get($screens, 'desktop', 'gutter-width');
     umc-content-section {
-        --margin-bottom--default: 56px;
-        --margin-bottom--default: 56px;
         @include act-as-column-section--unscoped;
+        border: 1px dotted rgba($color: #ff6600, $alpha: .5);
     }
     
     umc-content-section.umc-content {
         @include min-screen-width('tablet-portrait') {
-            width: calc(100% - (2*56px));
-            margin-left: map-deep-get($screens, 'desktop', 'gutter-width');
-            box-sizing: border-box;
+            width: calc(100% - 56px);
+            margin-top: -1 * $gutter;
+            margin-left: $gutter;
             border-radius: 16px 0 0;
-            background: #fff;
+            background: $white;
             padding: 56px 0 0 56px;
         }
         @include min-screen-width('desktop') {
