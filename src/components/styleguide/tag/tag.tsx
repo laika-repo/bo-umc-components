@@ -3,7 +3,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
 @Component({
   tag: 'umc-tag',
   styleUrl: 'tag.scss',
-  shadow: true
+  shadow: false
 })
 export class Tag {
   @Prop() label: string;

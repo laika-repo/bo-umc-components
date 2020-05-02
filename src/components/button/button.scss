@@ -1,4 +1,13 @@
 umc-button {
-  margin-left: -64px;
-  cursor: pointer;
+    // margin-left: -64px;
+    border: 1px solid #00778a;
+    border-radius: 28px;
+    padding: 16px 24px;
+    font-family: 'Museo Sans Rounded', sans-serif;
+    font-weight: 500;
+    color: #00778a;
+}
+
+umc-button:hover {
+    cursor: pointer;
 }

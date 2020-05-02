@@ -1,13 +1,17 @@
     umc-column-section {
         --background-color--default: $white;
-        --padding-vertical--default: 20px;
+        --padding-vertical--default: 0px;
         --padding-horizontal--default: 0px;
         --border-color--default: transparent;
         padding: var(--padding-vertical, var(--padding-vertical--default)) var(--padding-horizontal, var(--padding-horizontal--default));
         background-color: var(--background-color, var(--background-color--default));
         border-bottom: 1px solid var(--border-color, var(--border-color--default));
+        margin-bottom: 32px;
         @include act-as-column-section--unscoped;
-        color: red;
+    }
+    
+    umc-column-section.umc-breadcrumbs {
+        padding: 0;
     }
     
     umc-column-section.umc-location-switch {
@@ -30,7 +34,10 @@
         }
     }
     
-    // 
+    umc-section.styleguide-main-navigation umc-column-section {
+        flex-wrap: wrap;
+    }
+    
     umc-section.footer-links,
     umc-section.footer-colofon {
         umc-column-section {

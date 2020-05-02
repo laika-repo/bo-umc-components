@@ -58,18 +58,10 @@
             }
         }
         
-        umc-section.footer-links {
-            --background-color: #003741;
-        }
-        
         umc-section.footer-colofon umc-column-section {
             --text-color: white;
             --text-size: 14px;
             --padding-vertical: 44px;
-        }
-        
-        umc-section.footer-colofon {
-            --background-color: #00778a;
         }
         
         umc-column.submenu__main {
@@ -110,7 +102,7 @@
 </head>
 
 <body>
-    <umc-section-container class='locations-header'>
+    <!-- <umc-section-container class='locations-header'>
         <umc-column-section class="umc-location-switch">
             <umc-column>
                 <umc-list class='umc-navigation-list'>
@@ -173,7 +165,48 @@
 
             </umc-column-section>
         </umc-section>
-    </umc-menu-section>
+    </umc-menu-section> -->
+
+    <umc-section-container class='styleguide-main-navigation'>
+        <umc-column-section>
+            <umc-column>
+                <umc-logo class='umc-logo--white'></umc-logo>
+            </umc-column>
+        </umc-column-section>
+
+        <umc-column-section>
+            <umc-column>
+                <umc-list>
+                    <umc-list-header>Pagina's</umc-list-header>
+                    <umc-list-item><a href="#">Impact detail</a></umc-list-item>
+                    <umc-list-item><a href="#">Impact overzicht</a></umc-list-item>
+                </umc-list>
+            </umc-column>
+
+            <umc-column>
+                <umc-list>
+                    <umc-list-header>Componenten</umc-list-header>
+                    <umc-list-item>Header</umc-list-item>
+                    <umc-list-item><a href="footer.html">Footer</a></umc-list-item>
+                    <umc-list-item><a href="#">Researchers</a></umc-list-item>
+                    <umc-list-item><a href="#">Impact</a></umc-list-item>
+                </umc-list>
+            </umc-column>
+
+            <umc-column>
+                <umc-list>
+                    <umc-list-header>Design tokens</umc-list-header>
+                    <!--umc-list-item><a href="#">Kleuren</a></umc-list-item -->
+                    <umc-list-item><a href="grid.html">Grid</a></umc-list-item>
+                    <!-- umc-list-item>Typografie</umc-list-item-->
+                </umc-list>
+            </umc-column>
+
+
+
+
+        </umc-column-section>
+    </umc-section-container>
 
     <!-- <umc-section-container class='umc-debug-background-grid'>
         <umc-column-section>
@@ -230,12 +263,13 @@
         </umc-column-section>
     </umc-section-container> -->
 
+    <!-- Impact detail
     <umc-section-container class='content-header'>
         <umc-content-header>
             <umc-column-section class='umc-breadcrumbs'>
                 <umc-column>
                     <umc-list class='umc-navigation-list--back'>
-                        <umc-list-item><a href="#">Impact</a></umc-list-item>
+                        <umc-list-item><a href="#">Amsterdam UMC Research</a></umc-list-item>
                     </umc-list>
                 </umc-column>
             </umc-column-section>
@@ -356,6 +390,124 @@
                 </umc-teaser-link>
             </umc-teaser>
         </umc-teaser-section>
+    </umc-section-container>
+    // Impact detail -->
+
+    <!-- Impact detail -->
+    <umc-section-container class='teaser-overview'>
+        <umc-content-header>
+            <umc-column-section class='umc-breadcrumbs'>
+                <umc-column>
+                    <umc-list class='umc-navigation-list--back'>
+                        <umc-list-item><a href="#">Amsterdam UMC Research</a></umc-list-item>
+                    </umc-list>
+                </umc-column>
+            </umc-column-section>
+        </umc-content-header>
+
+        <umc-column-section>
+            <umc-title-block>Other impact stories</umc-title-block>
+        </umc-column-section>
+
+        <umc-teaser-section>
+            <umc-teaser>
+                <umc-teaser-image><img src='assets/placeholder-dokters-400-300.jpg'></umc-teaser-image>
+                <umc-teaser-body>
+                    <umc-teaser-header>Awarded grants for our life changing impacts</umc-teaser-header>
+                    <umc-teaser-text>A small discription text is At vero eos et accusamus et iusto odio ducimus qui blanditiis praesentium</umc-teaser-text>
+                </umc-teaser-body>
+                <umc-teaser-link>
+                    <a href="#">
+                        <umc-icon></umc-icon>
+                    </a>
+                </umc-teaser-link>
+            </umc-teaser>
+
+            <umc-teaser>
+                <umc-teaser-image><img src='assets/placeholder-lab2-400-300.jpg'></umc-teaser-image>
+                <umc-teaser-body>
+                    <umc-teaser-header>Awarded grants for our life changing impacts</umc-teaser-header>
+                    <umc-teaser-text>A small discription text is At vero eos et accusamus et iusto odio ducimus qui blanditiis praesentium</umc-teaser-text>
+                </umc-teaser-body>
+                <umc-teaser-link>
+                    <a href="#">
+                        <umc-icon></umc-icon>
+                    </a>
+                </umc-teaser-link>
+            </umc-teaser>
+
+            <umc-teaser>
+                <umc-teaser-image><img src='assets/placeholder-lab-400-300.jpg'></umc-teaser-image>
+                <umc-teaser-body>
+                    <umc-teaser-header>Awarded grants for our life changing impacts</umc-teaser-header>
+                    <umc-teaser-text>A small discription text is At vero eos et accusamus et iusto odio ducimus qui blanditiis praesentium</umc-teaser-text>
+                </umc-teaser-body>
+                <umc-teaser-link>
+                    <a href="#">
+                        <umc-icon></umc-icon>
+                    </a>
+                </umc-teaser-link>
+            </umc-teaser>
+
+            <umc-teaser>
+                <umc-teaser-image><img src='assets/placeholder-lab-400-300.jpg'></umc-teaser-image>
+                <umc-teaser-body>
+                    <umc-teaser-header>Awarded grants for our life changing impacts</umc-teaser-header>
+                    <umc-teaser-text>A small discription text is At vero eos et accusamus et iusto odio ducimus qui blanditiis praesentium</umc-teaser-text>
+                </umc-teaser-body>
+                <umc-teaser-link>
+                    <a href="#">
+                        <umc-icon></umc-icon>
+                    </a>
+                </umc-teaser-link>
+            </umc-teaser>
+
+            <umc-teaser>
+                <umc-teaser-image><img src='assets/placeholder-lab-400-300.jpg'></umc-teaser-image>
+                <umc-teaser-body>
+                    <umc-teaser-header>Awarded grants for our life changing impacts</umc-teaser-header>
+                    <umc-teaser-text>A small discription text is At vero eos et accusamus et iusto odio ducimus qui blanditiis praesentium</umc-teaser-text>
+                </umc-teaser-body>
+                <umc-teaser-link>
+                    <a href="#">
+                        <umc-icon></umc-icon>
+                    </a>
+                </umc-teaser-link>
+            </umc-teaser>
+
+            <umc-teaser>
+                <umc-teaser-image><img src='assets/placeholder-lab-400-300.jpg'></umc-teaser-image>
+                <umc-teaser-body>
+                    <umc-teaser-header>Awarded grants for our life changing impacts</umc-teaser-header>
+                    <umc-teaser-text>A small discription text is At vero eos et accusamus et iusto odio ducimus qui blanditiis praesentium</umc-teaser-text>
+                </umc-teaser-body>
+                <umc-teaser-link>
+                    <a href="#">
+                        <umc-icon></umc-icon>
+                    </a>
+                </umc-teaser-link>
+            </umc-teaser>
+
+            <umc-teaser>
+                <umc-teaser-image><img src='assets/placeholder-lab-400-300.jpg'></umc-teaser-image>
+                <umc-teaser-body>
+                    <umc-teaser-header>Awarded grants for our life changing impacts</umc-teaser-header>
+                    <umc-teaser-text>A small discription text is At vero eos et accusamus et iusto odio ducimus qui blanditiis praesentium</umc-teaser-text>
+                </umc-teaser-body>
+                <umc-teaser-link>
+                    <a href="#">
+                        <umc-icon></umc-icon>
+                    </a>
+                </umc-teaser-link>
+            </umc-teaser>
+        </umc-teaser-section>
+
+
+        <umc-section>
+            <umc-button>
+                More impact
+            </umc-button>
+        </umc-section>
     </umc-section-container>
 
     <umc-section class='footer-links'>

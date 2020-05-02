@@ -2,46 +2,13 @@ umc-column {
     --background-color--default: $white;
     --border-color--default: $white;
     --text-color--default: $black;
-    --font-size--default: $black;
+    --font-size--default: rem-calc(16px);
     background-color: var(--background-color, var(--background-color--default));
     color: var(--text-color, var(--text-color--default));
     margin-bottom: 12px;
     @include act-as-column--unscoped;
 }
 
-// // Todo: move to act-as-column
-// %fluid--4x {
-//     @include min-screen-width('tablet-portrait') {
-//         width: 28vw;
-//         margin-right: 56px;
-//         &:last-child {
-//             margin-right: 0;
-//         }
-//     }
-//     @include min-screen-width('desktop') {
-//         width: column-width-for-min-screen('desktop', 4);
-//     }
-// }
-// %fluid--6x {
-//     @include min-screen-width('tablet-portrait') {
-//         width: 44vw;
-//         margin-right: 56px;
-//         &:last-child {
-//             margin-right: 0;
-//         }
-//     }
-//     @include min-screen-width('desktop') {
-//         width: column-width-for-min-screen('desktop', 6);
-//     }
-// }
-// %fluid--8x {
-//     max-width: 60vw;
-//     min-width: 60vw;
-//     margin-right: 56px;
-//     &:last-child {
-//         margin-right: 0;
-//     }
-// }
 %fluid {
     margin-right: 56px;
     &:last-child {
@@ -75,6 +42,32 @@ umc-column {
 
 %align--left {
     justify-content: flex-start;
+}
+
+umc-section-container.styleguide-main-navigation umc-column-section {
+    umc-column {
+        color: $white;
+        @include min-screen-width('tablet-portrait') {
+            @include fluid--10x();
+        }
+        @include min-screen-width('desktop') {
+            width: column-width-for-min-screen('desktop', 10);
+        }
+    }
+    umc-list-header {
+        margin-bottom: 8px;
+    }
+}
+
+umc-column-section.umc-breadcrumbs umc-column {
+    @extend %fluid;
+    margin: 0;
+    @include min-screen-width('tablet-portrait') {
+        @include fluid--4x();
+    }
+    @include min-screen-width('desktop') {
+        width: column-width-for-min-screen('desktop', 6);
+    }
 }
 
 umc-column.umc-footer-logo {

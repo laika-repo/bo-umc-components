@@ -1,20 +1,16 @@
 umc-breadcrumbs {
-  display: block;
-
-  margin: 68px 0;
-
-  /* TODO: act-as-section */
-  width: map-deep-get($grid, "small", "content-width");
-
-  @include min-screen-width('tablet-portrait') {
-    width: map-deep-get($screens, 'tablet-portrait', 'content-width');
-  }
-
-  @include min-screen-width('tablet-landscape') {
-      width: map-deep-get($screens, 'tablet-landscape', 'content-width');
-  }
-
-  @include min-screen-width('desktop') {
-      width: map-deep-get($screens, 'desktop', 'content-width');
-  }
+    display: block;
+    padding: 0;
+    margin: 0;
+    /* TODO: act-as-section */
+    width: map-deep-get($grid, "small", "content-width");
+    @include min-screen-width('tablet-portrait') {
+        width: map-deep-get($screens, 'tablet-portrait', 'content-width');
+    }
+    @include min-screen-width('tablet-landscape') {
+        width: map-deep-get($screens, 'tablet-landscape', 'content-width');
+    }
+    @include min-screen-width('desktop') {
+        width: map-deep-get($screens, 'desktop', 'content-width');
+    }
 }

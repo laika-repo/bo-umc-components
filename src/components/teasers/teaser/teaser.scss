@@ -15,29 +15,6 @@ umc-teaser {
     img {
         width: 100%;
     }
-    // &:last-child {
-    //     display: none;
-    //     @include min-screen-width('desktop') {
-    //         display: flex;
-    //     }
-    // }
-    // &:nth-last-child(2) {
-    //     margin: 0;
-    //     @include min-screen-width('desktop') {
-    //         margin-right: map-deep-get($screens, 'desktop', 'gutter-width');
-    //     }
-    // }
-    // &.width--medium {
-    //     @include min-screen-width('tablet-portrait') {
-    //         width: column-width-for-min-screen('tablet-portrait', 4);
-    //     }
-    //     @include min-screen-width('tablet-landscape') {
-    //         width: column-width-for-min-screen('tablet-landscape', 4);
-    //     }
-    //     @include min-screen-width('desktop') {
-    //         width: column-width-for-min-screen('desktop', 4);
-    //     }
-    // }
 }
 
 %fluid {
@@ -52,11 +29,11 @@ umc-teaser {
 }
 
 @mixin fluid--4x() {
-    width: 28vw;
+    width: 26vw;
 }
 
 @mixin fluid--6x() {
-    width: calc(39vw);
+    width: 39vw;
 }
 
 @mixin fluid--8x() {
@@ -69,10 +46,19 @@ umc-teaser {
 
 umc-teaser {
     @extend %fluid;
-    &:nth-child(2) {
-        margin-right: 0;
-        @include min-screen-width('tablet-landscape') {
+    @include min-screen-width('tablet-portrait') {
+        /* Every second child */
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+    }
+    @include min-screen-width('tablet-landscape') {
+        &:nth-child(2n) {
             margin-right: 56px;
+        }
+        /* Every third child */
+        &:nth-child(3n) {
+            margin-right: 0;
         }
     }
     margin-bottom: 56px;
@@ -81,7 +67,7 @@ umc-teaser {
     }
     @include min-screen-width('tablet-landscape') {
         @include fluid--4x();
-        margin-bottom: 0;
+        // margin-bottom: 0;
     }
     @include min-screen-width('desktop') {
         width: column-width-for-min-screen('desktop', 4);

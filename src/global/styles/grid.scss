@@ -82,7 +82,7 @@ $screens: ( mobile: ( min-width: 375px, content-width: 327px, cols: 1, gutter-wi
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    border: 1px dotted rgba(0, 0, 0, 0.5);
+    // border: 1px dotted rgba(0, 0, 0, 0.5);
     width: 100%;
     @include min-screen-width('tablet-portrait') {
         width: column-width-for-min-screen('tablet-portrait', 1);

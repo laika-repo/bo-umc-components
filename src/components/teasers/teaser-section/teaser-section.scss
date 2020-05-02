@@ -6,7 +6,12 @@ umc-teaser-section {
     border-bottom: 1px solid var(--border-color, var(--border-color--default));
     @include act-as-column-section--unscoped;
     flex-wrap: wrap;
+}
+
+umc-section-container.content-footer umc-teaser-section {
     @include min-screen-width('tablet-landscape') {
         flex-wrap: nowrap;
     }
 }
+
+umc-section-container.teaser-overview umc-teaser-section {}

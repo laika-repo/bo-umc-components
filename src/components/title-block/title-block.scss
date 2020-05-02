@@ -25,7 +25,8 @@ umc-title-block.small {
     line-height: rem-calc(24px);
 }
 
-.content-footer umc-title-block {
+.content-footer umc-title-block,
+.teaser-overview umc-title-block {
     padding-left: 32px;
     @include min-screen-width('tablet-portrait') {
         padding-left: 56px;

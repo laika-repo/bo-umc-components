@@ -12,7 +12,7 @@ export class Column {
 
   render() {
     return (
-      <Host class={'width--' + this.width + ' ' + 'align--' + this.alignment}>
+      <Host>
         <slot></slot>
       </Host>
     );
