@@ -51,6 +51,7 @@ export namespace Components {
   interface UmcListHeader {}
   interface UmcListItem {}
   interface UmcListItemHeader {}
+  interface UmcListingBlock {}
   interface UmcLogo {
     'src': string;
   }
@@ -61,6 +62,10 @@ export namespace Components {
   interface UmcPublicationsListItemAuthors {}
   interface UmcPublicationsListItemPublication {}
   interface UmcPublicationsListItemTitle {}
+  interface UmcResearcher {}
+  interface UmcResearcherImage {}
+  interface UmcResearchers {}
+  interface UmcResearchersList {}
   interface UmcRichTextBlock {}
   interface UmcSearchInput {}
   interface UmcSection {}
@@ -253,6 +258,12 @@ declare global {
     new (): HTMLUmcListItemHeaderElement;
   };
 
+  interface HTMLUmcListingBlockElement extends Components.UmcListingBlock, HTMLStencilElement {}
+  var HTMLUmcListingBlockElement: {
+    prototype: HTMLUmcListingBlockElement;
+    new (): HTMLUmcListingBlockElement;
+  };
+
   interface HTMLUmcLogoElement extends Components.UmcLogo, HTMLStencilElement {}
   var HTMLUmcLogoElement: {
     prototype: HTMLUmcLogoElement;
@@ -299,6 +310,30 @@ declare global {
   var HTMLUmcPublicationsListItemTitleElement: {
     prototype: HTMLUmcPublicationsListItemTitleElement;
     new (): HTMLUmcPublicationsListItemTitleElement;
+  };
+
+  interface HTMLUmcResearcherElement extends Components.UmcResearcher, HTMLStencilElement {}
+  var HTMLUmcResearcherElement: {
+    prototype: HTMLUmcResearcherElement;
+    new (): HTMLUmcResearcherElement;
+  };
+
+  interface HTMLUmcResearcherImageElement extends Components.UmcResearcherImage, HTMLStencilElement {}
+  var HTMLUmcResearcherImageElement: {
+    prototype: HTMLUmcResearcherImageElement;
+    new (): HTMLUmcResearcherImageElement;
+  };
+
+  interface HTMLUmcResearchersElement extends Components.UmcResearchers, HTMLStencilElement {}
+  var HTMLUmcResearchersElement: {
+    prototype: HTMLUmcResearchersElement;
+    new (): HTMLUmcResearchersElement;
+  };
+
+  interface HTMLUmcResearchersListElement extends Components.UmcResearchersList, HTMLStencilElement {}
+  var HTMLUmcResearchersListElement: {
+    prototype: HTMLUmcResearchersListElement;
+    new (): HTMLUmcResearchersListElement;
   };
 
   interface HTMLUmcRichTextBlockElement extends Components.UmcRichTextBlock, HTMLStencilElement {}
@@ -436,6 +471,7 @@ declare global {
     'umc-list-header': HTMLUmcListHeaderElement;
     'umc-list-item': HTMLUmcListItemElement;
     'umc-list-item-header': HTMLUmcListItemHeaderElement;
+    'umc-listing-block': HTMLUmcListingBlockElement;
     'umc-logo': HTMLUmcLogoElement;
     'umc-menu-section': HTMLUmcMenuSectionElement;
     'umc-menu-toggle': HTMLUmcMenuToggleElement;
@@ -444,6 +480,10 @@ declare global {
     'umc-publications-list-item-authors': HTMLUmcPublicationsListItemAuthorsElement;
     'umc-publications-list-item-publication': HTMLUmcPublicationsListItemPublicationElement;
     'umc-publications-list-item-title': HTMLUmcPublicationsListItemTitleElement;
+    'umc-researcher': HTMLUmcResearcherElement;
+    'umc-researcher-image': HTMLUmcResearcherImageElement;
+    'umc-researchers': HTMLUmcResearchersElement;
+    'umc-researchers-list': HTMLUmcResearchersListElement;
     'umc-rich-text-block': HTMLUmcRichTextBlockElement;
     'umc-search-input': HTMLUmcSearchInputElement;
     'umc-section': HTMLUmcSectionElement;
@@ -507,6 +547,7 @@ declare namespace LocalJSX {
   interface UmcListHeader {}
   interface UmcListItem {}
   interface UmcListItemHeader {}
+  interface UmcListingBlock {}
   interface UmcLogo {
     'src'?: string;
   }
@@ -521,6 +562,10 @@ declare namespace LocalJSX {
   interface UmcPublicationsListItemAuthors {}
   interface UmcPublicationsListItemPublication {}
   interface UmcPublicationsListItemTitle {}
+  interface UmcResearcher {}
+  interface UmcResearcherImage {}
+  interface UmcResearchers {}
+  interface UmcResearchersList {}
   interface UmcRichTextBlock {}
   interface UmcSearchInput {}
   interface UmcSection {
@@ -578,6 +623,7 @@ declare namespace LocalJSX {
     'umc-list-header': UmcListHeader;
     'umc-list-item': UmcListItem;
     'umc-list-item-header': UmcListItemHeader;
+    'umc-listing-block': UmcListingBlock;
     'umc-logo': UmcLogo;
     'umc-menu-section': UmcMenuSection;
     'umc-menu-toggle': UmcMenuToggle;
@@ -586,6 +632,10 @@ declare namespace LocalJSX {
     'umc-publications-list-item-authors': UmcPublicationsListItemAuthors;
     'umc-publications-list-item-publication': UmcPublicationsListItemPublication;
     'umc-publications-list-item-title': UmcPublicationsListItemTitle;
+    'umc-researcher': UmcResearcher;
+    'umc-researcher-image': UmcResearcherImage;
+    'umc-researchers': UmcResearchers;
+    'umc-researchers-list': UmcResearchersList;
     'umc-rich-text-block': UmcRichTextBlock;
     'umc-search-input': UmcSearchInput;
     'umc-section': UmcSection;
@@ -640,6 +690,7 @@ declare module "@stencil/core" {
       'umc-list-header': LocalJSX.UmcListHeader & JSXBase.HTMLAttributes<HTMLUmcListHeaderElement>;
       'umc-list-item': LocalJSX.UmcListItem & JSXBase.HTMLAttributes<HTMLUmcListItemElement>;
       'umc-list-item-header': LocalJSX.UmcListItemHeader & JSXBase.HTMLAttributes<HTMLUmcListItemHeaderElement>;
+      'umc-listing-block': LocalJSX.UmcListingBlock & JSXBase.HTMLAttributes<HTMLUmcListingBlockElement>;
       'umc-logo': LocalJSX.UmcLogo & JSXBase.HTMLAttributes<HTMLUmcLogoElement>;
       'umc-menu-section': LocalJSX.UmcMenuSection & JSXBase.HTMLAttributes<HTMLUmcMenuSectionElement>;
       'umc-menu-toggle': LocalJSX.UmcMenuToggle & JSXBase.HTMLAttributes<HTMLUmcMenuToggleElement>;
@@ -648,6 +699,10 @@ declare module "@stencil/core" {
       'umc-publications-list-item-authors': LocalJSX.UmcPublicationsListItemAuthors & JSXBase.HTMLAttributes<HTMLUmcPublicationsListItemAuthorsElement>;
       'umc-publications-list-item-publication': LocalJSX.UmcPublicationsListItemPublication & JSXBase.HTMLAttributes<HTMLUmcPublicationsListItemPublicationElement>;
       'umc-publications-list-item-title': LocalJSX.UmcPublicationsListItemTitle & JSXBase.HTMLAttributes<HTMLUmcPublicationsListItemTitleElement>;
+      'umc-researcher': LocalJSX.UmcResearcher & JSXBase.HTMLAttributes<HTMLUmcResearcherElement>;
+      'umc-researcher-image': LocalJSX.UmcResearcherImage & JSXBase.HTMLAttributes<HTMLUmcResearcherImageElement>;
+      'umc-researchers': LocalJSX.UmcResearchers & JSXBase.HTMLAttributes<HTMLUmcResearchersElement>;
+      'umc-researchers-list': LocalJSX.UmcResearchersList & JSXBase.HTMLAttributes<HTMLUmcResearchersListElement>;
       'umc-rich-text-block': LocalJSX.UmcRichTextBlock & JSXBase.HTMLAttributes<HTMLUmcRichTextBlockElement>;
       'umc-search-input': LocalJSX.UmcSearchInput & JSXBase.HTMLAttributes<HTMLUmcSearchInputElement>;
       'umc-section': LocalJSX.UmcSection & JSXBase.HTMLAttributes<HTMLUmcSectionElement>;

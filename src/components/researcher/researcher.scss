@@ -1,0 +1,15 @@
+umc-researcher {
+    //display: flex;
+    display: flex;
+    border: 1px solid #ced9e5;
+    align-items: center;
+    margin-bottom: 16px;
+    a {
+        text-decoration: none;
+    }
+    a,
+    a:active,
+    a:visited {
+        color: #00778a;
+    }
+}
