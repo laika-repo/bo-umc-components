@@ -1,8 +1,9 @@
-umc-rich-text-block {
+umc-publications-list {
     display: block;
     font-family: 'Museo Sans Rounded', sans-serif;
     font-weight: 300;
+    margin: 0;
+    color: $black;
     font-size: rem-calc(18px);
     line-height: rem-calc(28px);
-    margin-bottom: 32px;
 }

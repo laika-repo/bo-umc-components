@@ -5,6 +5,7 @@
     }
     
     umc-content-section.umc-content {
+        border: 1px dotted green;
         @include min-screen-width('tablet-portrait') {
             width: calc(100% - 56px);
             margin-top: -1 * $gutter;
@@ -20,4 +21,8 @@
         @include min-screen-width('tablet-landscape') {
             flex-wrap: nowrap;
         }
+    }
+    
+    umc-content-section.umc-content-listing {
+        border: 1px dotted blue;
     }

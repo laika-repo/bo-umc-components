@@ -1,6 +1,16 @@
 umc-heading {
+    display: block;
     font-family: 'Museo Sans Rounded', sans-serif;
     font-weight: 300;
     color: white;
     font-size: rem-calc(22px);
+}
+
+umc-listing-block {
+    umc-heading {
+        color: $black;
+        font-weight: 500;
+        font-size: rem-calc(40px);
+        margin-bottom: 32px;
+    }
 }

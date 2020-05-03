@@ -1,11 +1,11 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'umc-content-section',
-  styleUrl: 'content-section.scss',
+  tag: 'umc-publications-list',
+  styleUrl: 'publications-list.scss',
   shadow: false
 })
-export class ContentSection {
+export class PublicationsList {
 
   render() {
     return (
