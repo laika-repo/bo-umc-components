@@ -1,6 +1,8 @@
 umc-researcher {
     //display: flex;
     display: flex;
+    box-sizing: border-box;
+    height: 80px;
     border: 1px solid #ced9e5;
     align-items: center;
     margin-bottom: 16px;

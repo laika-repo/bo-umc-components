@@ -82,6 +82,8 @@ export namespace Components {
   interface UmcTag {
     'label': string;
   }
+  interface UmcTag {}
+  interface UmcTagList {}
   interface UmcTeaser {}
   interface UmcTeaserBody {}
   interface UmcTeaserHeader {}
@@ -390,6 +392,18 @@ declare global {
     new (): HTMLUmcTagElement;
   };
 
+  interface HTMLUmcTagElement extends Components.UmcTag, HTMLStencilElement {}
+  var HTMLUmcTagElement: {
+    prototype: HTMLUmcTagElement;
+    new (): HTMLUmcTagElement;
+  };
+
+  interface HTMLUmcTagListElement extends Components.UmcTagList, HTMLStencilElement {}
+  var HTMLUmcTagListElement: {
+    prototype: HTMLUmcTagListElement;
+    new (): HTMLUmcTagListElement;
+  };
+
   interface HTMLUmcTeaserElement extends Components.UmcTeaser, HTMLStencilElement {}
   var HTMLUmcTeaserElement: {
     prototype: HTMLUmcTeaserElement;
@@ -493,6 +507,8 @@ declare global {
     'umc-tab': HTMLUmcTabElement;
     'umc-tabs': HTMLUmcTabsElement;
     'umc-tag': HTMLUmcTagElement;
+    'umc-tag': HTMLUmcTagElement;
+    'umc-tag-list': HTMLUmcTagListElement;
     'umc-teaser': HTMLUmcTeaserElement;
     'umc-teaser-body': HTMLUmcTeaserBodyElement;
     'umc-teaser-header': HTMLUmcTeaserHeaderElement;
@@ -585,6 +601,8 @@ declare namespace LocalJSX {
   interface UmcTag {
     'label'?: string;
   }
+  interface UmcTag {}
+  interface UmcTagList {}
   interface UmcTeaser {}
   interface UmcTeaserBody {}
   interface UmcTeaserHeader {}
@@ -645,6 +663,8 @@ declare namespace LocalJSX {
     'umc-tab': UmcTab;
     'umc-tabs': UmcTabs;
     'umc-tag': UmcTag;
+    'umc-tag': UmcTag;
+    'umc-tag-list': UmcTagList;
     'umc-teaser': UmcTeaser;
     'umc-teaser-body': UmcTeaserBody;
     'umc-teaser-header': UmcTeaserHeader;
@@ -712,6 +732,8 @@ declare module "@stencil/core" {
       'umc-tab': LocalJSX.UmcTab & JSXBase.HTMLAttributes<HTMLUmcTabElement>;
       'umc-tabs': LocalJSX.UmcTabs & JSXBase.HTMLAttributes<HTMLUmcTabsElement>;
       'umc-tag': LocalJSX.UmcTag & JSXBase.HTMLAttributes<HTMLUmcTagElement>;
+      'umc-tag': LocalJSX.UmcTag & JSXBase.HTMLAttributes<HTMLUmcTagElement>;
+      'umc-tag-list': LocalJSX.UmcTagList & JSXBase.HTMLAttributes<HTMLUmcTagListElement>;
       'umc-teaser': LocalJSX.UmcTeaser & JSXBase.HTMLAttributes<HTMLUmcTeaserElement>;
       'umc-teaser-body': LocalJSX.UmcTeaserBody & JSXBase.HTMLAttributes<HTMLUmcTeaserBodyElement>;
       'umc-teaser-header': LocalJSX.UmcTeaserHeader & JSXBase.HTMLAttributes<HTMLUmcTeaserHeaderElement>;
