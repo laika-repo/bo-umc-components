@@ -7,6 +7,12 @@ umc-logo {
 umc-logo.umc-logo--fullcolor {
     background-repeat: no-repeat;
     background-image: url('./assets/logo-aumc.svg');
+    width: 200px;
+    height: 35px;
+    @include min-screen-width('tablet-portrait') {
+        width: 288px;
+        height: 52px;
+    }
 }
 
 umc-logo.umc-logo--white {

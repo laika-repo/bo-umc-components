@@ -102,7 +102,7 @@
 </head>
 
 <body>
-    <!-- <umc-section-container class='locations-header'>
+    <umc-section-container class='locations-header'>
         <umc-column-section class="umc-location-switch">
             <umc-column>
                 <umc-list class='umc-navigation-list'>
@@ -115,17 +115,17 @@
 
     <umc-menu-section class='main-navigation umc-section--sticky'>
         <umc-column-section slot='navigation' class='umc-navigation-menu justify-columns'>
-            <umc-column class='width--small direction--horizontal vertical-align--middle'>
+            <umc-column class='direction--horizontal vertical-align--middle'>
                 <umc-menu-toggle class='umc-menu-toggle--menu'>
-                    <umc-label>Menu</umc-label>
+                    <umc-label><span>Menu</span></umc-label>
                 </umc-menu-toggle>
             </umc-column>
-            <umc-column class="width--medium align--center vertical-align--middle">
+            <umc-column class=" align--center vertical-align--middle">
                 <umc-logo class='umc-logo--fullcolor'></umc-logo>
             </umc-column>
-            <umc-column class="width--small direction--horizontal align--right vertical-align--middle">
+            <umc-column class="direction--horizontal align--right vertical-align--middle">
                 <umc-menu-toggle class='umc-menu-toggle--search'>
-                    <umc-label>Search</umc-label>
+                    <umc-label><span>Search</span></umc-label>
                 </umc-menu-toggle>
         </umc-column-section>
 
@@ -165,8 +165,9 @@
 
             </umc-column-section>
         </umc-section>
-    </umc-menu-section> -->
+    </umc-menu-section>
 
+    <!--
     <umc-section-container class='styleguide-main-navigation'>
         <umc-column-section>
             <umc-column>
@@ -196,25 +197,83 @@
             <umc-column>
                 <umc-list>
                     <umc-list-header>Design tokens</umc-list-header>
-                    <!--umc-list-item><a href="#">Kleuren</a></umc-list-item -->
+                    <umc-list-item><a href="#">Kleuren</a></umc-list-item>
                     <umc-list-item><a href="grid.html">Grid</a></umc-list-item>
-                    <!-- umc-list-item>Typografie</umc-list-item-->
+                    <umc-list-item>Typografie</umc-list-item>
                 </umc-list>
             </umc-column>
         </umc-column-section>
     </umc-section-container>
+-->
+    <umc-section-container class='umc-content-header-fullbleed'>
+        <umc-content-header>
+            <umc-column class='umc-breadcrumbs'>
+                <umc-list class='umc-navigation-list--back'>
+                    <umc-list-item><a href="#">Amsterdam UMC Research</a></umc-list-item>
+                </umc-list>
+            </umc-column>
+            <umc-title-block>Our research highlights</umc-title-block>
+        </umc-content-header>
 
 
-    <!-- Impact detail -->
+    </umc-section-container>
+    <umc-section-container class='umc-search-header'>
+        <umc-content-header>
+            <umc-search-input>
+                <input type="text" placeholder="Keyword" />
+                <!-- umc-button>
+                </umc-button -->
+            </umc-search-input>
+        </umc-content-header>
+
+    </umc-section-container>
+
+    <umc-section-container class='umc-main-content'>
+        <umc-content-section class='umc-content-listing'>
+            <umc-listing-block>
+                <umc-publications-list>
+                    <umc-publications-list-item>
+                        <umc-publications-list-item-title>
+                            <a href='#'>Practical Implementation of Blood Stain Age Estimation</a>
+                        </umc-publications-list-item-title>
+                        <umc-publications-list-item-publication>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </umc-publications-list-item-publication>
+
+                        <umc-tag-list>
+                            <umc-tag class='umc-tag-institute'>Research Institute Name</umc-tag>
+                            <umc-tag class='umc-tag-institute'>Research Institute Name</umc-tag>
+                            <umc-tag class='umc-tag-institute'>Research Institute Name</umc-tag>
+                        </umc-tag-list>
+                    </umc-publications-list-item>
+
+                    <umc-publications-list-item>
+                        <umc-publications-list-item-title>
+                            <a href='#'>Practical Implementation of Blood Stain Age Estimation</a>
+                        </umc-publications-list-item-title>
+                        <umc-publications-list-item-publication>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </umc-publications-list-item-publication>
+                        <umc-publications-list-item-authors>
+                            Edelman Gerda J., Roos Martin, Bolck Annabel, Aalders Maurice C.
+                        </umc-publications-list-item-authors>
+                    </umc-publications-list-item>
+
+                </umc-publications-list>
+            </umc-listing-block>
+
+
+        </umc-content-section>
+
+    </umc-section-container>
+
     <umc-section-container>
         <umc-content-header>
-            <umc-column-section class='umc-breadcrumbs'>
-                <umc-column>
-                    <umc-list class='umc-navigation-list--back'>
-                        <umc-list-item><a href="#">Amsterdam UMC Research</a></umc-list-item>
-                    </umc-list>
-                </umc-column>
-            </umc-column-section>
+            <umc-column class='umc-breadcrumbs'>
+                <umc-list class='umc-navigation-list--back'>
+                    <umc-list-item><a href="#">Amsterdam UMC Research</a></umc-list-item>
+                </umc-list>
+            </umc-column>
         </umc-content-header>
     </umc-section-container>
 
@@ -361,7 +420,6 @@
 
     </umc-section-container>
 
-
     <!-- umc-section-container class='content-footer'>
         <umc-column-section>
             <umc-title-block>Other impact stories</umc-title-block>
@@ -467,16 +525,14 @@
 
 
 
-    <!-- Impact detail 
+    <!-- Impact detail -->
     <umc-section-container>
         <umc-content-header>
-            <umc-column-section class='umc-breadcrumbs'>
-                <umc-column>
-                    <umc-list class='umc-navigation-list--back'>
-                        <umc-list-item><a href="#">Amsterdam UMC Research</a></umc-list-item>
-                    </umc-list>
-                </umc-column>
-            </umc-column-section>
+            <umc-column class='umc-breadcrumbs'>
+                <umc-list class='umc-navigation-list--back'>
+                    <umc-list-item><a href="#">Amsterdam UMC Research</a></umc-list-item>
+                </umc-list>
+            </umc-column>
         </umc-content-header>
 
 
@@ -598,7 +654,7 @@
             </umc-teaser>
         </umc-teaser-section>
     </umc-section-container>
-     // Impact detail -->
+    <!-- // Impact detail -->
 
     <!-- Impact overview
     <umc-section-container class='teaser-overview'>

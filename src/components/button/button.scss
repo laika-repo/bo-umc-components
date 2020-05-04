@@ -11,3 +11,17 @@ umc-button {
 umc-button:hover {
     cursor: pointer;
 }
+
+.umc-search-header umc-button {
+    border-width: 0;
+}
+
+umc-button::before {
+    display: inline-block;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-image: url(./assets/icon-search-white.svg);
+    background-repeat: no-repeat;
+    margin-right: 8px;
+}

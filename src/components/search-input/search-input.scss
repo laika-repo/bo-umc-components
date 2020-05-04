@@ -1,37 +1,40 @@
   umc-search-input {
-    
-
-  input {
-    font-family: 'Museo Sans Rounded', sans-serif;
-    font-weight: 300;
-    font-size: rem-calc(24px);
-    color: $white;
-
-    padding: 16px;
-    border-width: 0;
-    background: #005261;
-    border-radius: 8px;
-    height: 64px;
-    
-    @include min-screen-width('tablet-portrait') {
-      width: column-width-for-min-screen('tablet-portrait', 4);
-    }
-
-    @include min-screen-width('tablet-landscape') {
-      width: column-width-for-min-screen('tablet-landscape', 6);
-    }
+      box-sizing: border-box;
+      input {
+          font-family: 'Museo Sans Rounded', sans-serif;
+          font-weight: 300;
+          font-size: rem-calc(24px);
+          color: $white;
+          padding: 16px;
+          border-width: 0;
+          background: #005261;
+          border-radius: 8px;
+          height: 64px;
+          @include min-screen-width('tablet-portrait') {
+              width: column-width-for-min-screen('tablet-portrait', 4);
+          }
+          @include min-screen-width('tablet-landscape') {
+              width: column-width-for-min-screen('tablet-landscape', 6);
+          }
+          @include min-screen-width('desktop') {
+              width: column-width-for-min-screen('desktop', 8);
+          }
+          &::placeholder {
+              color: white;
+          }
+      }
+      button {
+          background: red;
+          border-width: 0;
+      }
+  }
   
-    @include min-screen-width('desktop') {
-      width: column-width-for-min-screen('desktop', 8);
-    }
-
-    &::placeholder {
-      color: white;
-    }
+  umc-section-container.umc-search-header umc-search-input {
+      width: 100%;
+      input {
+          background-color: #38296d;
+          width: 98%;
+          height: 64px;
+          padding: 0 0 0 16px;
+      }
   }
-
-  button {
-    background: red;
-    border-width: 0; 
-  }
-}

@@ -13,6 +13,10 @@ umc-section-container {
     background-color: var(--background-color, var(--background-color--default));
 }
 
+umc-section-container.umc-content-header-fullbleed {
+    --background-color: #f0f5f5;
+}
+
 umc-section-container.content-footer,
 umc-section-container.teaser-overview {
     --background-color: #f0f5f5;

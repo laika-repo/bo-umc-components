@@ -59,14 +59,40 @@ umc-section-container.styleguide-main-navigation umc-column-section {
     }
 }
 
-umc-column-section.umc-breadcrumbs umc-column {
+umc-column-section.umc-navigation-menu umc-column {
     @extend %fluid;
-    margin: 0;
+    &:first-child {
+        @include fluid--2x();
+        order: 3;
+        @include min-screen-width('tablet-portrait') {
+            order: initial;
+        }
+    }
+    &:nth-child(2) {
+        @include fluid--6x();
+        flex-direction: row;
+        order: 1;
+        @include min-screen-width('tablet-portrait') {
+            order: initial;
+        }
+    }
+    &:last-child {
+        @include fluid--2x();
+        order: 2;
+        @include min-screen-width('tablet-portrait') {
+            order: initial;
+        }
+    }
+}
+
+umc-column.umc-breadcrumbs {
+    @extend %fluid;
+    margin-left: 56px;
     @include min-screen-width('tablet-portrait') {
-        @include fluid--4x();
+        @include fluid--10x();
     }
     @include min-screen-width('desktop') {
-        width: column-width-for-min-screen('desktop', 6);
+        width: column-width-for-min-screen('desktop', 12);
     }
 }
 

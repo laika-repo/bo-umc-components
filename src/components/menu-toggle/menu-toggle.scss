@@ -7,6 +7,12 @@ umc-menu-toggle {
         margin: 0;
         display: inline-flex;
         align-items: center;
+        span {
+            display: none;
+            @include min-screen-width('tablet-portrait') {
+                display: inline;
+            }
+        }
     }
     &:hover {
         cursor: pointer;

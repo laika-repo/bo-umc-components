@@ -23,5 +23,17 @@
     }
     
     umc-content-section.umc-content-listing {
-        // border: 1px dotted blue;
+        @include min-screen-width('tablet-portrait') {
+            width: calc(100% - 56px);
+            margin-left: $gutter;
+            background: $white;
+            padding: 0;
+        }
+        @include min-screen-width('desktop') {
+            width: map-deep-get($screens, 'desktop', 'content-width') - map-deep-get($screens, 'desktop', 'gutter-width');
+        }
+        flex-wrap: wrap;
+        @include min-screen-width('tablet-landscape') {
+            flex-wrap: nowrap;
+        }
     }

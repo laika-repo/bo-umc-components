@@ -17,14 +17,20 @@
     umc-column-section.umc-location-switch {
         --text-color: #005261;
         --border-color: #ced9e5;
-        --margin-bottom: 0;
+        margin-bottom: 0;
         --padding-vertical: 8px;
+        padding-bottom: 0px;
         justify-content: space-between;
         umc-column {
             flex-direction: row;
             width: 100%;
             justify-content: center;
         }
+    }
+    
+    umc-column-section.umc-navigation-menu {
+        padding-top: 32px;
+        flex-direction: row;
     }
     
     umc-column-section.umc-navigation-menu,
