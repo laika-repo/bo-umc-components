@@ -60,6 +60,60 @@
         @extend %always-horizontal;
     }
     
+    umc-list.umc-list-pagination {
+        @extend %always-horizontal;
+        color: #00778a;
+        line-height: 30px;
+        font-weight: 500;
+        font-size: 18px;
+        a,
+        a:visited,
+        a:active {
+            color: #00778a;
+        }
+        a:hover {
+            cursor: pointer;
+        }
+        umc-list-item.umc-list-pagination--active {
+            display: inline-block;
+            background-color: #f07814;
+            text-align: center;
+            box-sizing: border-box;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            color: white;
+        }
+        umc-list-item:first-child {
+            a,
+            a:visited,
+            a:active {
+                color: #717373;
+            }
+            a::before {
+                display: inline-block;
+                content: "";
+                width: 16px;
+                height: 16px;
+                background-image: url(./assets/arrow-right-grey.svg);
+                background-repeat: no-repeat;
+                margin-right: 16px;
+                transform: scaleX(-1);
+            }
+        }
+        umc-list-item:last-child {
+            a::after {
+                display: inline-block;
+                content: "";
+                width: 16px;
+                height: 16px;
+                background-image: url(./assets/arrow-right-azure-blue.svg);
+                background-repeat: no-repeat;
+                margin-left: 16px;
+            }
+        }
+    }
+    
     umc-column.umc-footer-socials umc-list.umc-navigation-list {
         @extend %always-horizontal;
     }
