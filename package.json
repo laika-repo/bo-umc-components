@@ -27,7 +27,7 @@
     "@babel/core": "^7.9.0",
     "@stencil/core": "^1.8.8",
     "@storybook/addon-notes": "^5.3.18",
-    "@storybook/html": "^5.3.18",
+    "@storybook/html": "^6.5.13",
     "babel-loader": "^8.1.0",
     "copy-webpack-plugin": "^5.1.1",
     "stencil-markdown": "0.0.2-1",
